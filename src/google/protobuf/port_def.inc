@@ -270,7 +270,7 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
 #ifdef PROTOBUF_VERSION_SUFFIX
 #error PROTOBUF_VERSION_SUFFIX was previously defined
 #endif
-#define PROTOBUF_VERSION_SUFFIX ""
+#define PROTOBUF_VERSION_SUFFIX "-main"
 
 #ifdef PROTOBUF_MINIMUM_EDITION
 #error PROTOBUF_MINIMUM_EDITION was previously defined
