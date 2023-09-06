@@ -38,7 +38,7 @@
 
 #include "upb/base/status.hpp"
 #include "upb/mem/arena.hpp"
-#include "upb/reflection/def.h"
+#include "upb/reflection/def.h"  // IWYU pragma: export
 #include "upb/reflection/internal/def_pool.h"
 #include "upb/reflection/internal/enum_def.h"
 #include "upb/reflection/message.h"

@@ -31,7 +31,7 @@
 #ifndef UPB_REFLECTION_MESSAGE_HPP_
 #define UPB_REFLECTION_MESSAGE_HPP_
 
-#include "upb/reflection/message.h"
+#include "upb/reflection/message.h"  // IWYU pragma: export
 
 namespace upb {
 
