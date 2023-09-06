@@ -33,10 +33,13 @@
 #ifndef UPB_WIRE_DECODE_H_
 #define UPB_WIRE_DECODE_H_
 
+#include <stddef.h>
+#include <stdint.h>
+
 #include "upb/mem/arena.h"
 #include "upb/message/message.h"
 #include "upb/mini_table/extension_registry.h"
-#include "upb/wire/types.h"
+#include "upb/wire/types.h"  // IWYU pragma: export
 
 // Must be last.
 #include "upb/port/def.inc"
