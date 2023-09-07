@@ -43,6 +43,7 @@
 #include "google/protobuf/implicit_weak_message.h"
 #include "google/protobuf/port.h"
 #include "google/protobuf/repeated_field.h"
+#include "google/protobuf/string_piece_field_support.h"
 
 // Must be included last.
 #include "google/protobuf/port_def.inc"
@@ -189,8 +190,51 @@ void InternalOutOfLineDeleteMessageLite(MessageLite* message) {
   delete message;
 }
 
-}  // namespace internal
+void RepeatedPtrFieldBase::MergeFromString(const RepeatedPtrFieldBase& from) {
+  int length = from.current_size_;
+  auto new_elements = reinterpret_cast<std::string**>(InternalExtend(length));
+  auto from_elements = reinterpret_cast<std::string* const*>(from.elements());
+  int length1 = std::min(allocated_size() - current_size_, length);
+  for (int i = 0; i < length1; ++i) {
+    new_elements[i]->assign(*from_elements[i]);
+  }
+  if (Arena* const arena = arena_) {
+    for (int i = length1; i < length; ++i) {
+      new_elements[i] = Arena::Create<std::string>(arena, *from_elements[i]);
+    }
+  } else {
+    for (int i = length1; i < length; ++i) {
+      new_elements[i] = new std::string(*from_elements[i]);
+    }
+  }
+  ExchangeCurrentSize(current_size_ + length);
+  if (current_size_ > allocated_size()) {
+    rep()->allocated_size = current_size_;
+  }
+}
 
+void RepeatedPtrFieldBase::MergeFromStringPiece(
+    const RepeatedPtrFieldBase& from) {
+  int length = from.current_size_;
+  auto new_elements =
+      reinterpret_cast<StringPieceField**>(InternalExtend(length));
+  auto from_elements =
+      reinterpret_cast<StringPieceField* const*>(from.elements());
+  int length1 = std::min(allocated_size() - current_size_, length);
+  Arena* const arena = arena_;
+  for (int i = length1; i < length; ++i) {
+    new_elements[i] = Arena::Create<StringPieceField>(arena);
+  }
+  for (int i = 0; i < length; ++i) {
+    new_elements[i]->Set(from_elements[i]->Get());
+  }
+  ExchangeCurrentSize(current_size_ + length);
+  if (current_size_ > allocated_size()) {
+    rep()->allocated_size = current_size_;
+  }
+}
+
+}  // namespace internal
 }  // namespace protobuf
 }  // namespace google
 

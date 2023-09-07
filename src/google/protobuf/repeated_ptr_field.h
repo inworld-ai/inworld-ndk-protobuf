@@ -318,8 +318,21 @@ class PROTOBUF_EXPORT RepeatedPtrFieldBase {
     // calls the object-allocate and merge handlers.
     ABSL_DCHECK_NE(&other, this);
     if (other.current_size_ == 0) return;
+
+#ifdef __cpp_if_constexpr
+    using T = typename TypeHandler::Type;
+    if constexpr (std::is_base_of<::google::protobuf::MessageLite, T>::value) {
+      MergeFromMessage<T>(other);
+    } else if constexpr (std::is_same<T, StringPieceField>::value) {
+      MergeFromStringPiece(other);
+    } else {
+      static_assert(std::is_same<T, std::string>::value, "expected string");
+      MergeFromString(other);
+    }
+#else   // __cpp_if_constexpr
     MergeFromInternal(other,
                       &RepeatedPtrFieldBase::MergeFromInnerLoop<TypeHandler>);
+#endif  // __cpp_if_constexpr
   }
 
   inline void InternalSwap(RepeatedPtrFieldBase* PROTOBUF_RESTRICT rhs) {
@@ -773,6 +786,44 @@ class PROTOBUF_EXPORT RepeatedPtrFieldBase {
     ExchangeCurrentSize(0);
   }
 
+#ifdef __cpp_if_constexpr
+
+  void MergeFromString(const RepeatedPtrFieldBase& from);
+  void MergeFromStringPiece(const RepeatedPtrFieldBase& from);
+
+  template <typename T>
+  void MergeFromMessage(const RepeatedPtrFieldBase& from) {
+    int length = from.current_size_;
+    T** new_elements = reinterpret_cast<T**>(InternalExtend(length));
+    T* const* from_elements = reinterpret_cast<T* const*>(from.elements());
+    Arena* arena = GetOwningArena();
+    int length1 = std::min(allocated_size() - current_size_, length);
+    if (PROTOBUF_PREDICT_FALSE(length1 > 0)) {
+      for (int i = 0; i < length1; ++i) {
+        if constexpr (std::is_same<T, MessageLite>::value) {
+          new_elements[i]->CheckTypeAndMergeFrom(*from_elements[i]);
+        } else {
+          new_elements[i]->MergeFrom(*from_elements[i]);
+        }
+      }
+    }
+    for (int i = length1; i < length; ++i) {
+      if constexpr (std::is_constructible<T, Arena*, const T&>::value) {
+        new_elements[i] =
+            Arena::CreateMaybeMessage<T>(arena, *from_elements[i]);
+      } else {
+        new_elements[i] = static_cast<T*>(from_elements[i]->New(arena));
+        new_elements[i]->CheckTypeAndMergeFrom(*from_elements[i]);
+      }
+    }
+    ExchangeCurrentSize(current_size_ + length);
+    if (current_size_ > allocated_size()) {
+      rep()->allocated_size = current_size_;
+    }
+  }
+
+#else  // __cpp_if_constexpr
+
   // Non-templated inner function to avoid code duplication. Takes a function
   // pointer to the type-specific (templated) inner allocate/merge loop.
   PROTOBUF_NOINLINE void MergeFromInternal(
@@ -813,6 +864,8 @@ class PROTOBUF_EXPORT RepeatedPtrFieldBase {
       TypeHandler::Merge(*other_elem, new_elem);
     }
   }
+
+#endif  // __cpp_if_constexpr
 
   // Internal helper: extends array space if necessary to contain
   // |extend_amount| more elements, and returns a pointer to the element
