@@ -105,7 +105,7 @@ void Register(const MessageLite* containing_type, int number,
   global_registry = local_static_registry;
   if (!InsertIfNotPresent(local_static_registry,
                                std::make_pair(containing_type, number), info)) {
-    GOOGLE_LOG(FATAL) << "Multiple extension registrations for type \""
+    GOOGLE_LOG(WARNING) << "Multiple extension registrations for type \""
                << containing_type->GetTypeName() << "\", field number "
                << number << ".";
   }
