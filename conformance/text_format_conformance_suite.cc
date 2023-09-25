@@ -41,15 +41,15 @@ namespace proto2_messages = protobuf_test_messages::proto2;
 using conformance::ConformanceRequest;
 using conformance::ConformanceResponse;
 using conformance::WireFormat;
-using google::protobuf::Message;
-using google::protobuf::TextFormat;
+using google::protobuf_inworld::Message;
+using google::protobuf_inworld::TextFormat;
 using proto2_messages::TestAllTypesProto2;
 using proto2_messages::UnknownToTestAllTypes;
 using protobuf_test_messages::proto3::TestAllTypesProto3;
 using std::string;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 TextFormatConformanceTestSuite::TextFormatConformanceTestSuite() {
   SetFailureListFlagName("--text_format_failure_list");
@@ -453,5 +453,5 @@ void TextFormatConformanceTestSuite::RunSuiteImpl() {
                                     prototype);
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

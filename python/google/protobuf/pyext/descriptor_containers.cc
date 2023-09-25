@@ -73,7 +73,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 struct PyContainer;
@@ -1789,5 +1789,5 @@ bool InitDescriptorMappingTypes() {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

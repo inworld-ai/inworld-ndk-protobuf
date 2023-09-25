@@ -43,7 +43,7 @@
 #include <google/protobuf/stubs/common.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 class Reflection;
@@ -368,7 +368,7 @@ extern template bool CheckAndGetInteger<uint32>(PyObject*, uint32*);
 extern template bool CheckAndGetInteger<uint64>(PyObject*, uint64*);
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_MESSAGE_H__

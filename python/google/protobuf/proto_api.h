@@ -51,7 +51,7 @@
 #include <google/protobuf/message.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 // Note on the implementation:
@@ -91,7 +91,7 @@ inline const char* PyProtoAPICapsuleName() {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_PROTO_API_H__

@@ -64,7 +64,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 // Store interned descriptors, so that the same C++ descriptor yields the same
@@ -1965,5 +1965,5 @@ bool InitDescriptor() {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

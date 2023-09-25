@@ -37,7 +37,7 @@
 #include <google/protobuf/stubs/common.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 const int DEFAULT_FILE_MODE = 0777;
 
@@ -101,7 +101,7 @@ class File {
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(File);
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_TESTING_FILE_H__

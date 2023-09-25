@@ -43,7 +43,7 @@
 #include <google/protobuf/pyext/message.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class FieldDescriptor;
 class Message;
@@ -106,7 +106,7 @@ int AssignSubscript(RepeatedCompositeContainer* self,
                     PyObject* value);
 }  // namespace repeated_composite_container
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_REPEATED_COMPOSITE_CONTAINER_H__

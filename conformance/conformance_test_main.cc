@@ -33,8 +33,8 @@
 #include "text_format_conformance_suite.h"
 
 int main(int argc, char *argv[]) {
-  google::protobuf::BinaryAndJsonConformanceSuite binary_and_json_suite;
-  google::protobuf::TextFormatConformanceTestSuite text_format_suite;
-  return google::protobuf::ForkPipeRunner::Run(
+  google::protobuf_inworld::BinaryAndJsonConformanceSuite binary_and_json_suite;
+  google::protobuf_inworld::TextFormatConformanceTestSuite text_format_suite;
+  return google::protobuf_inworld::ForkPipeRunner::Run(
       argc, argv, {&binary_and_json_suite, &text_format_suite});
 }

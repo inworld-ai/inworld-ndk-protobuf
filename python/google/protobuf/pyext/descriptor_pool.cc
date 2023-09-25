@@ -57,7 +57,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 // A map to cache Python Pools per C++ pointer.
@@ -768,5 +768,5 @@ PyDescriptorPool* GetDescriptorPool_FromPool(const DescriptorPool* pool) {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

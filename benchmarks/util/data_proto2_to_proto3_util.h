@@ -4,12 +4,12 @@
 #include "google/protobuf/message.h"
 #include "google/protobuf/descriptor.h"
 
-using google::protobuf::FieldDescriptor;
-using google::protobuf::Message;
-using google::protobuf::Reflection;
+using google::protobuf_inworld::FieldDescriptor;
+using google::protobuf_inworld::Message;
+using google::protobuf_inworld::Reflection;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
 class DataStripper {
@@ -58,7 +58,7 @@ class Proto3DataStripper : public DataStripper {
 };
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // PROTOBUF_BENCHMARKS_UTIL_DATA_PROTO2_TO_PROTO3_UTIL_H_

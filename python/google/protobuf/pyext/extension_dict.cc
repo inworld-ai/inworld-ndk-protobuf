@@ -60,7 +60,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace extension_dict {
@@ -474,5 +474,5 @@ PyTypeObject ExtensionIterator_Type = {
     0,                                          //  tp_init
 };
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

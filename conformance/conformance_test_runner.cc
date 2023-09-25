@@ -67,7 +67,7 @@
 #include "conformance_test.h"
 
 using conformance::ConformanceResponse;
-using google::protobuf::ConformanceTestSuite;
+using google::protobuf_inworld::ConformanceTestSuite;
 using std::string;
 using std::vector;
 
@@ -80,7 +80,7 @@ using std::vector;
   }
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 void ParseFailureList(const char *filename,
                       conformance::FailureSet *failure_list) {
@@ -341,5 +341,5 @@ void ForkPipeRunner::CheckedRead(int fd, void *buf, size_t len) {
   }
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -56,7 +56,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace repeated_scalar_container {
@@ -774,5 +774,5 @@ PyTypeObject RepeatedScalarContainer_Type = {
 };
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -43,16 +43,16 @@
 
 using conformance::ConformanceRequest;
 using conformance::ConformanceResponse;
-using google::protobuf::Descriptor;
-using google::protobuf::DescriptorPool;
-using google::protobuf::Message;
-using google::protobuf::MessageFactory;
-using google::protobuf::TextFormat;
-using google::protobuf::util::BinaryToJsonString;
-using google::protobuf::util::JsonParseOptions;
-using google::protobuf::util::JsonToBinaryString;
-using google::protobuf::util::NewTypeResolverForDescriptorPool;
-using google::protobuf::util::TypeResolver;
+using google::protobuf_inworld::Descriptor;
+using google::protobuf_inworld::DescriptorPool;
+using google::protobuf_inworld::Message;
+using google::protobuf_inworld::MessageFactory;
+using google::protobuf_inworld::TextFormat;
+using google::protobuf_inworld::util::BinaryToJsonString;
+using google::protobuf_inworld::util::JsonParseOptions;
+using google::protobuf_inworld::util::JsonToBinaryString;
+using google::protobuf_inworld::util::NewTypeResolverForDescriptorPool;
+using google::protobuf_inworld::util::TypeResolver;
 using protobuf_test_messages::proto3::TestAllTypesProto3;
 using std::string;
 
@@ -71,7 +71,7 @@ TypeResolver* type_resolver;
 string* type_url;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 using util::Status;
 
@@ -246,7 +246,7 @@ bool DoTestIo() {
   return true;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 int main() {
@@ -254,7 +254,7 @@ int main() {
       kTypeUrlPrefix, DescriptorPool::generated_pool());
   type_url = new string(GetTypeUrl(TestAllTypesProto3::descriptor()));
   while (1) {
-    if (!google::protobuf::DoTestIo()) {
+    if (!google::protobuf_inworld::DoTestIo()) {
       fprintf(stderr, "conformance-cpp: received EOF from test runner "
                       "after %d tests, exiting\n", test_count);
       return 0;

@@ -59,7 +59,7 @@ class TestAllTypesProto3;
 }  // namespace protobuf_test_messages
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class ConformanceTestSuite;
 
@@ -317,7 +317,7 @@ class ConformanceTestSuite {
   std::set<std::string> skipped_;
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // CONFORMANCE_CONFORMANCE_TEST_H

@@ -31,7 +31,7 @@
 #include <Python.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 // Version constant.
@@ -123,5 +123,5 @@ PyMODINIT_FUNC INITFUNC() {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

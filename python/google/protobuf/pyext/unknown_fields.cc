@@ -45,7 +45,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace unknown_fields {
@@ -354,5 +354,5 @@ PyTypeObject PyUnknownFieldRef_Type = {
 
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

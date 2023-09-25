@@ -7,15 +7,15 @@
 
 #include "google/protobuf/compiler/plugin.h"
 
-using google::protobuf::FileDescriptorProto;
-using google::protobuf::FileDescriptor;
-using google::protobuf::DescriptorPool;
-using google::protobuf::io::Printer;
-using google::protobuf::util::SchemaGroupStripper;
-using google::protobuf::util::EnumScrubber;
+using google::protobuf_inworld::FileDescriptorProto;
+using google::protobuf_inworld::FileDescriptor;
+using google::protobuf_inworld::DescriptorPool;
+using google::protobuf_inworld::io::Printer;
+using google::protobuf_inworld::util::SchemaGroupStripper;
+using google::protobuf_inworld::util::EnumScrubber;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 namespace {
@@ -83,7 +83,7 @@ class GoGoProtoGenerator : public CodeGenerator {
     std::vector<std::pair<string,string>> option_pairs;
     ParseGeneratorParameter(parameter, &option_pairs);
 
-    std::unique_ptr<google::protobuf::io::ZeroCopyOutputStream> output(
+    std::unique_ptr<google::protobuf_inworld::io::ZeroCopyOutputStream> output(
         context->Open(basename + ".proto"));
     string content = new_pool_.BuildFile(new_file)->DebugString();
     Printer printer(output.get(), '$');
@@ -94,10 +94,10 @@ class GoGoProtoGenerator : public CodeGenerator {
 };
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 int main(int argc, char* argv[]) {
-  google::protobuf::compiler::GoGoProtoGenerator generator;
-  return google::protobuf::compiler::PluginMain(argc, argv, &generator);
+  google::protobuf_inworld::compiler::GoGoProtoGenerator generator;
+  return google::protobuf_inworld::compiler::PluginMain(argc, argv, &generator);
 }

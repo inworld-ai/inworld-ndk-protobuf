@@ -51,7 +51,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace message_factory {
@@ -299,5 +299,5 @@ bool InitMessageFactory() {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

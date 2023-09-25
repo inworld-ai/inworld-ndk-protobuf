@@ -99,7 +99,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 static PyObject* kDESCRIPTOR;
@@ -179,7 +179,7 @@ static int AddDescriptors(PyObject* cls, const Descriptor* descriptor) {
   // <message descriptor>.extensions_by_name[name]
   // which was defined previously.
   for (int i = 0; i < descriptor->extension_count(); ++i) {
-    const google::protobuf::FieldDescriptor* field = descriptor->extension(i);
+    const google::protobuf_inworld::FieldDescriptor* field = descriptor->extension(i);
     ScopedPyObjectPtr extension_field(PyFieldDescriptor_FromDescriptor(field));
     if (extension_field == NULL) {
       return -1;
@@ -2171,7 +2171,7 @@ static PyObject* RichCompare(CMessage* self, PyObject* other, int opid) {
     equals = false;
   } else {
     // Otherwise, we have a CMessage whose message we can inspect.
-    const google::protobuf::Message* other_message =
+    const google::protobuf_inworld::Message* other_message =
         reinterpret_cast<CMessage*>(other)->message;
     // If messages don't have the same descriptors, they are not equal.
     if (equals &&
@@ -2180,7 +2180,7 @@ static PyObject* RichCompare(CMessage* self, PyObject* other, int opid) {
     }
     // Check the message contents.
     if (equals &&
-        !google::protobuf::util::MessageDifferencer::Equals(
+        !google::protobuf_inworld::util::MessageDifferencer::Equals(
             *self->message, *reinterpret_cast<CMessage*>(other)->message)) {
       equals = false;
     }
@@ -3093,5 +3093,5 @@ bool InitProto2MessageModule(PyObject *m) {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

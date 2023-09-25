@@ -46,7 +46,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // When running unittests, get the directory containing the source code.
 std::string TestSourceDir();
@@ -98,7 +98,7 @@ class ScopedMemoryLog {
   GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(ScopedMemoryLog);
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_GOOGLETEST_H__
