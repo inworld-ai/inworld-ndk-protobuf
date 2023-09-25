@@ -76,7 +76,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 
@@ -1211,7 +1211,7 @@ internal::RepeatedFieldBackInsertIterator<T> RepeatedFieldBackInserter(
 }
 
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

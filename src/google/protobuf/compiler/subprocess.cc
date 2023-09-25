@@ -52,7 +52,7 @@
 #include "google/protobuf/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 #ifdef _WIN32
@@ -498,5 +498,5 @@ bool Subprocess::Communicate(const Message& input, Message* output,
 #endif  // !_WIN32
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

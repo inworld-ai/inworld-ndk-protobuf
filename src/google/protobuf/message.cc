@@ -66,7 +66,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // TODO(gerbens) make this factorized better. This should not have to hop
@@ -231,7 +231,7 @@ class GeneratedMessageFactory final : public MessageFactory {
  public:
   static GeneratedMessageFactory* singleton();
 
-  void RegisterFile(const google::protobuf::internal::DescriptorTable* table);
+  void RegisterFile(const google::protobuf_inworld::internal::DescriptorTable* table);
   void RegisterType(const Descriptor* descriptor, const Message* prototype);
 
   // implements MessageFactory ---------------------------------------
@@ -246,7 +246,7 @@ class GeneratedMessageFactory final : public MessageFactory {
     return it->second;
   }
 
-  const google::protobuf::internal::DescriptorTable* FindInFileMap(
+  const google::protobuf_inworld::internal::DescriptorTable* FindInFileMap(
       absl::string_view name) {
     auto it = files_.find(name);
     if (it == files_.end()) return nullptr;
@@ -255,7 +255,7 @@ class GeneratedMessageFactory final : public MessageFactory {
 
   struct DescriptorByNameHash {
     using is_transparent = void;
-    size_t operator()(const google::protobuf::internal::DescriptorTable* t) const {
+    size_t operator()(const google::protobuf_inworld::internal::DescriptorTable* t) const {
       return absl::HashOf(absl::string_view{t->filename});
     }
 
@@ -265,15 +265,15 @@ class GeneratedMessageFactory final : public MessageFactory {
   };
   struct DescriptorByNameEq {
     using is_transparent = void;
-    bool operator()(const google::protobuf::internal::DescriptorTable* lhs,
-                    const google::protobuf::internal::DescriptorTable* rhs) const {
+    bool operator()(const google::protobuf_inworld::internal::DescriptorTable* lhs,
+                    const google::protobuf_inworld::internal::DescriptorTable* rhs) const {
       return lhs == rhs || (*this)(lhs->filename, rhs->filename);
     }
     bool operator()(absl::string_view lhs,
-                    const google::protobuf::internal::DescriptorTable* rhs) const {
+                    const google::protobuf_inworld::internal::DescriptorTable* rhs) const {
       return (*this)(lhs, rhs->filename);
     }
-    bool operator()(const google::protobuf::internal::DescriptorTable* lhs,
+    bool operator()(const google::protobuf_inworld::internal::DescriptorTable* lhs,
                     absl::string_view rhs) const {
       return (*this)(lhs->filename, rhs);
     }
@@ -283,7 +283,7 @@ class GeneratedMessageFactory final : public MessageFactory {
   };
 
   // Only written at static init time, so does not require locking.
-  absl::flat_hash_set<const google::protobuf::internal::DescriptorTable*,
+  absl::flat_hash_set<const google::protobuf_inworld::internal::DescriptorTable*,
                       DescriptorByNameHash, DescriptorByNameEq>
       files_;
 
@@ -299,7 +299,7 @@ GeneratedMessageFactory* GeneratedMessageFactory::singleton() {
 }
 
 void GeneratedMessageFactory::RegisterFile(
-    const google::protobuf::internal::DescriptorTable* table) {
+    const google::protobuf_inworld::internal::DescriptorTable* table) {
   if (!files_.insert(table).second) {
     ABSL_LOG(FATAL) << "File is already registered: " << table->filename;
   }
@@ -369,7 +369,7 @@ MessageFactory* MessageFactory::generated_factory() {
 }
 
 void MessageFactory::InternalRegisterGeneratedFile(
-    const google::protobuf::internal::DescriptorTable* table) {
+    const google::protobuf_inworld::internal::DescriptorTable* table) {
   GeneratedMessageFactory::singleton()->RegisterFile(table);
 }
 
@@ -454,7 +454,7 @@ InternalMetadata::mutable_unknown_fields_slow<UnknownFieldSet>();
 
 }  // namespace internal
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -63,7 +63,7 @@ using type_info = ::type_info;
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 struct ArenaOptions;  // defined below
 class Arena;    // defined below
@@ -698,7 +698,7 @@ inline void* Arena::AllocateInternal<std::string, false>() {
   return impl_.AllocateFromStringBlock();
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

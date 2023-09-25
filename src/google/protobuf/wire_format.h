@@ -58,14 +58,14 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class MapKey;           // map_field.h
 class UnknownFieldSet;  // unknown_field_set.h
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // This class is for internal use by the protocol buffer library and by
@@ -408,7 +408,7 @@ uint8_t* SerializeMapKeyWithCachedSizes(const FieldDescriptor* field,
                                         const MapKey& value, uint8_t* target,
                                         io::EpsCopyOutputStream* stream);
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

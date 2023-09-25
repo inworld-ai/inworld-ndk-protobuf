@@ -39,7 +39,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 bool AnyMetadata::PackFrom(Arena* arena, const Message& message) {
@@ -76,7 +76,7 @@ bool GetAnyFieldDescriptors(const Message& message,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

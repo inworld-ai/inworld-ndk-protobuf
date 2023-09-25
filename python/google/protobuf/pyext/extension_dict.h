@@ -40,7 +40,7 @@
 #include "google/protobuf/pyext/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 class FieldDescriptor;
@@ -64,7 +64,7 @@ ExtensionDict* NewExtensionDict(CMessage *parent);
 
 }  // namespace extension_dict
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_EXTENSION_DICT_H__

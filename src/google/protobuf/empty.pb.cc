@@ -17,11 +17,11 @@
 // Must be included last.
 #include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+namespace _pb = ::google::protobuf_inworld;
+namespace _pbi = ::google::protobuf_inworld::internal;
+namespace _fl = ::google::protobuf_inworld::internal::field_layout;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
       template <typename>
 PROTOBUF_CONSTEXPR Empty::Empty(::_pbi::ConstantInitialized) {}
 struct EmptyDefaultTypeInternal {
@@ -34,7 +34,7 @@ struct EmptyDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_EXPORT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EmptyDefaultTypeInternal _Empty_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 static ::_pb::Metadata file_level_metadata_google_2fprotobuf_2fempty_2eproto[1];
 static constexpr const ::_pb::EnumDescriptor**
@@ -44,7 +44,7 @@ static constexpr const ::_pb::ServiceDescriptor**
 const ::uint32_t TableStruct_google_2fprotobuf_2fempty_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::google::protobuf::Empty, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::google::protobuf_inworld::Empty, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
@@ -55,11 +55,11 @@ const ::uint32_t TableStruct_google_2fprotobuf_2fempty_2eproto::offsets[] PROTOB
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::google::protobuf::Empty)},
+        {0, -1, -1, sizeof(::google::protobuf_inworld::Empty)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::google::protobuf::_Empty_default_instance_._instance,
+    &::google::protobuf_inworld::_Empty_default_instance_._instance,
 };
 const char descriptor_table_protodef_google_2fprotobuf_2fempty_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\033google/protobuf/empty.proto\022\017google.pr"
@@ -105,24 +105,24 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_google_2
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_google_2fprotobuf_2fempty_2eproto(&descriptor_table_google_2fprotobuf_2fempty_2eproto);
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 // ===================================================================
 
 class Empty::_Internal {
  public:
 };
 
-Empty::Empty(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+Empty::Empty(::google::protobuf_inworld::Arena* arena)
+    : ::google::protobuf_inworld::internal::ZeroFieldsBase(arena) {
   // @@protoc_insertion_point(arena_constructor:google.protobuf.Empty)
 }
 Empty::Empty(
-    ::google::protobuf::Arena* arena,
+    ::google::protobuf_inworld::Arena* arena,
     const Empty& from)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf_inworld::internal::ZeroFieldsBase(arena) {
   Empty* const _this = this;
   (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+  _internal_metadata_.MergeFrom<::google::protobuf_inworld::UnknownFieldSet>(
       from._internal_metadata_);
 
   // @@protoc_insertion_point(copy_constructor:google.protobuf.Empty)
@@ -136,17 +136,17 @@ Empty::Empty(
 
 
 
-::google::protobuf::Metadata Empty::GetMetadata() const {
+::google::protobuf_inworld::Metadata Empty::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_google_2fprotobuf_2fempty_2eproto_getter, &descriptor_table_google_2fprotobuf_2fempty_2eproto_once,
       file_level_metadata_google_2fprotobuf_2fempty_2eproto[0]);
 }
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 namespace google {
-namespace protobuf {
-}  // namespace protobuf
+namespace protobuf_inworld {
+}  // namespace protobuf_inworld
 }  // namespace google
 // @@protoc_insertion_point(global_scope)
 #include "google/protobuf/port_undef.inc"

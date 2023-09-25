@@ -46,7 +46,7 @@
 #include "google/protobuf/test_util2.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 namespace {
@@ -120,5 +120,5 @@ TEST(MessageSerializationTest, CollapseAdjacentExtensionRanges) {
 }  // namespace
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -43,7 +43,7 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 
@@ -171,7 +171,7 @@ std::string GetOptionalDeprecatedAttribute(
 
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_OBJECTIVEC_HELPERS_H__

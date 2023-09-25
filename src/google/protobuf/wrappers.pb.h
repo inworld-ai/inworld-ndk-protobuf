@@ -40,21 +40,21 @@
 #define PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fwrappers_2eproto PROTOBUF_EXPORT
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class AnyMetadata;
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // Internal implementation detail -- do not use these members.
 struct PROTOBUF_EXPORT TableStruct_google_2fprotobuf_2fwrappers_2eproto {
   static const ::uint32_t offsets[];
 };
-PROTOBUF_EXPORT extern const ::google::protobuf::internal::DescriptorTable
+PROTOBUF_EXPORT extern const ::google::protobuf_inworld::internal::DescriptorTable
     descriptor_table_google_2fprotobuf_2fwrappers_2eproto;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class BoolValue;
 struct BoolValueDefaultTypeInternal;
 PROTOBUF_EXPORT extern BoolValueDefaultTypeInternal _BoolValue_default_instance_;
@@ -82,11 +82,11 @@ PROTOBUF_EXPORT extern UInt32ValueDefaultTypeInternal _UInt32Value_default_insta
 class UInt64Value;
 struct UInt64ValueDefaultTypeInternal;
 PROTOBUF_EXPORT extern UInt64ValueDefaultTypeInternal _UInt64Value_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // ===================================================================
 
@@ -94,14 +94,14 @@ namespace protobuf {
 // -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT UInt64Value final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.UInt64Value) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.UInt64Value) */ {
  public:
   inline UInt64Value() : UInt64Value(nullptr) {}
   ~UInt64Value() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR UInt64Value(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR UInt64Value(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  UInt64Value(::google::protobuf::Arena* arena, const UInt64Value& from);
+  UInt64Value(::google::protobuf_inworld::Arena* arena, const UInt64Value& from);
   inline UInt64Value(const UInt64Value& from)
       : UInt64Value(nullptr, from) {}
   UInt64Value(UInt64Value&& from) noexcept
@@ -127,22 +127,22 @@ class PROTOBUF_EXPORT UInt64Value final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const UInt64Value& default_instance() {
@@ -168,7 +168,7 @@ class PROTOBUF_EXPORT UInt64Value final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(UInt64Value* other) {
@@ -179,46 +179,46 @@ class PROTOBUF_EXPORT UInt64Value final :
 
   // implements Message ----------------------------------------------
 
-  UInt64Value* New(::google::protobuf::Arena* arena = nullptr) const final {
+  UInt64Value* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<UInt64Value>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const UInt64Value& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const UInt64Value& from) {
     UInt64Value::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(UInt64Value* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.UInt64Value";
   }
   protected:
-  explicit UInt64Value(::google::protobuf::Arena* arena);
+  explicit UInt64Value(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -241,26 +241,26 @@ class PROTOBUF_EXPORT UInt64Value final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     ::uint64_t value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -268,14 +268,14 @@ class PROTOBUF_EXPORT UInt64Value final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT UInt32Value final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.UInt32Value) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.UInt32Value) */ {
  public:
   inline UInt32Value() : UInt32Value(nullptr) {}
   ~UInt32Value() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR UInt32Value(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR UInt32Value(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  UInt32Value(::google::protobuf::Arena* arena, const UInt32Value& from);
+  UInt32Value(::google::protobuf_inworld::Arena* arena, const UInt32Value& from);
   inline UInt32Value(const UInt32Value& from)
       : UInt32Value(nullptr, from) {}
   UInt32Value(UInt32Value&& from) noexcept
@@ -301,22 +301,22 @@ class PROTOBUF_EXPORT UInt32Value final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const UInt32Value& default_instance() {
@@ -342,7 +342,7 @@ class PROTOBUF_EXPORT UInt32Value final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(UInt32Value* other) {
@@ -353,46 +353,46 @@ class PROTOBUF_EXPORT UInt32Value final :
 
   // implements Message ----------------------------------------------
 
-  UInt32Value* New(::google::protobuf::Arena* arena = nullptr) const final {
+  UInt32Value* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<UInt32Value>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const UInt32Value& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const UInt32Value& from) {
     UInt32Value::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(UInt32Value* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.UInt32Value";
   }
   protected:
-  explicit UInt32Value(::google::protobuf::Arena* arena);
+  explicit UInt32Value(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -415,26 +415,26 @@ class PROTOBUF_EXPORT UInt32Value final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     ::uint32_t value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -442,14 +442,14 @@ class PROTOBUF_EXPORT UInt32Value final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT StringValue final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.StringValue) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.StringValue) */ {
  public:
   inline StringValue() : StringValue(nullptr) {}
   ~StringValue() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR StringValue(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR StringValue(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  StringValue(::google::protobuf::Arena* arena, const StringValue& from);
+  StringValue(::google::protobuf_inworld::Arena* arena, const StringValue& from);
   inline StringValue(const StringValue& from)
       : StringValue(nullptr, from) {}
   StringValue(StringValue&& from) noexcept
@@ -475,22 +475,22 @@ class PROTOBUF_EXPORT StringValue final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const StringValue& default_instance() {
@@ -516,7 +516,7 @@ class PROTOBUF_EXPORT StringValue final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(StringValue* other) {
@@ -527,46 +527,46 @@ class PROTOBUF_EXPORT StringValue final :
 
   // implements Message ----------------------------------------------
 
-  StringValue* New(::google::protobuf::Arena* arena = nullptr) const final {
+  StringValue* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<StringValue>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const StringValue& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const StringValue& from) {
     StringValue::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(StringValue* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.StringValue";
   }
   protected:
-  explicit StringValue(::google::protobuf::Arena* arena);
+  explicit StringValue(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -595,26 +595,26 @@ class PROTOBUF_EXPORT StringValue final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       41, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::ArenaStringPtr value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::internal::ArenaStringPtr value_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -622,14 +622,14 @@ class PROTOBUF_EXPORT StringValue final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Int64Value final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Int64Value) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Int64Value) */ {
  public:
   inline Int64Value() : Int64Value(nullptr) {}
   ~Int64Value() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Int64Value(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Int64Value(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Int64Value(::google::protobuf::Arena* arena, const Int64Value& from);
+  Int64Value(::google::protobuf_inworld::Arena* arena, const Int64Value& from);
   inline Int64Value(const Int64Value& from)
       : Int64Value(nullptr, from) {}
   Int64Value(Int64Value&& from) noexcept
@@ -655,22 +655,22 @@ class PROTOBUF_EXPORT Int64Value final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Int64Value& default_instance() {
@@ -696,7 +696,7 @@ class PROTOBUF_EXPORT Int64Value final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Int64Value* other) {
@@ -707,46 +707,46 @@ class PROTOBUF_EXPORT Int64Value final :
 
   // implements Message ----------------------------------------------
 
-  Int64Value* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Int64Value* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Int64Value>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const Int64Value& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const Int64Value& from) {
     Int64Value::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(Int64Value* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Int64Value";
   }
   protected:
-  explicit Int64Value(::google::protobuf::Arena* arena);
+  explicit Int64Value(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -769,26 +769,26 @@ class PROTOBUF_EXPORT Int64Value final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     ::int64_t value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -796,14 +796,14 @@ class PROTOBUF_EXPORT Int64Value final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Int32Value final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Int32Value) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Int32Value) */ {
  public:
   inline Int32Value() : Int32Value(nullptr) {}
   ~Int32Value() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Int32Value(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Int32Value(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Int32Value(::google::protobuf::Arena* arena, const Int32Value& from);
+  Int32Value(::google::protobuf_inworld::Arena* arena, const Int32Value& from);
   inline Int32Value(const Int32Value& from)
       : Int32Value(nullptr, from) {}
   Int32Value(Int32Value&& from) noexcept
@@ -829,22 +829,22 @@ class PROTOBUF_EXPORT Int32Value final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Int32Value& default_instance() {
@@ -870,7 +870,7 @@ class PROTOBUF_EXPORT Int32Value final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Int32Value* other) {
@@ -881,46 +881,46 @@ class PROTOBUF_EXPORT Int32Value final :
 
   // implements Message ----------------------------------------------
 
-  Int32Value* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Int32Value* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Int32Value>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const Int32Value& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const Int32Value& from) {
     Int32Value::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(Int32Value* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Int32Value";
   }
   protected:
-  explicit Int32Value(::google::protobuf::Arena* arena);
+  explicit Int32Value(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -943,26 +943,26 @@ class PROTOBUF_EXPORT Int32Value final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     ::int32_t value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -970,14 +970,14 @@ class PROTOBUF_EXPORT Int32Value final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT FloatValue final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.FloatValue) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.FloatValue) */ {
  public:
   inline FloatValue() : FloatValue(nullptr) {}
   ~FloatValue() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR FloatValue(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR FloatValue(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  FloatValue(::google::protobuf::Arena* arena, const FloatValue& from);
+  FloatValue(::google::protobuf_inworld::Arena* arena, const FloatValue& from);
   inline FloatValue(const FloatValue& from)
       : FloatValue(nullptr, from) {}
   FloatValue(FloatValue&& from) noexcept
@@ -1003,22 +1003,22 @@ class PROTOBUF_EXPORT FloatValue final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const FloatValue& default_instance() {
@@ -1044,7 +1044,7 @@ class PROTOBUF_EXPORT FloatValue final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(FloatValue* other) {
@@ -1055,46 +1055,46 @@ class PROTOBUF_EXPORT FloatValue final :
 
   // implements Message ----------------------------------------------
 
-  FloatValue* New(::google::protobuf::Arena* arena = nullptr) const final {
+  FloatValue* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<FloatValue>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const FloatValue& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const FloatValue& from) {
     FloatValue::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(FloatValue* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.FloatValue";
   }
   protected:
-  explicit FloatValue(::google::protobuf::Arena* arena);
+  explicit FloatValue(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1117,26 +1117,26 @@ class PROTOBUF_EXPORT FloatValue final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     float value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1144,14 +1144,14 @@ class PROTOBUF_EXPORT FloatValue final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT DoubleValue final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.DoubleValue) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.DoubleValue) */ {
  public:
   inline DoubleValue() : DoubleValue(nullptr) {}
   ~DoubleValue() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR DoubleValue(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR DoubleValue(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  DoubleValue(::google::protobuf::Arena* arena, const DoubleValue& from);
+  DoubleValue(::google::protobuf_inworld::Arena* arena, const DoubleValue& from);
   inline DoubleValue(const DoubleValue& from)
       : DoubleValue(nullptr, from) {}
   DoubleValue(DoubleValue&& from) noexcept
@@ -1177,22 +1177,22 @@ class PROTOBUF_EXPORT DoubleValue final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const DoubleValue& default_instance() {
@@ -1218,7 +1218,7 @@ class PROTOBUF_EXPORT DoubleValue final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(DoubleValue* other) {
@@ -1229,46 +1229,46 @@ class PROTOBUF_EXPORT DoubleValue final :
 
   // implements Message ----------------------------------------------
 
-  DoubleValue* New(::google::protobuf::Arena* arena = nullptr) const final {
+  DoubleValue* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<DoubleValue>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const DoubleValue& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const DoubleValue& from) {
     DoubleValue::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(DoubleValue* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.DoubleValue";
   }
   protected:
-  explicit DoubleValue(::google::protobuf::Arena* arena);
+  explicit DoubleValue(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1291,26 +1291,26 @@ class PROTOBUF_EXPORT DoubleValue final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     double value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1318,14 +1318,14 @@ class PROTOBUF_EXPORT DoubleValue final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT BytesValue final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.BytesValue) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.BytesValue) */ {
  public:
   inline BytesValue() : BytesValue(nullptr) {}
   ~BytesValue() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR BytesValue(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR BytesValue(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  BytesValue(::google::protobuf::Arena* arena, const BytesValue& from);
+  BytesValue(::google::protobuf_inworld::Arena* arena, const BytesValue& from);
   inline BytesValue(const BytesValue& from)
       : BytesValue(nullptr, from) {}
   BytesValue(BytesValue&& from) noexcept
@@ -1351,22 +1351,22 @@ class PROTOBUF_EXPORT BytesValue final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const BytesValue& default_instance() {
@@ -1392,7 +1392,7 @@ class PROTOBUF_EXPORT BytesValue final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(BytesValue* other) {
@@ -1403,46 +1403,46 @@ class PROTOBUF_EXPORT BytesValue final :
 
   // implements Message ----------------------------------------------
 
-  BytesValue* New(::google::protobuf::Arena* arena = nullptr) const final {
+  BytesValue* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<BytesValue>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const BytesValue& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const BytesValue& from) {
     BytesValue::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(BytesValue* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.BytesValue";
   }
   protected:
-  explicit BytesValue(::google::protobuf::Arena* arena);
+  explicit BytesValue(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1471,26 +1471,26 @@ class PROTOBUF_EXPORT BytesValue final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::ArenaStringPtr value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::internal::ArenaStringPtr value_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1498,14 +1498,14 @@ class PROTOBUF_EXPORT BytesValue final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT BoolValue final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.BoolValue) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.BoolValue) */ {
  public:
   inline BoolValue() : BoolValue(nullptr) {}
   ~BoolValue() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR BoolValue(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR BoolValue(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  BoolValue(::google::protobuf::Arena* arena, const BoolValue& from);
+  BoolValue(::google::protobuf_inworld::Arena* arena, const BoolValue& from);
   inline BoolValue(const BoolValue& from)
       : BoolValue(nullptr, from) {}
   BoolValue(BoolValue&& from) noexcept
@@ -1531,22 +1531,22 @@ class PROTOBUF_EXPORT BoolValue final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const BoolValue& default_instance() {
@@ -1572,7 +1572,7 @@ class PROTOBUF_EXPORT BoolValue final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(BoolValue* other) {
@@ -1583,46 +1583,46 @@ class PROTOBUF_EXPORT BoolValue final :
 
   // implements Message ----------------------------------------------
 
-  BoolValue* New(::google::protobuf::Arena* arena = nullptr) const final {
+  BoolValue* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<BoolValue>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const BoolValue& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const BoolValue& from) {
     BoolValue::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(BoolValue* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.BoolValue";
   }
   protected:
-  explicit BoolValue(::google::protobuf::Arena* arena);
+  explicit BoolValue(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1645,26 +1645,26 @@ class PROTOBUF_EXPORT BoolValue final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     bool value_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1991,7 +1991,7 @@ inline void BytesValue::set_allocated_value(std::string* value) {
 #endif  // __GNUC__
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 

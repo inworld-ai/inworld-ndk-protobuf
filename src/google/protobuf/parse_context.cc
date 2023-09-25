@@ -45,7 +45,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Only call if at start of tag.
@@ -592,7 +592,7 @@ const char* UnknownFieldParse(uint32_t tag, std::string* unknown,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

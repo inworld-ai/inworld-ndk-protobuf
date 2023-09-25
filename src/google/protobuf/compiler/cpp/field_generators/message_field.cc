@@ -49,13 +49,13 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using ::google::protobuf::internal::cpp::HasHasbit;
-using Sub = ::google::protobuf::io::Printer::Sub;
-using ::google::protobuf::io::AnnotationCollector;
+using ::google::protobuf_inworld::internal::cpp::HasHasbit;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
+using ::google::protobuf_inworld::io::AnnotationCollector;
 
 std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts,
                       bool weak) {
@@ -67,7 +67,7 @@ std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts,
       QualifiedDefaultInstanceName(field->message_type(), opts);
   std::string default_ptr =
       QualifiedDefaultInstancePtr(field->message_type(), opts);
-  absl::string_view base = "::google::protobuf::MessageLite";
+  absl::string_view base = "::google::protobuf_inworld::MessageLite";
 
   return {
       {"Submsg", qualified_type},
@@ -95,7 +95,7 @@ std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts,
       {"_weak", weak ? "_weak" : ""},
       Sub("StrongRef",
           !weak ? ""
-                : absl::Substitute("::google::protobuf::internal::StrongReference("
+                : absl::Substitute("::google::protobuf_inworld::internal::StrongReference("
                                    "reinterpret_cast<const $0&>($1));\n",
                                    qualified_type, default_ref))
           .WithSuffix(";"),
@@ -1062,5 +1062,5 @@ std::unique_ptr<FieldGeneratorBase> MakeOneofMessageGenerator(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -38,7 +38,7 @@
 #include "google/protobuf/unittest_lite.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace unittest = protobuf_unittest;
 namespace unittest_import = protobuf_unittest_import;
@@ -94,7 +94,7 @@ class TestUtilLite {
       const unittest::TestPackedExtensionsLite& message);
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_TEST_UTIL_LITE_H__

@@ -43,7 +43,7 @@
 #include "google/protobuf/port.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 
 static const int kDefaultBufferSize = 65536;
@@ -329,7 +329,7 @@ bool GzipOutputStream::Close() {
 }
 
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // HAVE_ZLIB

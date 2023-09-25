@@ -46,7 +46,7 @@
 #include "google/protobuf/util/message_differencer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 namespace {
 
@@ -435,5 +435,5 @@ TEST(RetentionTest, InvalidRecursionDepth) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

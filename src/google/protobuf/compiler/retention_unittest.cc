@@ -48,7 +48,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace {
 
@@ -601,5 +601,5 @@ TEST_F(RetentionStripTest, StripSourceRetentionExtensionRangeOptions) {
 
 }  // namespace
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

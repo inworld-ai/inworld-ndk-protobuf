@@ -67,14 +67,14 @@
 #include "google/protobuf/compiler/cpp/unittest.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
 // Can't use an anonymous namespace here due to brokenness of Tru64 compiler.
 namespace cpp_unittest {
 
-namespace protobuf_unittest = ::protobuf_unittest;
+namespace protobuf_inworld_unittest = ::protobuf_unittest;
 
 TEST(GENERATED_MESSAGE_TEST_NAME, TestConflictingSymbolNames) {
   // test_bad_identifiers.proto successfully compiled, then it works.  The
@@ -129,5 +129,5 @@ TEST(GENERATED_MESSAGE_TEST_NAME, TestConflictingExtension) {
 }  // namespace cpp_unittest
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

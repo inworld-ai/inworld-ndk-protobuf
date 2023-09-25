@@ -37,7 +37,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 int assume_var_for_test = 1;
@@ -52,5 +52,5 @@ TEST(PortTest, ProtobufAssume) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

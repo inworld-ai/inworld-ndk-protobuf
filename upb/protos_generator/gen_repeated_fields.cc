@@ -46,14 +46,14 @@
 #include "upbc/names.h"
 
 namespace protos_generator {
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 // Adds using accessors to reuse base Access class members from a Proxy/CProxy.
-void WriteRepeatedFieldUsingAccessors(const protobuf::FieldDescriptor* field,
+void WriteRepeatedFieldUsingAccessors(const protobuf_inworld::FieldDescriptor* field,
                                       absl::string_view class_name,
                                       absl::string_view resolved_field_name,
                                       Output& output, bool read_only) {
-  if (field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_MESSAGE) {
+  if (field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE) {
     output(
         R"cc(
           using $0Access::$1;
@@ -88,8 +88,8 @@ void WriteRepeatedFieldUsingAccessors(const protobuf::FieldDescriptor* field,
   }
 }
 
-void WriteRepeatedFieldsInMessageHeader(const protobuf::Descriptor* desc,
-                                        const protobuf::FieldDescriptor* field,
+void WriteRepeatedFieldsInMessageHeader(const protobuf_inworld::Descriptor* desc,
+                                        const protobuf_inworld::FieldDescriptor* field,
                                         absl::string_view resolved_field_name,
                                         absl::string_view resolved_upbc_name,
                                         Output& output) {
@@ -103,7 +103,7 @@ void WriteRepeatedFieldsInMessageHeader(const protobuf::Descriptor* desc,
       )cc",
       MessageName(desc), resolved_field_name, resolved_upbc_name);
 
-  if (field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_MESSAGE) {
+  if (field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE) {
     output(
         R"cc(
           $1 $2(size_t index) const;
@@ -118,7 +118,7 @@ void WriteRepeatedFieldsInMessageHeader(const protobuf::Descriptor* desc,
         resolved_upbc_name,                              // $3
         MessageBaseType(field, /* maybe_const */ false)  // $4
     );
-  } else if (field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_STRING) {
+  } else if (field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_STRING) {
     output(
         R"cc(
           $0 $1(size_t index) const;
@@ -143,8 +143,8 @@ void WriteRepeatedFieldsInMessageHeader(const protobuf::Descriptor* desc,
   }
 }
 
-void WriteRepeatedMessageAccessor(const protobuf::Descriptor* message,
-                                  const protobuf::FieldDescriptor* field,
+void WriteRepeatedMessageAccessor(const protobuf_inworld::Descriptor* message,
+                                  const protobuf_inworld::FieldDescriptor* field,
                                   const absl::string_view resolved_field_name,
                                   const absl::string_view class_name,
                                   Output& output) {
@@ -214,8 +214,8 @@ void WriteRepeatedMessageAccessor(const protobuf::Descriptor* message,
   );
 }
 
-void WriteRepeatedStringAccessor(const protobuf::Descriptor* message,
-                                 const protobuf::FieldDescriptor* field,
+void WriteRepeatedStringAccessor(const protobuf_inworld::Descriptor* message,
+                                 const protobuf_inworld::FieldDescriptor* field,
                                  const absl::string_view resolved_field_name,
                                  const absl::string_view class_name,
                                  Output& output) {
@@ -280,8 +280,8 @@ void WriteRepeatedStringAccessor(const protobuf::Descriptor* message,
   );
 }
 
-void WriteRepeatedScalarAccessor(const protobuf::Descriptor* message,
-                                 const protobuf::FieldDescriptor* field,
+void WriteRepeatedScalarAccessor(const protobuf_inworld::Descriptor* message,
+                                 const protobuf_inworld::FieldDescriptor* field,
                                  const absl::string_view resolved_field_name,
                                  const absl::string_view class_name,
                                  Output& output) {

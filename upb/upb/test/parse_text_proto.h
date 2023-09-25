@@ -51,7 +51,7 @@ class ParseTextProtoOrDie {
   operator T() {  // NOLINT: Needed to support parsing text proto as appropriate
                   // type.
     T message;
-    if (!google::protobuf::TextFormat::ParseFromString(text_proto_, &message)) {
+    if (!google::protobuf_inworld::TextFormat::ParseFromString(text_proto_, &message)) {
       ADD_FAILURE() << "Failed to parse textproto: " << text_proto_;
       abort();
     }

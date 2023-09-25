@@ -45,7 +45,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // To save code size, protos without any fields are derived from ZeroFieldsBase
@@ -82,7 +82,7 @@ class PROTOBUF_EXPORT ZeroFieldsBase : public Message {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

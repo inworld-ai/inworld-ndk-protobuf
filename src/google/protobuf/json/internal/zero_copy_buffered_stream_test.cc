@@ -41,7 +41,7 @@
 #include "google/protobuf/stubs/status_macros.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 namespace {
 // TODO(b/234474291): Use the gtest versions once that's available in OSS.
@@ -159,5 +159,5 @@ TEST(ZcBufferTest, MarkBuffered) {
 }
 }  // namespace
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

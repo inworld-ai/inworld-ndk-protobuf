@@ -40,7 +40,7 @@
 #include <vector>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // When running unittests, get the directory containing the source code.
 std::string TestSourceDir();
@@ -57,7 +57,7 @@ void CaptureTestStderr();
 std::string GetCapturedTestStdout();
 std::string GetCapturedTestStderr();
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_GOOGLETEST_H__

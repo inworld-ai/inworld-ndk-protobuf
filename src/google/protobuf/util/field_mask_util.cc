@@ -50,10 +50,10 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
-using google::protobuf::FieldMask;
+using google::protobuf_inworld::FieldMask;
 
 std::string FieldMaskUtil::ToString(const FieldMask& mask) {
   return absl::StrJoin(mask.paths(), ",");
@@ -714,5 +714,5 @@ bool FieldMaskUtil::TrimMessage(const FieldMask& mask, Message* message,
 }
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

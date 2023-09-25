@@ -42,7 +42,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 
@@ -209,5 +209,5 @@ bool Context::HasGeneratedMethods(const Descriptor* descriptor) const {
 
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

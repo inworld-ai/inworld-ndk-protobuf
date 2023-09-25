@@ -47,7 +47,7 @@ using ::testing::Eq;
 using ::testing::Ne;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 namespace {
 
@@ -171,5 +171,5 @@ TEST(StringBlockTest, EmplaceMultipleBlocks) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

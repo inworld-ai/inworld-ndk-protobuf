@@ -41,7 +41,7 @@
 #include "google/protobuf/port_def.inc"  // NOLINT
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
 // Run a command that returns a util::Status.  If the called code returns an
@@ -86,7 +86,7 @@ absl::Status DoAssignOrReturn(T& lhs, absl::StatusOr<T> result) {
       STATUS_MACROS_CONCAT_NAME(_status_or_value, __COUNTER__), lhs, rexpr);
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"  // NOLINT

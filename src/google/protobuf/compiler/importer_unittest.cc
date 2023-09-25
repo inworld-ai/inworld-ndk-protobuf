@@ -50,7 +50,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 namespace {
@@ -546,5 +546,5 @@ TEST_F(DiskSourceTreeTest, VirtualFileToDiskFile) {
 }  // namespace
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

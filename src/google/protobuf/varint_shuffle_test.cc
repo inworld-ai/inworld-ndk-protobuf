@@ -46,7 +46,7 @@ using testing::Range;
 using testing::TestWithParam;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 namespace {
 
@@ -327,5 +327,5 @@ TEST(ShiftMixParseVarint64Test, DroppingOverlongBits) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

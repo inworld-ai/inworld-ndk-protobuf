@@ -42,7 +42,7 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 // Convert enum value to C++ literal.
 //
@@ -59,7 +59,7 @@ std::string EnumInt32ToString(int number) {
   }
 }
 
-std::string EnumTypeName(const protobuf::EnumDescriptor* enum_descriptor) {
+std::string EnumTypeName(const protobuf_inworld::EnumDescriptor* enum_descriptor) {
   auto containing_type = enum_descriptor->containing_type();
   if (containing_type == nullptr) {
     // enums types with no package name are prefixed with protos_ to prevent
@@ -85,8 +85,8 @@ std::string EnumTypeName(const protobuf::EnumDescriptor* enum_descriptor) {
 }
 
 std::string EnumValueSymbolInNameSpace(
-    const protobuf::EnumDescriptor* desc,
-    const protobuf::EnumValueDescriptor* value) {
+    const protobuf_inworld::EnumDescriptor* desc,
+    const protobuf_inworld::EnumValueDescriptor* value) {
   auto containing_type = desc->containing_type();
   if (containing_type != nullptr) {
     return ToCIdent(absl::StrCat(containing_type->name(), "_", desc->name(),
@@ -101,16 +101,16 @@ std::string EnumValueSymbolInNameSpace(
   }
 }
 
-void WriteEnumValues(const protobuf::EnumDescriptor* desc, Output& output) {
-  std::vector<const protobuf::EnumValueDescriptor*> values;
+void WriteEnumValues(const protobuf_inworld::EnumDescriptor* desc, Output& output) {
+  std::vector<const protobuf_inworld::EnumValueDescriptor*> values;
   auto value_count = desc->value_count();
   values.reserve(value_count);
   for (int i = 0; i < value_count; i++) {
     values.push_back(desc->value(i));
   }
   std::sort(values.begin(), values.end(),
-            [](const protobuf::EnumValueDescriptor* a,
-               const protobuf::EnumValueDescriptor* b) {
+            [](const protobuf_inworld::EnumValueDescriptor* a,
+               const protobuf_inworld::EnumValueDescriptor* b) {
               return a->number() < b->number();
             });
 
@@ -126,7 +126,7 @@ void WriteEnumValues(const protobuf::EnumDescriptor* desc, Output& output) {
 }
 
 void WriteEnumDeclarations(
-    const std::vector<const protobuf::EnumDescriptor*>& enums, Output& output) {
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& enums, Output& output) {
   for (auto enumdesc : enums) {
     output("enum $0 : int {\n", EnumTypeName(enumdesc));
     WriteEnumValues(enumdesc, output);
@@ -135,7 +135,7 @@ void WriteEnumDeclarations(
 }
 
 void WriteHeaderEnumForwardDecls(
-    std::vector<const protobuf::EnumDescriptor*>& enums, Output& output) {
+    std::vector<const protobuf_inworld::EnumDescriptor*>& enums, Output& output) {
   for (const auto* enumdesc : enums) {
     output("enum $0 : int;\n", EnumTypeName(enumdesc));
   }

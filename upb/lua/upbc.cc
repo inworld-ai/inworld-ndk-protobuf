@@ -37,11 +37,11 @@
 #include "google/protobuf/descriptor.h"
 #include "google/protobuf/io/printer.h"
 
-namespace protoc = ::google::protobuf::compiler;
-namespace protobuf = ::google::protobuf;
+namespace protoc = ::google::protobuf_inworld::compiler;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 class LuaGenerator : public protoc::CodeGenerator {
-  bool Generate(const protobuf::FileDescriptor* file,
+  bool Generate(const protobuf_inworld::FileDescriptor* file,
                 const std::string& parameter, protoc::GeneratorContext* context,
                 std::string* error) const override;
 };
@@ -54,16 +54,16 @@ static std::string StripExtension(absl::string_view fname) {
   return std::string(fname.substr(0, lastdot));
 }
 
-static std::string Filename(const protobuf::FileDescriptor* file) {
+static std::string Filename(const protobuf_inworld::FileDescriptor* file) {
   return StripExtension(file->name()) + "_pb.lua";
 }
 
-static std::string ModuleName(const protobuf::FileDescriptor* file) {
+static std::string ModuleName(const protobuf_inworld::FileDescriptor* file) {
   std::string ret = StripExtension(file->name()) + "_pb";
   return absl::StrReplaceAll(ret, {{"/", "."}});
 }
 
-static void PrintHexDigit(char digit, protobuf::io::Printer* printer) {
+static void PrintHexDigit(char digit, protobuf_inworld::io::Printer* printer) {
   char text;
   if (digit < 10) {
     text = '0' + digit;
@@ -74,7 +74,7 @@ static void PrintHexDigit(char digit, protobuf::io::Printer* printer) {
 }
 
 static void PrintString(int max_cols, absl::string_view* str,
-                        protobuf::io::Printer* printer) {
+                        protobuf_inworld::io::Printer* printer) {
   printer->Print("\'");
   while (max_cols > 0 && !str->empty()) {
     char ch = (*str)[0];
@@ -99,22 +99,22 @@ static void PrintString(int max_cols, absl::string_view* str,
   printer->Print("\'");
 }
 
-bool LuaGenerator::Generate(const protobuf::FileDescriptor* file,
+bool LuaGenerator::Generate(const protobuf_inworld::FileDescriptor* file,
                             const std::string& /* parameter */,
                             protoc::GeneratorContext* context,
                             std::string* /* error */) const {
   std::string filename = Filename(file);
-  protobuf::io::ZeroCopyOutputStream* out = context->Open(filename);
-  protobuf::io::Printer printer(out, '$');
+  protobuf_inworld::io::ZeroCopyOutputStream* out = context->Open(filename);
+  protobuf_inworld::io::Printer printer(out, '$');
 
   for (int i = 0; i < file->dependency_count(); i++) {
-    const protobuf::FileDescriptor* dep = file->dependency(i);
+    const protobuf_inworld::FileDescriptor* dep = file->dependency(i);
     printer.Print("require('$name$')\n", "name", ModuleName(dep));
   }
 
   printer.Print("local upb = require('upb')\n");
 
-  protobuf::FileDescriptorProto file_proto;
+  protobuf_inworld::FileDescriptorProto file_proto;
   file->CopyTo(&file_proto);
   std::string file_data;
   file_proto.SerializeToString(&file_data);
@@ -135,5 +135,5 @@ bool LuaGenerator::Generate(const protobuf::FileDescriptor* file,
 
 int main(int argc, char** argv) {
   LuaGenerator generator;
-  return google::protobuf::compiler::PluginMain(argc, argv, &generator);
+  return google::protobuf_inworld::compiler::PluginMain(argc, argv, &generator);
 }

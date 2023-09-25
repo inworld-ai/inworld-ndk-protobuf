@@ -58,7 +58,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 // Helper methods to test parsing merge behavior.
@@ -1348,5 +1348,5 @@ TEST(LiteBasicTest, CodedInputStreamRollback) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

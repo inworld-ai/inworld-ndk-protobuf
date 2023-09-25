@@ -39,7 +39,7 @@
 #include "google/protobuf/descriptor.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 std::string GetCrateName(Context<FileDescriptor> dep);
@@ -64,7 +64,7 @@ std::string GetCrateRelativeQualifiedPath(Context<Descriptor> msg);
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_RUST_NAMING_H__

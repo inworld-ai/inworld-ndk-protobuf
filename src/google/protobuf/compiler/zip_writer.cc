@@ -40,7 +40,7 @@
 #include "google/protobuf/io/coded_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // January 1, 1980 as a DOS date.
@@ -191,5 +191,5 @@ bool ZipWriter::WriteDirectory() {
 }
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

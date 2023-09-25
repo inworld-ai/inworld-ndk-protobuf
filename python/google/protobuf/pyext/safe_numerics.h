@@ -37,7 +37,7 @@
 #include "absl/log/absl_check.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 template <bool SameSize, bool DestLarger,
@@ -157,7 +157,7 @@ inline Dest checked_numeric_cast(Source source) {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_SAFE_NUMERICS_H__

@@ -62,7 +62,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class DynamicMessageFactory;
 class FieldDescriptor;
@@ -1005,7 +1005,7 @@ class PROTOBUF_EXPORT FieldContext {
 };
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

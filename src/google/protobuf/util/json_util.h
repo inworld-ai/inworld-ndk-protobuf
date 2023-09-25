@@ -37,24 +37,24 @@
 #include "google/protobuf/json/json.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
-using JsonParseOptions = ::google::protobuf::json::ParseOptions;
-using JsonPrintOptions = ::google::protobuf::json::PrintOptions;
+using JsonParseOptions = ::google::protobuf_inworld::json::ParseOptions;
+using JsonPrintOptions = ::google::protobuf_inworld::json::PrintOptions;
 
 using JsonOptions ABSL_DEPRECATED("use JsonPrintOptions instead") =
     JsonPrintOptions;
 
-using ::google::protobuf::json::BinaryToJsonStream;
-using ::google::protobuf::json::BinaryToJsonString;
+using ::google::protobuf_inworld::json::BinaryToJsonStream;
+using ::google::protobuf_inworld::json::BinaryToJsonString;
 
-using ::google::protobuf::json::JsonStringToMessage;
-using ::google::protobuf::json::JsonToBinaryStream;
+using ::google::protobuf_inworld::json::JsonStringToMessage;
+using ::google::protobuf_inworld::json::JsonToBinaryStream;
 
-using ::google::protobuf::json::JsonToBinaryString;
-using ::google::protobuf::json::MessageToJsonString;
+using ::google::protobuf_inworld::json::JsonToBinaryString;
+using ::google::protobuf_inworld::json::MessageToJsonString;
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_UTIL_JSON_UTIL_H__

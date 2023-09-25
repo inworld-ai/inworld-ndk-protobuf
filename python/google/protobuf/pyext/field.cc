@@ -35,7 +35,7 @@
 #include "google/protobuf/pyext/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace field {
@@ -139,5 +139,5 @@ PyObject* NewFieldProperty(const FieldDescriptor* field_descriptor) {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

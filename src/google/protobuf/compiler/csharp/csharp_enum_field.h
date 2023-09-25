@@ -35,7 +35,7 @@
 #include "google/protobuf/compiler/csharp/csharp_primitive_field.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace csharp {
 
@@ -74,7 +74,7 @@ class EnumOneofFieldGenerator : public PrimitiveOneofFieldGenerator {
 
 }  // namespace csharp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CSHARP_ENUM_FIELD_H__

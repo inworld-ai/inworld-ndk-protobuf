@@ -61,7 +61,7 @@
 const size_t kMapEntryTagByteSize = 2;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Forward declare static functions
@@ -1800,7 +1800,7 @@ size_t ComputeUnknownFieldsSize(const InternalMetadata& metadata,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

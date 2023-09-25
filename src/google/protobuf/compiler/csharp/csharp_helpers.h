@@ -48,7 +48,7 @@
 #include "google/protobuf/stubs/common.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace csharp {
 
@@ -161,7 +161,7 @@ inline bool RequiresPresenceBit(const FieldDescriptor* descriptor) {
 
 }  // namespace csharp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -46,7 +46,7 @@
 #include "absl/strings/str_format.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 
 // This approximately 0x1.ffffffp127, but we don't use 0x1.ffffffp127 because
@@ -279,5 +279,5 @@ std::string SimpleFtoa(float value) {
 }
 
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

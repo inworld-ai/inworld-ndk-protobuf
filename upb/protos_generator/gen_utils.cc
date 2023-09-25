@@ -38,10 +38,10 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
-void AddEnums(const protobuf::Descriptor* message,
-              std::vector<const protobuf::EnumDescriptor*>* enums) {
+void AddEnums(const protobuf_inworld::Descriptor* message,
+              std::vector<const protobuf_inworld::EnumDescriptor*>* enums) {
   enums->reserve(enums->size() + message->enum_type_count());
   for (int i = 0; i < message->enum_type_count(); i++) {
     enums->push_back(message->enum_type(i));
@@ -51,9 +51,9 @@ void AddEnums(const protobuf::Descriptor* message,
   }
 }
 
-std::vector<const protobuf::EnumDescriptor*> SortedEnums(
-    const protobuf::FileDescriptor* file) {
-  std::vector<const protobuf::EnumDescriptor*> enums;
+std::vector<const protobuf_inworld::EnumDescriptor*> SortedEnums(
+    const protobuf_inworld::FileDescriptor* file) {
+  std::vector<const protobuf_inworld::EnumDescriptor*> enums;
   enums.reserve(file->enum_type_count());
   for (int i = 0; i < file->enum_type_count(); i++) {
     enums.push_back(file->enum_type(i));
@@ -64,17 +64,17 @@ std::vector<const protobuf::EnumDescriptor*> SortedEnums(
   return enums;
 }
 
-void AddMessages(const protobuf::Descriptor* message,
-                 std::vector<const protobuf::Descriptor*>* messages) {
+void AddMessages(const protobuf_inworld::Descriptor* message,
+                 std::vector<const protobuf_inworld::Descriptor*>* messages) {
   messages->push_back(message);
   for (int i = 0; i < message->nested_type_count(); i++) {
     AddMessages(message->nested_type(i), messages);
   }
 }
 
-std::vector<const protobuf::Descriptor*> SortedMessages(
-    const protobuf::FileDescriptor* file) {
-  std::vector<const protobuf::Descriptor*> messages;
+std::vector<const protobuf_inworld::Descriptor*> SortedMessages(
+    const protobuf_inworld::FileDescriptor* file) {
+  std::vector<const protobuf_inworld::Descriptor*> messages;
   for (int i = 0; i < file->message_type_count(); i++) {
     AddMessages(file->message_type(i), &messages);
   }
@@ -82,8 +82,8 @@ std::vector<const protobuf::Descriptor*> SortedMessages(
 }
 
 void AddExtensionsFromMessage(
-    const protobuf::Descriptor* message,
-    std::vector<const protobuf::FieldDescriptor*>* exts) {
+    const protobuf_inworld::Descriptor* message,
+    std::vector<const protobuf_inworld::FieldDescriptor*>* exts) {
   for (int i = 0; i < message->extension_count(); i++) {
     exts->push_back(message->extension(i));
   }
@@ -92,12 +92,12 @@ void AddExtensionsFromMessage(
   }
 }
 
-std::vector<const protobuf::FieldDescriptor*> SortedExtensions(
-    const protobuf::FileDescriptor* file) {
+std::vector<const protobuf_inworld::FieldDescriptor*> SortedExtensions(
+    const protobuf_inworld::FileDescriptor* file) {
   const int extension_count = file->extension_count();
   const int message_type_count = file->message_type_count();
 
-  std::vector<const protobuf::FieldDescriptor*> ret;
+  std::vector<const protobuf_inworld::FieldDescriptor*> ret;
   ret.reserve(extension_count + message_type_count);
 
   for (int i = 0; i < extension_count; i++) {
@@ -110,16 +110,16 @@ std::vector<const protobuf::FieldDescriptor*> SortedExtensions(
   return ret;
 }
 
-std::vector<const protobuf::FieldDescriptor*> FieldNumberOrder(
-    const protobuf::Descriptor* message) {
-  std::vector<const protobuf::FieldDescriptor*> fields;
+std::vector<const protobuf_inworld::FieldDescriptor*> FieldNumberOrder(
+    const protobuf_inworld::Descriptor* message) {
+  std::vector<const protobuf_inworld::FieldDescriptor*> fields;
   fields.reserve(message->field_count());
   for (int i = 0; i < message->field_count(); i++) {
     fields.push_back(message->field(i));
   }
   std::sort(fields.begin(), fields.end(),
-            [](const protobuf::FieldDescriptor* a,
-               const protobuf::FieldDescriptor* b) {
+            [](const protobuf_inworld::FieldDescriptor* a,
+               const protobuf_inworld::FieldDescriptor* b) {
               return a->number() < b->number();
             });
   return fields;

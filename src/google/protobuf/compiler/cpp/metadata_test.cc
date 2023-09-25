@@ -43,7 +43,7 @@
 #include "google/protobuf/compiler/cpp/helpers.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
@@ -623,5 +623,5 @@ TEST_F(CppMetadataTest, AnnotatesLazyMessageSemantics) {
 }  // namespace
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

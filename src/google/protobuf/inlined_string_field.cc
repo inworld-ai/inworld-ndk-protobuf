@@ -49,7 +49,7 @@
 // clang-format on
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 
@@ -72,7 +72,7 @@ std::string* InlinedStringField::Mutable(Arena* arena, bool donated,
   return MutableSlow(arena, donated, donating_states, mask, msg);
 }
 
-std::string* InlinedStringField::MutableSlow(::google::protobuf::Arena* arena,
+std::string* InlinedStringField::MutableSlow(::google::protobuf_inworld::Arena* arena,
                                              bool donated,
                                              uint32_t* donating_states,
                                              uint32_t mask, MessageLite* msg) {
@@ -122,5 +122,5 @@ void InlinedStringField::ClearToDefault(const LazyString& default_value,
 
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

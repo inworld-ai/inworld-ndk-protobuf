@@ -58,7 +58,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 namespace {
 // Randomly inserts bonus whitespace of a few different kinds into a string.
@@ -536,5 +536,5 @@ absl::StatusOr<LocationWith<MaybeOwnedString>> JsonLexer::ParseBareWord() {
 }
 
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -48,7 +48,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // These helpers implement the unique behaviors of edition features.  For more
 // details, see go/protobuf-editions-features.
@@ -85,7 +85,7 @@ class PROTOBUF_EXPORT FeatureResolver {
   FeatureSet defaults_;
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_FEATURE_RESOLVER_H__

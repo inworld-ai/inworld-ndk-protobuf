@@ -36,7 +36,7 @@
 #include "google/protobuf/parse_context.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 template <typename T>
@@ -280,7 +280,7 @@ const char* ExtensionSet::ParseMessageSetItemTmpl(
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_EXTENSION_SET_INL_H__

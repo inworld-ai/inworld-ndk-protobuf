@@ -58,9 +58,9 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
-using ::google::protobuf::internal::WireFormatLite;
+using ::google::protobuf_inworld::internal::WireFormatLite;
 
 // See the comment in json_util2_parser.cc for more information.
 //
@@ -291,7 +291,7 @@ struct ParseProto3Type : Proto3Type {
     RecordAsSeen(f, msg);
     return WithDynamicType(
         f->parent(), type_url, [&](const Desc& desc) -> absl::Status {
-          if (f->proto().kind() == google::protobuf::Field::TYPE_GROUP) {
+          if (f->proto().kind() == google::protobuf_inworld::Field::TYPE_GROUP) {
             msg.stream_.WriteTag(f->proto().number() << 3 |
                                  WireFormatLite::WIRETYPE_START_GROUP);
             RETURN_IF_ERROR(body(desc, msg));
@@ -328,27 +328,27 @@ struct ParseProto3Type : Proto3Type {
   }
 
   static void SetInt64(Field f, Msg& msg, int64_t x) {
-    SetInt<int64_t, google::protobuf::Field::TYPE_INT64,
-           google::protobuf::Field::TYPE_SFIXED64,
-           google::protobuf::Field::TYPE_SINT64>(f, msg, x);
+    SetInt<int64_t, google::protobuf_inworld::Field::TYPE_INT64,
+           google::protobuf_inworld::Field::TYPE_SFIXED64,
+           google::protobuf_inworld::Field::TYPE_SINT64>(f, msg, x);
   }
 
   static void SetUInt64(Field f, Msg& msg, uint64_t x) {
-    SetInt<uint64_t, google::protobuf::Field::TYPE_UINT64,
-           google::protobuf::Field::TYPE_FIXED64,
-           google::protobuf::Field::TYPE_UNKNOWN>(f, msg, x);
+    SetInt<uint64_t, google::protobuf_inworld::Field::TYPE_UINT64,
+           google::protobuf_inworld::Field::TYPE_FIXED64,
+           google::protobuf_inworld::Field::TYPE_UNKNOWN>(f, msg, x);
   }
 
   static void SetInt32(Field f, Msg& msg, int32_t x) {
-    SetInt<int32_t, google::protobuf::Field::TYPE_INT32,
-           google::protobuf::Field::TYPE_SFIXED32,
-           google::protobuf::Field::TYPE_SINT32>(f, msg, x);
+    SetInt<int32_t, google::protobuf_inworld::Field::TYPE_INT32,
+           google::protobuf_inworld::Field::TYPE_SFIXED32,
+           google::protobuf_inworld::Field::TYPE_SINT32>(f, msg, x);
   }
 
   static void SetUInt32(Field f, Msg& msg, uint32_t x) {
-    SetInt<uint32_t, google::protobuf::Field::TYPE_UINT32,
-           google::protobuf::Field::TYPE_FIXED32,
-           google::protobuf::Field::TYPE_UNKNOWN>(f, msg, x);
+    SetInt<uint32_t, google::protobuf_inworld::Field::TYPE_UINT32,
+           google::protobuf_inworld::Field::TYPE_FIXED32,
+           google::protobuf_inworld::Field::TYPE_UNKNOWN>(f, msg, x);
   }
 
   static void SetBool(Field f, Msg& msg, bool x) {
@@ -374,7 +374,7 @@ struct ParseProto3Type : Proto3Type {
   }
 
  private:
-  using Kind = google::protobuf::Field::Kind;
+  using Kind = google::protobuf_inworld::Field::Kind;
   // Sets a field of *some* integer type, with the given kinds for the possible
   // encodings. This avoids quadruplicating this code in the helpers for the
   // four major integer types.
@@ -416,7 +416,7 @@ struct ParseProto3Type : Proto3Type {
   }
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

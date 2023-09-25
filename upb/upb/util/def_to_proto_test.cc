@@ -48,8 +48,8 @@
 namespace upb_test {
 
 // Loads and retrieves a descriptor for `msgdef` into the given `pool`.
-const google::protobuf::Descriptor* AddMessageDescriptor(
-    upb::MessageDefPtr msgdef, google::protobuf::DescriptorPool* pool) {
+const google::protobuf_inworld::Descriptor* AddMessageDescriptor(
+    upb::MessageDefPtr msgdef, google::protobuf_inworld::DescriptorPool* pool) {
   upb::Arena tmp_arena;
   upb::FileDefPtr file = msgdef.file();
   google_protobuf_FileDescriptorProto* upb_proto =
@@ -57,9 +57,9 @@ const google::protobuf::Descriptor* AddMessageDescriptor(
   size_t size;
   const char* buf = google_protobuf_FileDescriptorProto_serialize(
       upb_proto, tmp_arena.ptr(), &size);
-  google::protobuf::FileDescriptorProto google_proto;
+  google::protobuf_inworld::FileDescriptorProto google_proto;
   google_proto.ParseFromArray(buf, size);
-  const google::protobuf::FileDescriptor* file_desc =
+  const google::protobuf_inworld::FileDescriptor* file_desc =
       pool->BuildFile(google_proto);
   EXPECT_TRUE(file_desc != nullptr);
   return pool->FindMessageTypeByName(msgdef.full_name());
@@ -67,13 +67,13 @@ const google::protobuf::Descriptor* AddMessageDescriptor(
 
 // Converts a upb `msg` (with type `msgdef`) into a protobuf Message object from
 // the given factory and descriptor.
-std::unique_ptr<google::protobuf::Message> ToProto(
+std::unique_ptr<google::protobuf_inworld::Message> ToProto(
     const upb_Message* msg, const upb_MessageDef* msgdef,
-    const google::protobuf::Descriptor* desc,
-    google::protobuf::MessageFactory* factory) {
+    const google::protobuf_inworld::Descriptor* desc,
+    google::protobuf_inworld::MessageFactory* factory) {
   upb::Arena arena;
   EXPECT_TRUE(desc != nullptr);
-  std::unique_ptr<google::protobuf::Message> google_msg(
+  std::unique_ptr<google::protobuf_inworld::Message> google_msg(
       factory->GetPrototype(desc)->New());
   char* buf;
   size_t size;
@@ -90,19 +90,19 @@ std::unique_ptr<google::protobuf::Message> ToProto(
 MATCHER_P2(EqualsUpbProto, proto, msgdef_func,
            negation ? "are not equal" : "are equal") {
   upb::DefPool defpool;
-  google::protobuf::DescriptorPool pool;
-  google::protobuf::DynamicMessageFactory factory;
+  google::protobuf_inworld::DescriptorPool pool;
+  google::protobuf_inworld::DynamicMessageFactory factory;
   upb::MessageDefPtr msgdef(msgdef_func(defpool.ptr()));
   EXPECT_TRUE(msgdef.ptr() != nullptr);
-  const google::protobuf::Descriptor* desc =
+  const google::protobuf_inworld::Descriptor* desc =
       AddMessageDescriptor(msgdef, &pool);
   EXPECT_TRUE(desc != nullptr);
-  std::unique_ptr<google::protobuf::Message> m1(
+  std::unique_ptr<google::protobuf_inworld::Message> m1(
       ToProto(proto, msgdef.ptr(), desc, &factory));
-  std::unique_ptr<google::protobuf::Message> m2(
+  std::unique_ptr<google::protobuf_inworld::Message> m2(
       ToProto(arg, msgdef.ptr(), desc, &factory));
   std::string differences;
-  google::protobuf::util::MessageDifferencer differencer;
+  google::protobuf_inworld::util::MessageDifferencer differencer;
   differencer.ReportDifferencesToString(&differences);
   bool eq = differencer.Compare(*m2, *m1);
   if (!eq) {

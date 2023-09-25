@@ -33,7 +33,7 @@
 #include "google/protobuf/internal_visibility.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 class InternalVisibilityForTesting {
@@ -44,7 +44,7 @@ class InternalVisibilityForTesting {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_INTERNAL_VISIBILITY_FOR_TESTING_H__

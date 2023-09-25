@@ -58,7 +58,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 // This is a duplicate of JsonParseOptions from json_util.h; it must be
 // re-defined here so that :json_lexer does not need to depend on :json_util.
@@ -352,7 +352,7 @@ absl::Status JsonLexer::VisitObject(F f) {
   return absl::OkStatus();
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

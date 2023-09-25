@@ -47,7 +47,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
@@ -233,5 +233,5 @@ TEST(CppPluginTest, PluginTest) {
 }  // namespace
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

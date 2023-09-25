@@ -60,7 +60,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace internal {
 PROTOBUF_EXPORT extern const char kDebugStringSilentMarker[1];
@@ -580,7 +580,7 @@ class PROTOBUF_EXPORT TextFormat {
   //
   // If you would like to read a protocol buffer serialized in the
   // (non-human-readable) binary wire format, see
-  // google::protobuf::MessageLite::ParseFromString().
+  // google::protobuf_inworld::MessageLite::ParseFromString().
   static bool Parse(io::ZeroCopyInputStream* input, Message* output);
   // Like Parse(), but reads directly from a string.
   static bool ParseFromString(absl::string_view input, Message* output);
@@ -804,7 +804,7 @@ inline TextFormat::ParseInfoTree* TextFormat::CreateNested(
   return info_tree->CreateNested(field);
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

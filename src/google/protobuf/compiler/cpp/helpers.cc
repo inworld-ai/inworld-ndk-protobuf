@@ -69,7 +69,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
@@ -603,7 +603,7 @@ int EstimateSize(const FieldDescriptor* field) {
   if (field == nullptr) return 0;
   if (field->is_repeated()) {
     if (field->is_map()) {
-      return sizeof(google::protobuf::Map<int32_t, int32_t>);
+      return sizeof(google::protobuf_inworld::Map<int32_t, int32_t>);
     }
     return field->cpp_type() < FieldDescriptor::CPPTYPE_STRING || IsCord(field)
                ? sizeof(RepeatedField<int32_t>)
@@ -1704,7 +1704,7 @@ bool HasMessageFieldOrExtension(const Descriptor* desc) {
 
 std::vector<io::Printer::Sub> AnnotatedAccessors(
     const FieldDescriptor* field, absl::Span<const absl::string_view> prefixes,
-    absl::optional<google::protobuf::io::AnnotationCollector::Semantic> semantic) {
+    absl::optional<google::protobuf_inworld::io::AnnotationCollector::Semantic> semantic) {
   auto field_name = FieldName(field);
 
   std::vector<io::Printer::Sub> vars;
@@ -1735,5 +1735,5 @@ bool ShouldGenerateClass(const Descriptor* descriptor, const Options& options) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -45,7 +45,7 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 
@@ -163,5 +163,5 @@ void ExtensionGenerator::GenerateRegistrationSource(
 
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -40,7 +40,7 @@
 #include "absl/strings/string_view.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 
@@ -71,7 +71,7 @@ class RelativePath final {
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_RUST_RELATIVE_PATH_H__

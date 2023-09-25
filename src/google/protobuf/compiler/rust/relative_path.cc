@@ -41,7 +41,7 @@
 #include "absl/strings/string_view.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 
@@ -99,5 +99,5 @@ std::string RelativePath::Relative(const RelativePath& dest) const {
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

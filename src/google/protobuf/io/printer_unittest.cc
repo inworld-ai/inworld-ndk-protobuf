@@ -51,7 +51,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace {
 using ::testing::AllOf;
@@ -916,5 +916,5 @@ TEST_F(PrinterTest, PreserveNewlinesThroughEmits) {
 
 }  // namespace
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

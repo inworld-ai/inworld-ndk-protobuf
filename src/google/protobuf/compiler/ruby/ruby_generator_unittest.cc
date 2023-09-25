@@ -41,7 +41,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace ruby {
 namespace {
@@ -60,7 +60,7 @@ std::string FindRubyTestDir() {
 void RubyTest(std::string proto_file, std::string import_proto_file = "") {
   std::string ruby_tests = FindRubyTestDir();
 
-  google::protobuf::compiler::CommandLineInterface cli;
+  google::protobuf_inworld::compiler::CommandLineInterface cli;
   cli.SetInputsAreProtoPathRelative(true);
 
   ruby::Generator ruby_generator;
@@ -131,5 +131,5 @@ TEST(RubyGeneratorTest, Proto3ExplictLegacyPackageTest) {
 }  // namespace
 }  // namespace ruby
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

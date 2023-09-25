@@ -38,7 +38,7 @@
 #include "google/protobuf/wire_format_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 namespace {
@@ -59,10 +59,10 @@ TcFieldData Xor2SerializedBytes(TcFieldData tfd, const char* ptr) {
 absl::optional<const char*> fallback_ptr_received;
 absl::optional<uint64_t> fallback_hasbits_received;
 absl::optional<uint64_t> fallback_tag_received;
-const char* FastParserGaveUp(::google::protobuf::MessageLite*, const char* ptr,
-                             ::google::protobuf::internal::ParseContext*,
-                             ::google::protobuf::internal::TcFieldData data,
-                             const ::google::protobuf::internal::TcParseTableBase*,
+const char* FastParserGaveUp(::google::protobuf_inworld::MessageLite*, const char* ptr,
+                             ::google::protobuf_inworld::internal::ParseContext*,
+                             ::google::protobuf_inworld::internal::TcFieldData data,
+                             const ::google::protobuf_inworld::internal::TcParseTableBase*,
                              uint64_t hasbits) {
   fallback_ptr_received = ptr;
   fallback_hasbits_received = hasbits;
@@ -923,5 +923,5 @@ TEST(GeneratedMessageTctableLiteTest,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -84,7 +84,7 @@ using ::testing::ElementsAre;
 using ::testing::Pair;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 using UNITTEST::ForeignMessage;
 using UNITTEST::TestAllTypes;
@@ -324,21 +324,21 @@ TEST_F(MapImplTest, OperatorBracket) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace std {
 
 template <>  // NOLINT
-struct hash<google::protobuf::internal::MoveTestKey> {
-  size_t operator()(const google::protobuf::internal::MoveTestKey& key) const {
+struct hash<google::protobuf_inworld::internal::MoveTestKey> {
+  size_t operator()(const google::protobuf_inworld::internal::MoveTestKey& key) const {
     return hash<uint64_t>{}(key.data);
   }
 };
 }  // namespace std
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 template <>
@@ -4332,7 +4332,7 @@ TEST(NonUtf8Test, BytesValuePassesInProto3) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

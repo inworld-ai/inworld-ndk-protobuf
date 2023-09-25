@@ -37,7 +37,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // Provides APIs to test protocol buffers reflectively.
 class MapReflectionTester {
@@ -121,7 +121,7 @@ class MapReflectionTester {
   const FieldDescriptor* map_int32_foreign_message_val_;
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

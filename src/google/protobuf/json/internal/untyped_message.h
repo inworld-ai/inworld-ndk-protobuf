@@ -60,7 +60,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 struct SizeVisitor {
   template <typename T>
@@ -90,7 +90,7 @@ class ResolverPool {
     absl::StatusOr<const Enum*> EnumType() const;
 
     const Message& parent() const { return *parent_; }
-    const google::protobuf::Field& proto() const { return *raw_; }
+    const google::protobuf_inworld::Field& proto() const { return *raw_; }
 
    private:
     friend class ResolverPool;
@@ -98,7 +98,7 @@ class ResolverPool {
     Field() = default;
 
     ResolverPool* pool_ = nullptr;
-    const google::protobuf::Field* raw_ = nullptr;
+    const google::protobuf_inworld::Field* raw_ = nullptr;
     const Message* parent_ = nullptr;
     mutable const void* type_ = nullptr;
   };
@@ -112,7 +112,7 @@ class ResolverPool {
     const Field* FindField(absl::string_view name) const;
     const Field* FindField(int32_t number) const;
 
-    const google::protobuf::Type& proto() const { return raw_; }
+    const google::protobuf_inworld::Type& proto() const { return raw_; }
     ResolverPool* pool() const { return pool_; }
 
    private:
@@ -121,7 +121,7 @@ class ResolverPool {
     explicit Message(ResolverPool* pool) : pool_(pool) {}
 
     ResolverPool* pool_;
-    google::protobuf::Type raw_;
+    google::protobuf_inworld::Type raw_;
     mutable std::unique_ptr<Field[]> fields_;
     mutable absl::flat_hash_map<absl::string_view, const Field*>
         fields_by_name_;
@@ -133,7 +133,7 @@ class ResolverPool {
     Enum(const Enum&) = delete;
     Enum& operator=(const Enum&) = delete;
 
-    const google::protobuf::Enum& proto() const { return raw_; }
+    const google::protobuf_inworld::Enum& proto() const { return raw_; }
     ResolverPool* pool() const { return pool_; }
 
    private:
@@ -142,12 +142,12 @@ class ResolverPool {
     explicit Enum(ResolverPool* pool) : pool_(pool) {}
 
     ResolverPool* pool_;
-    google::protobuf::Enum raw_;
-    mutable absl::flat_hash_map<absl::string_view, google::protobuf::EnumValue*>
+    google::protobuf_inworld::Enum raw_;
+    mutable absl::flat_hash_map<absl::string_view, google::protobuf_inworld::EnumValue*>
         values_;
   };
 
-  explicit ResolverPool(google::protobuf::util::TypeResolver* resolver)
+  explicit ResolverPool(google::protobuf_inworld::util::TypeResolver* resolver)
       : resolver_(resolver) {}
 
   ResolverPool(const ResolverPool&) = delete;
@@ -159,7 +159,7 @@ class ResolverPool {
  private:
   absl::flat_hash_map<std::string, std::unique_ptr<Message>> messages_;
   absl::flat_hash_map<std::string, std::unique_ptr<Enum>> enums_;
-  google::protobuf::util::TypeResolver* resolver_;
+  google::protobuf_inworld::util::TypeResolver* resolver_;
 };
 
 // A parsed wire-format proto that uses TypeReslover for parsing.
@@ -253,7 +253,7 @@ class UntypedMessage final {
   absl::flat_hash_map<int32_t, Value> fields_;
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

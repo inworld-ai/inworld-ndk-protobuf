@@ -43,7 +43,7 @@
 #include "google/protobuf/pyext/scoped_pyobject_ptr.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 PyDescriptorDatabase::PyDescriptorDatabase(PyObject* py_database)
@@ -183,5 +183,5 @@ bool PyDescriptorDatabase::FindAllExtensionNumbers(
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

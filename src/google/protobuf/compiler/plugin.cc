@@ -52,13 +52,13 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 #if defined(_WIN32)
 // DO NOT include <io.h>, instead create functions in io_win32.{h,cc} and import
 // them like we do below.
-using google::protobuf::io::win32::setmode;
+using google::protobuf_inworld::io::win32::setmode;
 #endif
 
 class GeneratorResponseContext : public GeneratorContext {
@@ -90,7 +90,7 @@ class GeneratorResponseContext : public GeneratorContext {
 
   io::ZeroCopyOutputStream* OpenForInsertWithGeneratedCodeInfo(
       const std::string& filename, const std::string& insertion_point,
-      const google::protobuf::GeneratedCodeInfo& info) override {
+      const google::protobuf_inworld::GeneratedCodeInfo& info) override {
     CodeGeneratorResponse::File* file = response_->add_file();
     file->set_name(filename);
     file->set_insertion_point(insertion_point);
@@ -208,5 +208,5 @@ int PluginMain(int argc, char* argv[], const CodeGenerator* generator) {
 }
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

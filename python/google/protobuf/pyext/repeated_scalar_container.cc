@@ -50,7 +50,7 @@
   (PyUnicode_Check(ob) ? PyUnicode_AsUTF8(ob) : PyBytes_AsString(ob))
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace repeated_scalar_container {
@@ -784,5 +784,5 @@ PyTypeObject RepeatedScalarContainer_Type = {
 };
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -39,7 +39,7 @@
 #include "google/protobuf/descriptor.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace python {
 
@@ -59,7 +59,7 @@ std::string NamePrefixedWithNestedTypes(const DescriptorT& descriptor,
 
 }  // namespace python
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_PYTHON_HELPERS_H__

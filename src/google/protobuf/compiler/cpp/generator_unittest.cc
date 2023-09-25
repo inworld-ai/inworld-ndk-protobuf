@@ -38,7 +38,7 @@
 #include "google/protobuf/cpp_features.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
@@ -52,7 +52,7 @@ class CppGeneratorTest : public CommandLineInterfaceTester {
     // Generate built-in protos.
     CreateTempFile(
         "google/protobuf/descriptor.proto",
-        google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+        google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
     CreateTempFile("google/protobuf/cpp_features.proto",
                    pb::CppFeatures::descriptor()->file()->DebugString());
   }
@@ -290,5 +290,5 @@ TEST_F(CppGeneratorTest, CtypeOnExtensionTest) {
 }  // namespace
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

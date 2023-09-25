@@ -53,7 +53,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 struct WriterOptions {
   // Whether to add spaces, line breaks and indentation to make the JSON output
@@ -234,7 +234,7 @@ class JsonWriter {
   std::string scratch_buf_;
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

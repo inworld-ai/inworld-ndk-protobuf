@@ -70,7 +70,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 class Reflection;
@@ -681,14 +681,14 @@ class PROTOBUF_EXPORT RepeatedPtrFieldBase {
   friend class AccessorHelper;
 
   template <typename T>
-  friend struct google::protobuf::WeakRepeatedPtrField;
+  friend struct google::protobuf_inworld::WeakRepeatedPtrField;
 
   friend class internal::TcParser;  // TODO(jorg): Remove this friend.
 
   // The reflection implementation needs to call protected methods directly,
   // reinterpreting pointers as being to Message instead of a specific Message
   // subclass.
-  friend class google::protobuf::Reflection;
+  friend class google::protobuf_inworld::Reflection;
   friend class internal::SwapFieldHelper;
 
   struct Rep {
@@ -2147,7 +2147,7 @@ UnsafeArenaAllocatedRepeatedPtrFieldBackInserter(
       mutable_field);
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

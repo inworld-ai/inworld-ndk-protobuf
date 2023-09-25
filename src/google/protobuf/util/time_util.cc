@@ -47,11 +47,11 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
-using google::protobuf::Duration;
-using google::protobuf::Timestamp;
+using google::protobuf_inworld::Duration;
+using google::protobuf_inworld::Timestamp;
 
 namespace {
 static constexpr int32_t kNanosPerSecond = 1000000000;
@@ -440,14 +440,14 @@ timeval TimeUtil::DurationToTimeval(const Duration& value) {
 }
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
-using ::google::protobuf::util::CreateNormalized;
-using ::google::protobuf::util::kNanosPerSecond;
+using ::google::protobuf_inworld::util::CreateNormalized;
+using ::google::protobuf_inworld::util::kNanosPerSecond;
 
 // Convert a Duration to uint128.
 void ToUint128(const Duration& value, absl::uint128* result, bool* negative) {
@@ -579,5 +579,5 @@ Duration operator-(const Timestamp& t1, const Timestamp& t2) {
   return CreateNormalized<Duration>(t1.seconds() - t2.seconds(),
                                     t1.nanos() - t2.nanos());
 }
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

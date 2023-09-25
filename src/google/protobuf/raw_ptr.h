@@ -39,7 +39,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 PROTOBUF_EXPORT ABSL_CACHELINE_ALIGNED extern const char
@@ -79,7 +79,7 @@ constexpr void* DefaultRawPtr() {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

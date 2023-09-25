@@ -33,7 +33,7 @@
 #include "google/protobuf/python_protobuf.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 static const Message* GetCProtoInsidePyProtoStub(PyObject* msg) {
@@ -59,5 +59,5 @@ Message* MutableCProtoInsidePyProto(PyObject* msg) {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

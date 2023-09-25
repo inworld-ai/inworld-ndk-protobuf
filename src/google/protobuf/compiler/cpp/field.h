@@ -49,7 +49,7 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
@@ -545,7 +545,7 @@ std::vector<io::Printer::Sub> FieldVars(const FieldDescriptor* field,
                                         const Options& opts);
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CPP_FIELD_H__

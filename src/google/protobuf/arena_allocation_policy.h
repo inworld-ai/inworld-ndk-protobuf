@@ -35,7 +35,7 @@
 #include <cstdint>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // `AllocationPolicy` defines `Arena` allocation policies. Applications can
@@ -119,7 +119,7 @@ class TaggedAllocationPolicyPtr {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_ARENA_ALLOCATION_POLICY_H__

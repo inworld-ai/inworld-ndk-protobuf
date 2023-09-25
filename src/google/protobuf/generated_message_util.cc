@@ -54,7 +54,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 void DestroyMessage(const void* message) {
@@ -405,7 +405,7 @@ MessageLite* GetOwnedMessageInternal(Arena* message_arena,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

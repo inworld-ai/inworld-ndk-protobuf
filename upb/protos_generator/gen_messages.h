@@ -35,16 +35,16 @@
 #include "protos_generator/output.h"
 
 namespace protos_generator {
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 void WriteMessageClassDeclarations(
-    const protobuf::Descriptor* descriptor,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
-    const std::vector<const protobuf::EnumDescriptor*>& file_enums,
+    const protobuf_inworld::Descriptor* descriptor,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& file_enums,
     Output& output);
 void WriteMessageImplementation(
-    const protobuf::Descriptor* descriptor,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
+    const protobuf_inworld::Descriptor* descriptor,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
     Output& output);
 }  // namespace protos_generator
 

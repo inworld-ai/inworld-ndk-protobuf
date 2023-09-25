@@ -51,7 +51,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace {
 class PrinterDeathTest : public testing::Test {
@@ -171,5 +171,5 @@ TEST_F(PrinterDeathTest, FormatInternalUnknownVar) {
 #endif  // GTEST_HAS_DEATH_TEST
 }  // namespace
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

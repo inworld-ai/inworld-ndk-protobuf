@@ -36,7 +36,7 @@
 #include "google/protobuf/unittest_preserve_unknown_enum2.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 void FillMessage(
@@ -276,5 +276,5 @@ TEST(PreserveUnknownEnumTest, Proto2CatchesUnknownValues) {
   EXPECT_EQ(message.unknown_fields().field(2).varint(), 4242);
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

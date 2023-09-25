@@ -38,7 +38,7 @@
 #include "google/protobuf/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace rust_internal {
 
 // Represents serialized Protobuf wire format data.
@@ -62,7 +62,7 @@ extern "C" struct SerializedData {
 // This function is defined in `rust_alloc_for_cpp_api.rs`.
 extern "C" void* __pb_rust_alloc(size_t size, size_t align);
 
-inline SerializedData SerializeMsg(const google::protobuf::Message* msg) {
+inline SerializedData SerializeMsg(const google::protobuf_inworld::Message* msg) {
   size_t len = msg->ByteSizeLong();
   void* bytes = __pb_rust_alloc(len, alignof(char));
   if (!msg->SerializeToArray(bytes, static_cast<int>(len))) {
@@ -82,7 +82,7 @@ struct PtrAndLen {
 };
 
 }  // namespace rust_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_RUST_CPP_KERNEL_CPP_H__

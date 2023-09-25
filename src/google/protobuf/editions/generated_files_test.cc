@@ -40,7 +40,7 @@
 // Full coverage will come as we migrate test protos to editions.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 using ::protobuf_editions_test::EditionsDefaultMessage;
@@ -162,7 +162,7 @@ TEST(Generated, EditionDefaults2023InternalFeatures) {
   EXPECT_THAT(
       internal::InternalFeatureHelper::GetFeatures(
           *EditionsDefaultMessage::descriptor()),
-      google::protobuf::EqualsProto(R"pb(
+      google::protobuf_inworld::EqualsProto(R"pb(
         field_presence: EXPLICIT
         enum_type: OPEN
         repeated_field_encoding: PACKED
@@ -173,5 +173,5 @@ TEST(Generated, EditionDefaults2023InternalFeatures) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

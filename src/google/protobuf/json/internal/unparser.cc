@@ -65,7 +65,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 namespace {
 template <typename Traits>
@@ -872,7 +872,7 @@ absl::Status MessageToJsonString(const Message& message, std::string* output,
   return absl::OkStatus();
 }
 
-absl::Status BinaryToJsonStream(google::protobuf::util::TypeResolver* resolver,
+absl::Status BinaryToJsonStream(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 io::ZeroCopyInputStream* binary_input,
                                 io::ZeroCopyOutputStream* json_output,
@@ -930,5 +930,5 @@ absl::Status BinaryToJsonStream(google::protobuf::util::TypeResolver* resolver,
   return absl::OkStatus();
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

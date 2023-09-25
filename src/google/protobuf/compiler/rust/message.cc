@@ -42,7 +42,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 namespace {
@@ -447,11 +447,11 @@ void GenerateThunksCc(Context<Descriptor> msg) {
         extern $abi$ {
         void* $new_thunk$(){return new $QualifiedMsg$(); }
         void $delete_thunk$(void* ptr) { delete static_cast<$QualifiedMsg$*>(ptr); }
-        google::protobuf::rust_internal::SerializedData $serialize_thunk$($QualifiedMsg$* msg) {
-          return google::protobuf::rust_internal::SerializeMsg(msg);
+        google::protobuf_inworld::rust_internal::SerializedData $serialize_thunk$($QualifiedMsg$* msg) {
+          return google::protobuf_inworld::rust_internal::SerializeMsg(msg);
         }
         bool $deserialize_thunk$($QualifiedMsg$* msg,
-                                 google::protobuf::rust_internal::SerializedData data) {
+                                 google::protobuf_inworld::rust_internal::SerializedData data) {
           return msg->ParseFromArray(data.data, data.len);
         }
 
@@ -467,5 +467,5 @@ void GenerateThunksCc(Context<Descriptor> msg) {
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

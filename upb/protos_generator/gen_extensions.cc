@@ -36,9 +36,9 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
-std::string ExtensionIdentifierBase(const protobuf::FieldDescriptor* ext) {
+std::string ExtensionIdentifierBase(const protobuf_inworld::FieldDescriptor* ext) {
   assert(ext->is_extension());
   std::string ext_scope;
   if (ext->extension_scope()) {
@@ -48,13 +48,13 @@ std::string ExtensionIdentifierBase(const protobuf::FieldDescriptor* ext) {
   }
 }
 
-std::string ContainingTypeName(const protobuf::FieldDescriptor* ext) {
+std::string ContainingTypeName(const protobuf_inworld::FieldDescriptor* ext) {
   return ext->containing_type()->file() != ext->file()
              ? QualifiedClassName(ext->containing_type())
              : ClassName(ext->containing_type());
 }
 
-void WriteExtensionIdentifierHeader(const protobuf::FieldDescriptor* ext,
+void WriteExtensionIdentifierHeader(const protobuf_inworld::FieldDescriptor* ext,
                                     Output& output) {
   std::string mini_table_name =
       absl::StrCat(ExtensionIdentifierBase(ext), "_", ext->name(), "_ext");
@@ -74,7 +74,7 @@ void WriteExtensionIdentifierHeader(const protobuf::FieldDescriptor* ext,
 }
 
 void WriteExtensionIdentifiersHeader(
-    const std::vector<const protobuf::FieldDescriptor*>& extensions,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& extensions,
     Output& output) {
   for (const auto* ext : extensions) {
     if (!ext->extension_scope()) {
@@ -83,7 +83,7 @@ void WriteExtensionIdentifiersHeader(
   }
 }
 
-void WriteExtensionIdentifier(const protobuf::FieldDescriptor* ext,
+void WriteExtensionIdentifier(const protobuf_inworld::FieldDescriptor* ext,
                               Output& output) {
   std::string mini_table_name =
       absl::StrCat(ExtensionIdentifierBase(ext), "_", ext->name(), "_ext");
@@ -105,7 +105,7 @@ void WriteExtensionIdentifier(const protobuf::FieldDescriptor* ext,
 }
 
 void WriteExtensionIdentifiers(
-    const std::vector<const protobuf::FieldDescriptor*>& extensions,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& extensions,
     Output& output) {
   for (const auto* ext : extensions) {
     if (!ext->extension_scope()) {

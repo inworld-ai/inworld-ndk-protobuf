@@ -39,21 +39,21 @@
 #include "google/protobuf/util/type_resolver.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
-// Internal version of google::protobuf::util::MessageToJsonString; see json_util.h for
+// Internal version of google::protobuf_inworld::util::MessageToJsonString; see json_util.h for
 // details.
 absl::Status MessageToJsonString(const Message& message, std::string* output,
                                  json_internal::WriterOptions options);
-// Internal version of google::protobuf::util::BinaryToJsonStream; see json_util.h for
+// Internal version of google::protobuf_inworld::util::BinaryToJsonStream; see json_util.h for
 // details.
-absl::Status BinaryToJsonStream(google::protobuf::util::TypeResolver* resolver,
+absl::Status BinaryToJsonStream(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 io::ZeroCopyInputStream* binary_input,
                                 io::ZeroCopyOutputStream* json_output,
                                 json_internal::WriterOptions options);
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_JSON_INTERNAL_UNPARSER_H__

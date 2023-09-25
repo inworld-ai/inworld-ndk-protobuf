@@ -41,7 +41,7 @@
 #include "google/protobuf/unittest.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
 TEST(DelimitedMessageUtilTest, DelimitedMessages) {
@@ -112,5 +112,5 @@ TEST(DelimitedMessageUtilTest, FailsAtEndOfStream) {
 }
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

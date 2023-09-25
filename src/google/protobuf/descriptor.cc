@@ -94,9 +94,9 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
-using ::google::protobuf::internal::DownCast;
+using ::google::protobuf_inworld::internal::DownCast;
 
 const int kPackageLimit = 100;
 
@@ -9514,7 +9514,7 @@ void LazyDescriptor::Once(const ServiceDescriptor* service) {
   }
 }
 
-bool ParseNoReflection(absl::string_view from, google::protobuf::MessageLite& to) {
+bool ParseNoReflection(absl::string_view from, google::protobuf_inworld::MessageLite& to) {
   to.Clear();
   const char* ptr;
   internal::ParseContext ctx(io::CodedInputStream::GetDefaultRecursionLimit(),
@@ -9574,7 +9574,7 @@ absl::string_view ShortEditionName(Edition edition) {
 }
 }  // namespace internal
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

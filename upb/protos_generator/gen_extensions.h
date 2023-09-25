@@ -36,17 +36,17 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 void WriteExtensionIdentifiersHeader(
-    const std::vector<const protobuf::FieldDescriptor*>& extensions,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& extensions,
     Output& output);
-void WriteExtensionIdentifierHeader(const protobuf::FieldDescriptor* ext,
+void WriteExtensionIdentifierHeader(const protobuf_inworld::FieldDescriptor* ext,
                                     Output& output);
 void WriteExtensionIdentifiers(
-    const std::vector<const protobuf::FieldDescriptor*>& extensions,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& extensions,
     Output& output);
-void WriteExtensionIdentifier(const protobuf::FieldDescriptor* ext,
+void WriteExtensionIdentifier(const protobuf_inworld::FieldDescriptor* ext,
                               Output& output);
 
 }  // namespace protos_generator

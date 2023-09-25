@@ -36,7 +36,7 @@
 #include "google/protobuf/generated_message_reflection.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Visit every node in the descriptors calling `visitor(node, proto)`.
@@ -204,7 +204,7 @@ void VisitDescriptors(const FileDescriptor& file, Visitor visitor) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_DESCRIPTOR_VISITOR_H__

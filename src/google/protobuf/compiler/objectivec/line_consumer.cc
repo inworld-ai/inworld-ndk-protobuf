@@ -55,7 +55,7 @@
 // error cases, so it seems to be ok to use as a back door for errors.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 
@@ -63,7 +63,7 @@ namespace objectivec {
 // in this port namespace to avoid ambiguous definition.
 namespace posix {
 #ifdef _WIN32
-using google::protobuf::io::win32::open;
+using google::protobuf_inworld::io::win32::open;
 #else   // !_WIN32
 using ::open;
 #endif  // _WIN32
@@ -208,5 +208,5 @@ bool ParseSimpleStream(io::ZeroCopyInputStream& input_stream,
 
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -58,7 +58,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 // The type traits in this file provide describe how to read from protobuf
 // representation used by the JSON API, either via proto reflection or via
@@ -431,7 +431,7 @@ struct UnparseProto3Type : Proto3Type {
   }
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

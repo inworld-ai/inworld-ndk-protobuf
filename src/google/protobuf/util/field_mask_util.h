@@ -46,11 +46,11 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
 class PROTOBUF_EXPORT FieldMaskUtil {
-  typedef google::protobuf::FieldMask FieldMask;
+  typedef google::protobuf_inworld::FieldMask FieldMask;
 
  public:
   // Converts FieldMask to/from string, formatted by separating each path
@@ -257,7 +257,7 @@ class PROTOBUF_EXPORT FieldMaskUtil::TrimOptions {
 };
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

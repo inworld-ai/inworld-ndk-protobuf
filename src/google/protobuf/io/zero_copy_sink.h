@@ -40,7 +40,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace zc_sink_internal {
 
@@ -73,7 +73,7 @@ class PROTOBUF_EXPORT ZeroCopyStreamByteSink {
 };
 }  // namespace zc_sink_internal
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

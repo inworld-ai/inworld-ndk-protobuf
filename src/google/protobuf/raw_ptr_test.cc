@@ -36,7 +36,7 @@
 #include "absl/base/optimization.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 namespace {
 
@@ -120,5 +120,5 @@ TEST(RawPtr, ClearIfNotDefault) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

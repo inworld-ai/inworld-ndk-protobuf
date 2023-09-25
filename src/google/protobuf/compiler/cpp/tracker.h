@@ -38,21 +38,21 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
 // Generates printer substitutions for message-level tracker callbacks.
-std::vector<google::protobuf::io::Printer::Sub> MakeTrackerCalls(
-    const google::protobuf::Descriptor* message, const Options& opts);
+std::vector<google::protobuf_inworld::io::Printer::Sub> MakeTrackerCalls(
+    const google::protobuf_inworld::Descriptor* message, const Options& opts);
 
 // Generates printer substitutions for field-specific tracker callbacks.
-std::vector<google::protobuf::io::Printer::Sub> MakeTrackerCalls(
-    const google::protobuf::FieldDescriptor* field, const Options& opts);
+std::vector<google::protobuf_inworld::io::Printer::Sub> MakeTrackerCalls(
+    const google::protobuf_inworld::FieldDescriptor* field, const Options& opts);
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CPP_TRACKER_H__

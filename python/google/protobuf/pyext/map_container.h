@@ -41,7 +41,7 @@
 #include "google/protobuf/pyext/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 
@@ -83,7 +83,7 @@ extern MessageMapContainer* NewMessageMapContainer(
     CMessageClass* message_class);
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_MAP_CONTAINER_H__

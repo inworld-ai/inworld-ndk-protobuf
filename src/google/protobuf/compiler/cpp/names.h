@@ -39,7 +39,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Descriptor;
 class EnumDescriptor;
@@ -105,7 +105,7 @@ PROTOC_EXPORT std::string StripProto(absl::string_view filename);
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -45,11 +45,11 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using Sub = ::google::protobuf::io::Printer::Sub;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 constexpr absl::string_view kTracker = "Impl_::_tracker_";
 constexpr absl::string_view kVarPrefix = "annotate_";
@@ -336,5 +336,5 @@ std::vector<Sub> MakeTrackerCalls(const FieldDescriptor* field,
 }
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

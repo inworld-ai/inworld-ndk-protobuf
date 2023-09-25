@@ -65,7 +65,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace {
 
@@ -2058,7 +2058,7 @@ TEST(MessageDifferencerTest, PrintMapKeysTest) {
       "deleted: item[0].mp[key_c]: 3\n",
       diff);
 
-  google::protobuf::Any any1, any2;
+  google::protobuf_inworld::Any any1, any2;
   any1.PackFrom(msg1);
   any2.PackFrom(msg2);
   std::string diff_with_any;
@@ -4041,5 +4041,5 @@ TEST(Anytest, TreatAsSet_DifferentType) {
 
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -42,7 +42,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 namespace {
@@ -196,5 +196,5 @@ std::string FieldInfoComment(Context<FieldDescriptor> field) {
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

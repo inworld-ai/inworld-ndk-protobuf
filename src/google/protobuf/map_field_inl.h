@@ -50,7 +50,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 // UnwrapMapKey template
 template <typename T>
@@ -203,7 +203,7 @@ const Message* MapField<Derived, Key, T, kKeyFieldType,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

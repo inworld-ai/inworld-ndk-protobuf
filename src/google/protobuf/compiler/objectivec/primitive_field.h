@@ -34,7 +34,7 @@
 #include "google/protobuf/compiler/objectivec/field.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 
@@ -81,7 +81,7 @@ class RepeatedPrimitiveFieldGenerator : public RepeatedFieldGenerator {
 
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_OBJECTIVEC_PRIMITIVE_FIELD_H__

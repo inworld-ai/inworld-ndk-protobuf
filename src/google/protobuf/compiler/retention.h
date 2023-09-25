@@ -38,7 +38,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // Returns a FileDescriptorProto for this file, with all RETENTION_SOURCE
@@ -85,7 +85,7 @@ PROTOC_EXPORT ServiceOptions
 StripLocalSourceRetentionOptions(const ServiceDescriptor& descriptor);
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

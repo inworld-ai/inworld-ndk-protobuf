@@ -58,7 +58,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class DynamicMessage;
 class MapIterator;
 
@@ -289,24 +289,24 @@ struct RealKeyToVariantKey<MapKey> {
 
 }  // namespace internal
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 namespace std {
 template <>
-struct hash<google::protobuf::MapKey> {
-  size_t operator()(const google::protobuf::MapKey& map_key) const {
-    return ::google::protobuf::internal::RealKeyToVariantKey<::google::protobuf::MapKey>{}(map_key)
+struct hash<google::protobuf_inworld::MapKey> {
+  size_t operator()(const google::protobuf_inworld::MapKey& map_key) const {
+    return ::google::protobuf_inworld::internal::RealKeyToVariantKey<::google::protobuf_inworld::MapKey>{}(map_key)
         .Hash();
   }
-  bool operator()(const google::protobuf::MapKey& map_key1,
-                  const google::protobuf::MapKey& map_key2) const {
+  bool operator()(const google::protobuf_inworld::MapKey& map_key1,
+                  const google::protobuf_inworld::MapKey& map_key2) const {
     return map_key1 < map_key2;
   }
 };
 }  // namespace std
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 class ContendedMapCleanTest;
@@ -466,8 +466,8 @@ class PROTOBUF_EXPORT MapFieldBase : public MapFieldBaseForParse {
   friend class ContendedMapCleanTest;
   friend class GeneratedMessageReflection;
   friend class MapFieldAccessor;
-  friend class google::protobuf::Reflection;
-  friend class google::protobuf::DynamicMessage;
+  friend class google::protobuf_inworld::Reflection;
+  friend class google::protobuf_inworld::DynamicMessage;
 
   // See assertion in TypeDefinedMapFieldBase::TypeDefinedMapFieldBase()
   const UntypedMapBase& GetMapRaw() const {
@@ -481,7 +481,7 @@ class PROTOBUF_EXPORT MapFieldBase : public MapFieldBaseForParse {
   // type helper for key and value. Call these help methods to deal with
   // different types. Real helper methods are implemented in
   // TypeDefinedMapFieldBase.
-  friend class google::protobuf::MapIterator;
+  friend class google::protobuf_inworld::MapIterator;
 
   // Copy the map<...>::iterator from other_iterator to
   // this_iterator.
@@ -635,7 +635,7 @@ class MapField final : public TypeDefinedMapFieldBase<Key, T> {
   // Implements MapFieldBase
   const Message* GetPrototype() const final;
 
-  friend class google::protobuf::Arena;
+  friend class google::protobuf_inworld::Arena;
   friend class MapFieldStateTest;  // For testing, it needs raw access to impl_
 };
 
@@ -764,7 +764,7 @@ class PROTOBUF_EXPORT MapValueConstRef {
   friend class internal::MapField;
   template <typename K, typename V>
   friend class internal::TypeDefinedMapFieldBase;
-  friend class google::protobuf::MapIterator;
+  friend class google::protobuf_inworld::MapIterator;
   friend class Reflection;
   friend class internal::DynamicMapField;
   friend class internal::MapFieldBase;
@@ -927,7 +927,7 @@ template <>
 struct is_internal_map_value_type<class MapValueRef> : std::true_type {};
 }  // namespace internal
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #ifdef _MSC_VER

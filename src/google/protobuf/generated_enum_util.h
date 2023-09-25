@@ -50,7 +50,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // This type trait can be used to cause templates to only match proto2 enum
 // types.
@@ -129,7 +129,7 @@ inline PROTOBUF_ALWAYS_INLINE bool ValidateEnumInlined(int value,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

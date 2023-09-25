@@ -54,14 +54,14 @@ class ConformanceRequest;
 class ConformanceResponse;
 }  // namespace conformance
 
-namespace protobuf_test_messages {
+namespace protobuf_inworld_test_messages {
 namespace proto3 {
 class TestAllTypesProto3;
 }  // namespace proto3
-}  // namespace protobuf_test_messages
+}  // namespace protobuf_inworld_test_messages
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class ConformanceTestSuite;
 
@@ -335,7 +335,7 @@ class ConformanceTestSuite {
   absl::btree_set<std::string> skipped_;
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // CONFORMANCE_CONFORMANCE_TEST_H

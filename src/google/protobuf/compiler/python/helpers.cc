@@ -46,7 +46,7 @@
 #include "google/protobuf/descriptor.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace python {
 
@@ -140,5 +140,5 @@ template std::string NamePrefixedWithNestedTypes<EnumDescriptor>(
 
 }  // namespace python
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

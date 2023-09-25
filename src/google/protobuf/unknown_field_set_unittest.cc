@@ -62,7 +62,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 using internal::WireFormat;
 using ::testing::ElementsAre;
@@ -756,5 +756,5 @@ TEST_F(UnknownFieldSetTest, SerializeToCord_TestPackedTypes) {
 
 }  // namespace
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

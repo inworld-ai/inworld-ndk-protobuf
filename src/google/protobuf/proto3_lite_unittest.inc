@@ -39,7 +39,7 @@
 using UNITTEST::TestAllTypes;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 // We selectively set/check a few representative fields rather than all fields
 // as this test is only expected to cover the basics of lite support.
@@ -145,5 +145,5 @@ TEST(LITE_TEST_NAME, OneofHazzers) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

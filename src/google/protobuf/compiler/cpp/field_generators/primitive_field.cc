@@ -51,14 +51,14 @@
 #include "google/protobuf/wire_format.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using ::google::protobuf::internal::WireFormat;
-using ::google::protobuf::internal::WireFormatLite;
-using Sub = ::google::protobuf::io::Printer::Sub;
-using Semantic = ::google::protobuf::io::AnnotationCollector::Semantic;
+using ::google::protobuf_inworld::internal::WireFormat;
+using ::google::protobuf_inworld::internal::WireFormatLite;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
+using Semantic = ::google::protobuf_inworld::io::AnnotationCollector::Semantic;
 
 // For encodings with fixed sizes, returns that size in bytes.
 absl::optional<size_t> FixedSize(FieldDescriptor::Type type) {
@@ -670,5 +670,5 @@ std::unique_ptr<FieldGeneratorBase> MakeRepeatedPrimitiveGenerator(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

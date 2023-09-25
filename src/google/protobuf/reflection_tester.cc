@@ -40,7 +40,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 MapReflectionTester::MapReflectionTester(const Descriptor* base_descriptor)
     : base_descriptor_(base_descriptor) {
@@ -1677,7 +1677,7 @@ void MapReflectionTester::ExpectClearViaReflectionIterator(Message* message) {
               reflection->MapEnd(message, F("map_int32_foreign_message")));
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

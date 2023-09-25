@@ -55,7 +55,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 namespace {
@@ -310,5 +310,5 @@ bool RustGenerator::Generate(const FileDescriptor* file_desc,
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

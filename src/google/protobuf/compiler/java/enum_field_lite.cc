@@ -52,10 +52,10 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
-using Semantic = ::google::protobuf::io::AnnotationCollector::Semantic;
+using Semantic = ::google::protobuf_inworld::io::AnnotationCollector::Semantic;
 
 namespace {
 bool EnableExperimentalRuntimeForLite() {
@@ -962,7 +962,7 @@ std::string RepeatedImmutableEnumFieldLiteGenerator::GetBoxedType() const {
 
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

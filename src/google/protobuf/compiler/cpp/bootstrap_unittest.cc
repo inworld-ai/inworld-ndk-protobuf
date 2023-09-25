@@ -60,7 +60,7 @@
 #include "google/protobuf/test_util2.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
@@ -200,5 +200,5 @@ TEST(BootstrapTest, OptionNotExist) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

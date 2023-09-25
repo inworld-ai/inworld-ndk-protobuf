@@ -38,7 +38,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 void MessagePath::Describe(std::string& out) const {
   absl::StrAppend(&out, components_.front().type_name);
@@ -63,5 +63,5 @@ void MessagePath::Describe(std::string& out) const {
   }
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -41,7 +41,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 inline uint64_t BSwap64(uint64_t host_int) {
@@ -190,7 +190,7 @@ inline uint64_t ToHost(uint64_t value) {
 }  // namespace big_endian
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

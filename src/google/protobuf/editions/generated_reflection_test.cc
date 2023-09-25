@@ -32,7 +32,7 @@
 #include "google/protobuf/editions/golden/test_messages_proto2.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 using ::protobuf_test_messages::proto2::TestAllTypesProto2;
@@ -49,5 +49,5 @@ TEST(Generated, Reflection) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

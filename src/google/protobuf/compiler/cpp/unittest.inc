@@ -82,7 +82,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
@@ -110,7 +110,7 @@ class MockErrorCollector : public MultiFileErrorCollector {
 #ifndef PROTOBUF_TEST_NO_DESCRIPTORS
 
 // Test that generated code has proper descriptors:
-// Parse a descriptor directly (using google::protobuf::compiler::Importer) and
+// Parse a descriptor directly (using google::protobuf_inworld::compiler::Importer) and
 // compare it to the one that was produced by generated code.
 TEST(GENERATED_DESCRIPTOR_TEST_NAME, IdenticalDescriptors) {
   const FileDescriptor* generated_descriptor =
@@ -1258,7 +1258,7 @@ class GENERATED_SERVICE_TEST_NAME : public testing::Test {
       foo_(descriptor_->FindMethodByName("Foo")),
       bar_(descriptor_->FindMethodByName("Bar")),
       stub_(&mock_channel_),
-      done_(::google::protobuf::NewPermanentCallback(&DoNothing)) {}
+      done_(::google::protobuf_inworld::NewPermanentCallback(&DoNothing)) {}
 
   void SetUp() override {
     ASSERT_TRUE(foo_ != nullptr);
@@ -2190,7 +2190,7 @@ TEST_F(GENERATED_SERVICE_TEST_NAME, NoGenericServices) {
   // Verify that a ServiceDescriptor is generated for the service even if the
   // class itself is not.
   const FileDescriptor* file =
-      ::google::protobuf::unittest::no_generic_services_test::TestMessage::descriptor()
+      ::google::protobuf_inworld::unittest::no_generic_services_test::TestMessage::descriptor()
           ->file();
 
   ASSERT_EQ(1, file->service_count());
@@ -2224,7 +2224,7 @@ TEST(DESCRIPTOR_INIT_TEST_NAME, Initialized) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

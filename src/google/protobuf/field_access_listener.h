@@ -38,7 +38,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // A default/no-op implementation of message hooks.
 //
@@ -159,15 +159,15 @@ struct NoOpAccessListener {
                                      const void* field) {}
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #ifndef REPLACE_PROTO_LISTENER_IMPL
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 template <class T>
 using AccessListener = NoOpAccessListener<T>;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 #else
 // You can put your implementations of hooks/listeners here.

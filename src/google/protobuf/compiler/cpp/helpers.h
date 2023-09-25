@@ -58,15 +58,15 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 enum class ArenaDtorNeeds { kNone = 0, kOnDemand = 1, kRequired = 2 };
 
 inline absl::string_view ProtobufNamespace(const Options& opts) {
-  // This won't be transformed by copybara, since copybara looks for google::protobuf::.
+  // This won't be transformed by copybara, since copybara looks for google::protobuf_inworld::.
   constexpr absl::string_view kGoogle3Ns = "proto2";
-  constexpr absl::string_view kOssNs = "google::protobuf";
+  constexpr absl::string_view kOssNs = "google::protobuf_inworld";
 
   return opts.opensource_runtime ? kOssNs : kGoogle3Ns;
 }
@@ -205,7 +205,7 @@ std::string DescriptorTableName(const FileDescriptor* file,
 // dllexport needed for the target file, if any.
 std::string FileDllExport(const FileDescriptor* file, const Options& options);
 
-// Name of the base class: google::protobuf::Message or google::protobuf::MessageLite.
+// Name of the base class: google::protobuf_inworld::Message or google::protobuf_inworld::MessageLite.
 std::string SuperClassName(const Descriptor* descriptor,
                            const Options& options);
 
@@ -777,7 +777,7 @@ inline bool HasSimpleBaseClasses(const FileDescriptor* file,
 inline bool HasTracker(const Descriptor* desc, const Options& options) {
   return options.field_listener_options.inject_field_listener_events &&
          desc->file()->options().optimize_for() !=
-             google::protobuf::FileOptions::LITE_RUNTIME;
+             google::protobuf_inworld::FileOptions::LITE_RUNTIME;
 }
 
 // Returns true if this message needs an Impl_ struct for it's data.
@@ -1075,7 +1075,7 @@ bool HasMessageFieldOrExtension(const Descriptor* desc);
 // be annotated with `field`.
 std::vector<io::Printer::Sub> AnnotatedAccessors(
     const FieldDescriptor* field, absl::Span<const absl::string_view> prefixes,
-    absl::optional<google::protobuf::io::AnnotationCollector::Semantic> semantic =
+    absl::optional<google::protobuf_inworld::io::AnnotationCollector::Semantic> semantic =
         absl::nullopt);
 
 // Check whether `file` represents the .proto file FileDescriptorProto and
@@ -1090,7 +1090,7 @@ bool ShouldGenerateClass(const Descriptor* descriptor, const Options& options);
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

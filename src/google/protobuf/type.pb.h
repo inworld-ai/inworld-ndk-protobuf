@@ -43,21 +43,21 @@
 #define PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftype_2eproto PROTOBUF_EXPORT
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class AnyMetadata;
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // Internal implementation detail -- do not use these members.
 struct PROTOBUF_EXPORT TableStruct_google_2fprotobuf_2ftype_2eproto {
   static const ::uint32_t offsets[];
 };
-PROTOBUF_EXPORT extern const ::google::protobuf::internal::DescriptorTable
+PROTOBUF_EXPORT extern const ::google::protobuf_inworld::internal::DescriptorTable
     descriptor_table_google_2fprotobuf_2ftype_2eproto;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class Enum;
 struct EnumDefaultTypeInternal;
 PROTOBUF_EXPORT extern EnumDefaultTypeInternal _Enum_default_instance_;
@@ -73,11 +73,11 @@ PROTOBUF_EXPORT extern OptionDefaultTypeInternal _Option_default_instance_;
 class Type;
 struct TypeDefaultTypeInternal;
 PROTOBUF_EXPORT extern TypeDefaultTypeInternal _Type_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 enum Field_Kind : int {
   Field_Kind_TYPE_UNKNOWN = 0,
   Field_Kind_TYPE_DOUBLE = 1,
@@ -109,7 +109,7 @@ PROTOBUF_EXPORT extern const uint32_t Field_Kind_internal_data_[];
 constexpr Field_Kind Field_Kind_Kind_MIN = static_cast<Field_Kind>(0);
 constexpr Field_Kind Field_Kind_Kind_MAX = static_cast<Field_Kind>(18);
 constexpr int Field_Kind_Kind_ARRAYSIZE = 18 + 1;
-PROTOBUF_EXPORT const ::google::protobuf::EnumDescriptor*
+PROTOBUF_EXPORT const ::google::protobuf_inworld::EnumDescriptor*
 Field_Kind_descriptor();
 template <typename T>
 const std::string& Field_Kind_Name(T value) {
@@ -120,12 +120,12 @@ const std::string& Field_Kind_Name(T value) {
 }
 template <>
 inline const std::string& Field_Kind_Name(Field_Kind value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<Field_Kind_descriptor,
+  return ::google::protobuf_inworld::internal::NameOfDenseEnum<Field_Kind_descriptor,
                                                  0, 18>(
       static_cast<int>(value));
 }
 inline bool Field_Kind_Parse(absl::string_view name, Field_Kind* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Field_Kind>(
+  return ::google::protobuf_inworld::internal::ParseNamedEnum<Field_Kind>(
       Field_Kind_descriptor(), name, value);
 }
 enum Field_Cardinality : int {
@@ -144,7 +144,7 @@ PROTOBUF_EXPORT extern const uint32_t Field_Cardinality_internal_data_[];
 constexpr Field_Cardinality Field_Cardinality_Cardinality_MIN = static_cast<Field_Cardinality>(0);
 constexpr Field_Cardinality Field_Cardinality_Cardinality_MAX = static_cast<Field_Cardinality>(3);
 constexpr int Field_Cardinality_Cardinality_ARRAYSIZE = 3 + 1;
-PROTOBUF_EXPORT const ::google::protobuf::EnumDescriptor*
+PROTOBUF_EXPORT const ::google::protobuf_inworld::EnumDescriptor*
 Field_Cardinality_descriptor();
 template <typename T>
 const std::string& Field_Cardinality_Name(T value) {
@@ -155,12 +155,12 @@ const std::string& Field_Cardinality_Name(T value) {
 }
 template <>
 inline const std::string& Field_Cardinality_Name(Field_Cardinality value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<Field_Cardinality_descriptor,
+  return ::google::protobuf_inworld::internal::NameOfDenseEnum<Field_Cardinality_descriptor,
                                                  0, 3>(
       static_cast<int>(value));
 }
 inline bool Field_Cardinality_Parse(absl::string_view name, Field_Cardinality* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Field_Cardinality>(
+  return ::google::protobuf_inworld::internal::ParseNamedEnum<Field_Cardinality>(
       Field_Cardinality_descriptor(), name, value);
 }
 enum Syntax : int {
@@ -178,7 +178,7 @@ PROTOBUF_EXPORT extern const uint32_t Syntax_internal_data_[];
 constexpr Syntax Syntax_MIN = static_cast<Syntax>(0);
 constexpr Syntax Syntax_MAX = static_cast<Syntax>(2);
 constexpr int Syntax_ARRAYSIZE = 2 + 1;
-PROTOBUF_EXPORT const ::google::protobuf::EnumDescriptor*
+PROTOBUF_EXPORT const ::google::protobuf_inworld::EnumDescriptor*
 Syntax_descriptor();
 template <typename T>
 const std::string& Syntax_Name(T value) {
@@ -189,12 +189,12 @@ const std::string& Syntax_Name(T value) {
 }
 template <>
 inline const std::string& Syntax_Name(Syntax value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<Syntax_descriptor,
+  return ::google::protobuf_inworld::internal::NameOfDenseEnum<Syntax_descriptor,
                                                  0, 2>(
       static_cast<int>(value));
 }
 inline bool Syntax_Parse(absl::string_view name, Syntax* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Syntax>(
+  return ::google::protobuf_inworld::internal::ParseNamedEnum<Syntax>(
       Syntax_descriptor(), name, value);
 }
 
@@ -204,14 +204,14 @@ inline bool Syntax_Parse(absl::string_view name, Syntax* value) {
 // -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Option final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Option) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Option) */ {
  public:
   inline Option() : Option(nullptr) {}
   ~Option() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Option(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Option(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Option(::google::protobuf::Arena* arena, const Option& from);
+  Option(::google::protobuf_inworld::Arena* arena, const Option& from);
   inline Option(const Option& from)
       : Option(nullptr, from) {}
   Option(Option&& from) noexcept
@@ -237,22 +237,22 @@ class PROTOBUF_EXPORT Option final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Option& default_instance() {
@@ -278,7 +278,7 @@ class PROTOBUF_EXPORT Option final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Option* other) {
@@ -289,46 +289,46 @@ class PROTOBUF_EXPORT Option final :
 
   // implements Message ----------------------------------------------
 
-  Option* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Option* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Option>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const Option& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const Option& from) {
     Option::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(Option* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Option";
   }
   protected:
-  explicit Option(::google::protobuf::Arena* arena);
+  explicit Option(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -357,44 +357,44 @@ class PROTOBUF_EXPORT Option final :
   // .google.protobuf.Any value = 2;
   bool has_value() const;
   void clear_value() ;
-  const ::google::protobuf::Any& value() const;
-  PROTOBUF_NODISCARD ::google::protobuf::Any* release_value();
-  ::google::protobuf::Any* mutable_value();
-  void set_allocated_value(::google::protobuf::Any* value);
-  void unsafe_arena_set_allocated_value(::google::protobuf::Any* value);
-  ::google::protobuf::Any* unsafe_arena_release_value();
+  const ::google::protobuf_inworld::Any& value() const;
+  PROTOBUF_NODISCARD ::google::protobuf_inworld::Any* release_value();
+  ::google::protobuf_inworld::Any* mutable_value();
+  void set_allocated_value(::google::protobuf_inworld::Any* value);
+  void unsafe_arena_set_allocated_value(::google::protobuf_inworld::Any* value);
+  ::google::protobuf_inworld::Any* unsafe_arena_release_value();
 
   private:
-  const ::google::protobuf::Any& _internal_value() const;
-  ::google::protobuf::Any* _internal_mutable_value();
+  const ::google::protobuf_inworld::Any& _internal_value() const;
+  ::google::protobuf_inworld::Any* _internal_mutable_value();
 
   public:
   // @@protoc_insertion_point(class_scope:google.protobuf.Option)
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       1, 2, 1,
       35, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
-    ::google::protobuf::Any* value_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr name_;
+    ::google::protobuf_inworld::Any* value_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -402,14 +402,14 @@ class PROTOBUF_EXPORT Option final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Field final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Field) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Field) */ {
  public:
   inline Field() : Field(nullptr) {}
   ~Field() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Field(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Field(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Field(::google::protobuf::Arena* arena, const Field& from);
+  Field(::google::protobuf_inworld::Arena* arena, const Field& from);
   inline Field(const Field& from)
       : Field(nullptr, from) {}
   Field(Field&& from) noexcept
@@ -435,22 +435,22 @@ class PROTOBUF_EXPORT Field final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Field& default_instance() {
@@ -476,7 +476,7 @@ class PROTOBUF_EXPORT Field final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Field* other) {
@@ -487,46 +487,46 @@ class PROTOBUF_EXPORT Field final :
 
   // implements Message ----------------------------------------------
 
-  Field* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Field* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Field>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const Field& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const Field& from) {
     Field::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(Field* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Field";
   }
   protected:
-  explicit Field(::google::protobuf::Arena* arena);
+  explicit Field(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -556,7 +556,7 @@ class PROTOBUF_EXPORT Field final :
   static constexpr Kind Kind_MIN = Field_Kind_Kind_MIN;
   static constexpr Kind Kind_MAX = Field_Kind_Kind_MAX;
   static constexpr int Kind_ARRAYSIZE = Field_Kind_Kind_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor* Kind_descriptor() {
+  static inline const ::google::protobuf_inworld::EnumDescriptor* Kind_descriptor() {
     return Field_Kind_descriptor();
   }
   template <typename T>
@@ -578,7 +578,7 @@ class PROTOBUF_EXPORT Field final :
   static constexpr Cardinality Cardinality_MIN = Field_Cardinality_Cardinality_MIN;
   static constexpr Cardinality Cardinality_MAX = Field_Cardinality_Cardinality_MAX;
   static constexpr int Cardinality_ARRAYSIZE = Field_Cardinality_Cardinality_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor* Cardinality_descriptor() {
+  static inline const ::google::protobuf_inworld::EnumDescriptor* Cardinality_descriptor() {
     return Field_Cardinality_descriptor();
   }
   template <typename T>
@@ -610,16 +610,16 @@ class PROTOBUF_EXPORT Field final :
 
   public:
   void clear_options() ;
-  ::google::protobuf::Option* mutable_options(int index);
-  ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >*
+  ::google::protobuf_inworld::Option* mutable_options(int index);
+  ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >*
       mutable_options();
   private:
-  const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& _internal_options() const;
-  ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* _internal_mutable_options();
+  const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& _internal_options() const;
+  ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* _internal_mutable_options();
   public:
-  const ::google::protobuf::Option& options(int index) const;
-  ::google::protobuf::Option* add_options();
-  const ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >&
+  const ::google::protobuf_inworld::Option& options(int index) const;
+  ::google::protobuf_inworld::Option* add_options();
+  const ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >&
       options() const;
   // string name = 4;
   void clear_name() ;
@@ -687,22 +687,22 @@ class PROTOBUF_EXPORT Field final :
   public:
   // .google.protobuf.Field.Kind kind = 1;
   void clear_kind() ;
-  ::google::protobuf::Field_Kind kind() const;
-  void set_kind(::google::protobuf::Field_Kind value);
+  ::google::protobuf_inworld::Field_Kind kind() const;
+  void set_kind(::google::protobuf_inworld::Field_Kind value);
 
   private:
-  ::google::protobuf::Field_Kind _internal_kind() const;
-  void _internal_set_kind(::google::protobuf::Field_Kind value);
+  ::google::protobuf_inworld::Field_Kind _internal_kind() const;
+  void _internal_set_kind(::google::protobuf_inworld::Field_Kind value);
 
   public:
   // .google.protobuf.Field.Cardinality cardinality = 2;
   void clear_cardinality() ;
-  ::google::protobuf::Field_Cardinality cardinality() const;
-  void set_cardinality(::google::protobuf::Field_Cardinality value);
+  ::google::protobuf_inworld::Field_Cardinality cardinality() const;
+  void set_cardinality(::google::protobuf_inworld::Field_Cardinality value);
 
   private:
-  ::google::protobuf::Field_Cardinality _internal_cardinality() const;
-  void _internal_set_cardinality(::google::protobuf::Field_Cardinality value);
+  ::google::protobuf_inworld::Field_Cardinality _internal_cardinality() const;
+  void _internal_set_cardinality(::google::protobuf_inworld::Field_Cardinality value);
 
   public:
   // int32 number = 3;
@@ -739,35 +739,35 @@ class PROTOBUF_EXPORT Field final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       4, 10, 1,
       72, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option > options_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
-    ::google::protobuf::internal::ArenaStringPtr type_url_;
-    ::google::protobuf::internal::ArenaStringPtr json_name_;
-    ::google::protobuf::internal::ArenaStringPtr default_value_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option > options_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr name_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr type_url_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr json_name_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr default_value_;
     int kind_;
     int cardinality_;
     ::int32_t number_;
     ::int32_t oneof_index_;
     bool packed_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -775,14 +775,14 @@ class PROTOBUF_EXPORT Field final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT EnumValue final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.EnumValue) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.EnumValue) */ {
  public:
   inline EnumValue() : EnumValue(nullptr) {}
   ~EnumValue() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR EnumValue(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR EnumValue(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  EnumValue(::google::protobuf::Arena* arena, const EnumValue& from);
+  EnumValue(::google::protobuf_inworld::Arena* arena, const EnumValue& from);
   inline EnumValue(const EnumValue& from)
       : EnumValue(nullptr, from) {}
   EnumValue(EnumValue&& from) noexcept
@@ -808,22 +808,22 @@ class PROTOBUF_EXPORT EnumValue final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const EnumValue& default_instance() {
@@ -849,7 +849,7 @@ class PROTOBUF_EXPORT EnumValue final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(EnumValue* other) {
@@ -860,46 +860,46 @@ class PROTOBUF_EXPORT EnumValue final :
 
   // implements Message ----------------------------------------------
 
-  EnumValue* New(::google::protobuf::Arena* arena = nullptr) const final {
+  EnumValue* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<EnumValue>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const EnumValue& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const EnumValue& from) {
     EnumValue::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(EnumValue* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.EnumValue";
   }
   protected:
-  explicit EnumValue(::google::protobuf::Arena* arena);
+  explicit EnumValue(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -917,16 +917,16 @@ class PROTOBUF_EXPORT EnumValue final :
 
   public:
   void clear_options() ;
-  ::google::protobuf::Option* mutable_options(int index);
-  ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >*
+  ::google::protobuf_inworld::Option* mutable_options(int index);
+  ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >*
       mutable_options();
   private:
-  const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& _internal_options() const;
-  ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* _internal_mutable_options();
+  const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& _internal_options() const;
+  ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* _internal_mutable_options();
   public:
-  const ::google::protobuf::Option& options(int index) const;
-  ::google::protobuf::Option* add_options();
-  const ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >&
+  const ::google::protobuf_inworld::Option& options(int index) const;
+  ::google::protobuf_inworld::Option* add_options();
+  const ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >&
       options() const;
   // string name = 1;
   void clear_name() ;
@@ -958,28 +958,28 @@ class PROTOBUF_EXPORT EnumValue final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       2, 3, 1,
       38, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option > options_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option > options_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr name_;
     ::int32_t number_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -987,14 +987,14 @@ class PROTOBUF_EXPORT EnumValue final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Type final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Type) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Type) */ {
  public:
   inline Type() : Type(nullptr) {}
   ~Type() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Type(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Type(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Type(::google::protobuf::Arena* arena, const Type& from);
+  Type(::google::protobuf_inworld::Arena* arena, const Type& from);
   inline Type(const Type& from)
       : Type(nullptr, from) {}
   Type(Type&& from) noexcept
@@ -1020,22 +1020,22 @@ class PROTOBUF_EXPORT Type final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Type& default_instance() {
@@ -1061,7 +1061,7 @@ class PROTOBUF_EXPORT Type final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Type* other) {
@@ -1072,46 +1072,46 @@ class PROTOBUF_EXPORT Type final :
 
   // implements Message ----------------------------------------------
 
-  Type* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Type* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Type>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const Type& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const Type& from) {
     Type::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(Type* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Type";
   }
   protected:
-  explicit Type(::google::protobuf::Arena* arena);
+  explicit Type(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1133,16 +1133,16 @@ class PROTOBUF_EXPORT Type final :
 
   public:
   void clear_fields() ;
-  ::google::protobuf::Field* mutable_fields(int index);
-  ::google::protobuf::RepeatedPtrField< ::google::protobuf::Field >*
+  ::google::protobuf_inworld::Field* mutable_fields(int index);
+  ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Field >*
       mutable_fields();
   private:
-  const ::google::protobuf::RepeatedPtrField<::google::protobuf::Field>& _internal_fields() const;
-  ::google::protobuf::RepeatedPtrField<::google::protobuf::Field>* _internal_mutable_fields();
+  const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Field>& _internal_fields() const;
+  ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Field>* _internal_mutable_fields();
   public:
-  const ::google::protobuf::Field& fields(int index) const;
-  ::google::protobuf::Field* add_fields();
-  const ::google::protobuf::RepeatedPtrField< ::google::protobuf::Field >&
+  const ::google::protobuf_inworld::Field& fields(int index) const;
+  ::google::protobuf_inworld::Field* add_fields();
+  const ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Field >&
       fields() const;
   // repeated string oneofs = 3;
   int oneofs_size() const;
@@ -1164,12 +1164,12 @@ class PROTOBUF_EXPORT Type final :
   void add_oneofs(const char* value);
   void add_oneofs(const char* value, std::size_t size);
   void add_oneofs(absl::string_view value);
-  const ::google::protobuf::RepeatedPtrField<std::string>& oneofs() const;
-  ::google::protobuf::RepeatedPtrField<std::string>* mutable_oneofs();
+  const ::google::protobuf_inworld::RepeatedPtrField<std::string>& oneofs() const;
+  ::google::protobuf_inworld::RepeatedPtrField<std::string>* mutable_oneofs();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<std::string>& _internal_oneofs() const;
-  ::google::protobuf::RepeatedPtrField<std::string>* _internal_mutable_oneofs();
+  const ::google::protobuf_inworld::RepeatedPtrField<std::string>& _internal_oneofs() const;
+  ::google::protobuf_inworld::RepeatedPtrField<std::string>* _internal_mutable_oneofs();
 
   public:
   // repeated .google.protobuf.Option options = 4;
@@ -1179,16 +1179,16 @@ class PROTOBUF_EXPORT Type final :
 
   public:
   void clear_options() ;
-  ::google::protobuf::Option* mutable_options(int index);
-  ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >*
+  ::google::protobuf_inworld::Option* mutable_options(int index);
+  ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >*
       mutable_options();
   private:
-  const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& _internal_options() const;
-  ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* _internal_mutable_options();
+  const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& _internal_options() const;
+  ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* _internal_mutable_options();
   public:
-  const ::google::protobuf::Option& options(int index) const;
-  ::google::protobuf::Option* add_options();
-  const ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >&
+  const ::google::protobuf_inworld::Option& options(int index) const;
+  ::google::protobuf_inworld::Option* add_options();
+  const ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >&
       options() const;
   // string name = 1;
   void clear_name() ;
@@ -1225,58 +1225,58 @@ class PROTOBUF_EXPORT Type final :
   // .google.protobuf.SourceContext source_context = 5;
   bool has_source_context() const;
   void clear_source_context() ;
-  const ::google::protobuf::SourceContext& source_context() const;
-  PROTOBUF_NODISCARD ::google::protobuf::SourceContext* release_source_context();
-  ::google::protobuf::SourceContext* mutable_source_context();
-  void set_allocated_source_context(::google::protobuf::SourceContext* value);
-  void unsafe_arena_set_allocated_source_context(::google::protobuf::SourceContext* value);
-  ::google::protobuf::SourceContext* unsafe_arena_release_source_context();
+  const ::google::protobuf_inworld::SourceContext& source_context() const;
+  PROTOBUF_NODISCARD ::google::protobuf_inworld::SourceContext* release_source_context();
+  ::google::protobuf_inworld::SourceContext* mutable_source_context();
+  void set_allocated_source_context(::google::protobuf_inworld::SourceContext* value);
+  void unsafe_arena_set_allocated_source_context(::google::protobuf_inworld::SourceContext* value);
+  ::google::protobuf_inworld::SourceContext* unsafe_arena_release_source_context();
 
   private:
-  const ::google::protobuf::SourceContext& _internal_source_context() const;
-  ::google::protobuf::SourceContext* _internal_mutable_source_context();
+  const ::google::protobuf_inworld::SourceContext& _internal_source_context() const;
+  ::google::protobuf_inworld::SourceContext* _internal_mutable_source_context();
 
   public:
   // .google.protobuf.Syntax syntax = 6;
   void clear_syntax() ;
-  ::google::protobuf::Syntax syntax() const;
-  void set_syntax(::google::protobuf::Syntax value);
+  ::google::protobuf_inworld::Syntax syntax() const;
+  void set_syntax(::google::protobuf_inworld::Syntax value);
 
   private:
-  ::google::protobuf::Syntax _internal_syntax() const;
-  void _internal_set_syntax(::google::protobuf::Syntax value);
+  ::google::protobuf_inworld::Syntax _internal_syntax() const;
+  void _internal_set_syntax(::google::protobuf_inworld::Syntax value);
 
   public:
   // @@protoc_insertion_point(class_scope:google.protobuf.Type)
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       3, 7, 3,
       46, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField< ::google::protobuf::Field > fields_;
-    ::google::protobuf::RepeatedPtrField<std::string> oneofs_;
-    ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option > options_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
-    ::google::protobuf::internal::ArenaStringPtr edition_;
-    ::google::protobuf::SourceContext* source_context_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
+    ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Field > fields_;
+    ::google::protobuf_inworld::RepeatedPtrField<std::string> oneofs_;
+    ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option > options_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr name_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr edition_;
+    ::google::protobuf_inworld::SourceContext* source_context_;
     int syntax_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1285,14 +1285,14 @@ class PROTOBUF_EXPORT Type final :
 };// -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Enum final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Enum) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.Enum) */ {
  public:
   inline Enum() : Enum(nullptr) {}
   ~Enum() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Enum(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Enum(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Enum(::google::protobuf::Arena* arena, const Enum& from);
+  Enum(::google::protobuf_inworld::Arena* arena, const Enum& from);
   inline Enum(const Enum& from)
       : Enum(nullptr, from) {}
   Enum(Enum&& from) noexcept
@@ -1318,22 +1318,22 @@ class PROTOBUF_EXPORT Enum final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Enum& default_instance() {
@@ -1359,7 +1359,7 @@ class PROTOBUF_EXPORT Enum final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Enum* other) {
@@ -1370,46 +1370,46 @@ class PROTOBUF_EXPORT Enum final :
 
   // implements Message ----------------------------------------------
 
-  Enum* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Enum* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Enum>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const Enum& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const Enum& from) {
     Enum::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(Enum* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Enum";
   }
   protected:
-  explicit Enum(::google::protobuf::Arena* arena);
+  explicit Enum(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1430,16 +1430,16 @@ class PROTOBUF_EXPORT Enum final :
 
   public:
   void clear_enumvalue() ;
-  ::google::protobuf::EnumValue* mutable_enumvalue(int index);
-  ::google::protobuf::RepeatedPtrField< ::google::protobuf::EnumValue >*
+  ::google::protobuf_inworld::EnumValue* mutable_enumvalue(int index);
+  ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::EnumValue >*
       mutable_enumvalue();
   private:
-  const ::google::protobuf::RepeatedPtrField<::google::protobuf::EnumValue>& _internal_enumvalue() const;
-  ::google::protobuf::RepeatedPtrField<::google::protobuf::EnumValue>* _internal_mutable_enumvalue();
+  const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::EnumValue>& _internal_enumvalue() const;
+  ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::EnumValue>* _internal_mutable_enumvalue();
   public:
-  const ::google::protobuf::EnumValue& enumvalue(int index) const;
-  ::google::protobuf::EnumValue* add_enumvalue();
-  const ::google::protobuf::RepeatedPtrField< ::google::protobuf::EnumValue >&
+  const ::google::protobuf_inworld::EnumValue& enumvalue(int index) const;
+  ::google::protobuf_inworld::EnumValue* add_enumvalue();
+  const ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::EnumValue >&
       enumvalue() const;
   // repeated .google.protobuf.Option options = 3;
   int options_size() const;
@@ -1448,16 +1448,16 @@ class PROTOBUF_EXPORT Enum final :
 
   public:
   void clear_options() ;
-  ::google::protobuf::Option* mutable_options(int index);
-  ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >*
+  ::google::protobuf_inworld::Option* mutable_options(int index);
+  ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >*
       mutable_options();
   private:
-  const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& _internal_options() const;
-  ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* _internal_mutable_options();
+  const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& _internal_options() const;
+  ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* _internal_mutable_options();
   public:
-  const ::google::protobuf::Option& options(int index) const;
-  ::google::protobuf::Option* add_options();
-  const ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option >&
+  const ::google::protobuf_inworld::Option& options(int index) const;
+  ::google::protobuf_inworld::Option* add_options();
+  const ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option >&
       options() const;
   // string name = 1;
   void clear_name() ;
@@ -1494,57 +1494,57 @@ class PROTOBUF_EXPORT Enum final :
   // .google.protobuf.SourceContext source_context = 4;
   bool has_source_context() const;
   void clear_source_context() ;
-  const ::google::protobuf::SourceContext& source_context() const;
-  PROTOBUF_NODISCARD ::google::protobuf::SourceContext* release_source_context();
-  ::google::protobuf::SourceContext* mutable_source_context();
-  void set_allocated_source_context(::google::protobuf::SourceContext* value);
-  void unsafe_arena_set_allocated_source_context(::google::protobuf::SourceContext* value);
-  ::google::protobuf::SourceContext* unsafe_arena_release_source_context();
+  const ::google::protobuf_inworld::SourceContext& source_context() const;
+  PROTOBUF_NODISCARD ::google::protobuf_inworld::SourceContext* release_source_context();
+  ::google::protobuf_inworld::SourceContext* mutable_source_context();
+  void set_allocated_source_context(::google::protobuf_inworld::SourceContext* value);
+  void unsafe_arena_set_allocated_source_context(::google::protobuf_inworld::SourceContext* value);
+  ::google::protobuf_inworld::SourceContext* unsafe_arena_release_source_context();
 
   private:
-  const ::google::protobuf::SourceContext& _internal_source_context() const;
-  ::google::protobuf::SourceContext* _internal_mutable_source_context();
+  const ::google::protobuf_inworld::SourceContext& _internal_source_context() const;
+  ::google::protobuf_inworld::SourceContext* _internal_mutable_source_context();
 
   public:
   // .google.protobuf.Syntax syntax = 5;
   void clear_syntax() ;
-  ::google::protobuf::Syntax syntax() const;
-  void set_syntax(::google::protobuf::Syntax value);
+  ::google::protobuf_inworld::Syntax syntax() const;
+  void set_syntax(::google::protobuf_inworld::Syntax value);
 
   private:
-  ::google::protobuf::Syntax _internal_syntax() const;
-  void _internal_set_syntax(::google::protobuf::Syntax value);
+  ::google::protobuf_inworld::Syntax _internal_syntax() const;
+  void _internal_set_syntax(::google::protobuf_inworld::Syntax value);
 
   public:
   // @@protoc_insertion_point(class_scope:google.protobuf.Enum)
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       3, 6, 3,
       40, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField< ::google::protobuf::EnumValue > enumvalue_;
-    ::google::protobuf::RepeatedPtrField< ::google::protobuf::Option > options_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
-    ::google::protobuf::internal::ArenaStringPtr edition_;
-    ::google::protobuf::SourceContext* source_context_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
+    ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::EnumValue > enumvalue_;
+    ::google::protobuf_inworld::RepeatedPtrField< ::google::protobuf_inworld::Option > options_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr name_;
+    ::google::protobuf_inworld::internal::ArenaStringPtr edition_;
+    ::google::protobuf_inworld::SourceContext* source_context_;
     int syntax_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1632,39 +1632,39 @@ inline void Type::clear_fields() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.fields_.Clear();
 }
-inline ::google::protobuf::Field* Type::mutable_fields(int index)
+inline ::google::protobuf_inworld::Field* Type::mutable_fields(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:google.protobuf.Type.fields)
   return _internal_mutable_fields()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Field>* Type::mutable_fields()
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Field>* Type::mutable_fields()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.Type.fields)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_fields();
 }
-inline const ::google::protobuf::Field& Type::fields(int index) const
+inline const ::google::protobuf_inworld::Field& Type::fields(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Type.fields)
   return _internal_fields().Get(index);
 }
-inline ::google::protobuf::Field* Type::add_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf_inworld::Field* Type::add_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::google::protobuf::Field* _add = _internal_mutable_fields()->Add();
+  ::google::protobuf_inworld::Field* _add = _internal_mutable_fields()->Add();
   // @@protoc_insertion_point(field_add:google.protobuf.Type.fields)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Field>& Type::fields() const
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Field>& Type::fields() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.Type.fields)
   return _internal_fields();
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Field>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Field>&
 Type::_internal_fields() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.fields_;
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Field>*
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Field>*
 Type::_internal_mutable_fields() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.fields_;
@@ -1749,23 +1749,23 @@ inline void Type::add_oneofs(absl::string_view value) {
   _internal_mutable_oneofs()->Add()->assign(value.data(), value.size());
   // @@protoc_insertion_point(field_add_string_piece:google.protobuf.Type.oneofs)
 }
-inline const ::google::protobuf::RepeatedPtrField<std::string>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<std::string>&
 Type::oneofs() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.Type.oneofs)
   return _internal_oneofs();
 }
-inline ::google::protobuf::RepeatedPtrField<std::string>*
+inline ::google::protobuf_inworld::RepeatedPtrField<std::string>*
 Type::mutable_oneofs() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.Type.oneofs)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_oneofs();
 }
-inline const ::google::protobuf::RepeatedPtrField<std::string>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<std::string>&
 Type::_internal_oneofs() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.oneofs_;
 }
-inline ::google::protobuf::RepeatedPtrField<std::string>*
+inline ::google::protobuf_inworld::RepeatedPtrField<std::string>*
 Type::_internal_mutable_oneofs() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.oneofs_;
@@ -1782,39 +1782,39 @@ inline void Type::clear_options() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.options_.Clear();
 }
-inline ::google::protobuf::Option* Type::mutable_options(int index)
+inline ::google::protobuf_inworld::Option* Type::mutable_options(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:google.protobuf.Type.options)
   return _internal_mutable_options()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* Type::mutable_options()
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* Type::mutable_options()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.Type.options)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_options();
 }
-inline const ::google::protobuf::Option& Type::options(int index) const
+inline const ::google::protobuf_inworld::Option& Type::options(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Type.options)
   return _internal_options().Get(index);
 }
-inline ::google::protobuf::Option* Type::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf_inworld::Option* Type::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::google::protobuf::Option* _add = _internal_mutable_options()->Add();
+  ::google::protobuf_inworld::Option* _add = _internal_mutable_options()->Add();
   // @@protoc_insertion_point(field_add:google.protobuf.Type.options)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& Type::options() const
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& Type::options() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.Type.options)
   return _internal_options();
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>&
 Type::_internal_options() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.options_;
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>*
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>*
 Type::_internal_mutable_options() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.options_;
@@ -1826,21 +1826,21 @@ inline bool Type::has_source_context() const {
   PROTOBUF_ASSUME(!value || _impl_.source_context_ != nullptr);
   return value;
 }
-inline const ::google::protobuf::SourceContext& Type::_internal_source_context() const {
+inline const ::google::protobuf_inworld::SourceContext& Type::_internal_source_context() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::google::protobuf::SourceContext* p = _impl_.source_context_;
-  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::SourceContext&>(::google::protobuf::_SourceContext_default_instance_);
+  const ::google::protobuf_inworld::SourceContext* p = _impl_.source_context_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf_inworld::SourceContext&>(::google::protobuf_inworld::_SourceContext_default_instance_);
 }
-inline const ::google::protobuf::SourceContext& Type::source_context() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::google::protobuf_inworld::SourceContext& Type::source_context() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Type.source_context)
   return _internal_source_context();
 }
-inline void Type::unsafe_arena_set_allocated_source_context(::google::protobuf::SourceContext* value) {
+inline void Type::unsafe_arena_set_allocated_source_context(::google::protobuf_inworld::SourceContext* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.source_context_);
+    delete reinterpret_cast<::google::protobuf_inworld::MessageLite*>(_impl_.source_context_);
   }
-  _impl_.source_context_ = reinterpret_cast<::google::protobuf::SourceContext*>(value);
+  _impl_.source_context_ = reinterpret_cast<::google::protobuf_inworld::SourceContext*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
@@ -1848,67 +1848,67 @@ inline void Type::unsafe_arena_set_allocated_source_context(::google::protobuf::
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:google.protobuf.Type.source_context)
 }
-inline ::google::protobuf::SourceContext* Type::release_source_context() {
+inline ::google::protobuf_inworld::SourceContext* Type::release_source_context() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::SourceContext* released = _impl_.source_context_;
+  ::google::protobuf_inworld::SourceContext* released = _impl_.source_context_;
   _impl_.source_context_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  auto* old = reinterpret_cast<::google::protobuf_inworld::MessageLite*>(released);
+  released = ::google::protobuf_inworld::internal::DuplicateIfNonNull(released);
   if (GetArenaForAllocation() == nullptr) {
     delete old;
   }
 #else   // PROTOBUF_FORCE_COPY_IN_RELEASE
   if (GetArenaForAllocation() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    released = ::google::protobuf_inworld::internal::DuplicateIfNonNull(released);
   }
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return released;
 }
-inline ::google::protobuf::SourceContext* Type::unsafe_arena_release_source_context() {
+inline ::google::protobuf_inworld::SourceContext* Type::unsafe_arena_release_source_context() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   // @@protoc_insertion_point(field_release:google.protobuf.Type.source_context)
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::SourceContext* temp = _impl_.source_context_;
+  ::google::protobuf_inworld::SourceContext* temp = _impl_.source_context_;
   _impl_.source_context_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::SourceContext* Type::_internal_mutable_source_context() {
+inline ::google::protobuf_inworld::SourceContext* Type::_internal_mutable_source_context() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.source_context_ == nullptr) {
-    auto* p = CreateMaybeMessage<::google::protobuf::SourceContext>(GetArenaForAllocation());
-    _impl_.source_context_ = reinterpret_cast<::google::protobuf::SourceContext*>(p);
+    auto* p = CreateMaybeMessage<::google::protobuf_inworld::SourceContext>(GetArenaForAllocation());
+    _impl_.source_context_ = reinterpret_cast<::google::protobuf_inworld::SourceContext*>(p);
   }
   return _impl_.source_context_;
 }
-inline ::google::protobuf::SourceContext* Type::mutable_source_context() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::google::protobuf::SourceContext* _msg = _internal_mutable_source_context();
+inline ::google::protobuf_inworld::SourceContext* Type::mutable_source_context() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf_inworld::SourceContext* _msg = _internal_mutable_source_context();
   // @@protoc_insertion_point(field_mutable:google.protobuf.Type.source_context)
   return _msg;
 }
-inline void Type::set_allocated_source_context(::google::protobuf::SourceContext* value) {
-  ::google::protobuf::Arena* message_arena = GetArenaForAllocation();
+inline void Type::set_allocated_source_context(::google::protobuf_inworld::SourceContext* value) {
+  ::google::protobuf_inworld::Arena* message_arena = GetArenaForAllocation();
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.source_context_);
+    delete reinterpret_cast<::google::protobuf_inworld::MessageLite*>(_impl_.source_context_);
   }
 
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena =
-        ::google::protobuf::Arena::InternalGetOwningArena(reinterpret_cast<::google::protobuf::MessageLite*>(value));
+    ::google::protobuf_inworld::Arena* submessage_arena =
+        ::google::protobuf_inworld::Arena::InternalGetOwningArena(reinterpret_cast<::google::protobuf_inworld::MessageLite*>(value));
     if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+      value = ::google::protobuf_inworld::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
 
-  _impl_.source_context_ = reinterpret_cast<::google::protobuf::SourceContext*>(value);
+  _impl_.source_context_ = reinterpret_cast<::google::protobuf_inworld::SourceContext*>(value);
   // @@protoc_insertion_point(field_set_allocated:google.protobuf.Type.source_context)
 }
 
@@ -1917,19 +1917,19 @@ inline void Type::clear_syntax() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.syntax_ = 0;
 }
-inline ::google::protobuf::Syntax Type::syntax() const {
+inline ::google::protobuf_inworld::Syntax Type::syntax() const {
   // @@protoc_insertion_point(field_get:google.protobuf.Type.syntax)
   return _internal_syntax();
 }
-inline void Type::set_syntax(::google::protobuf::Syntax value) {
+inline void Type::set_syntax(::google::protobuf_inworld::Syntax value) {
   _internal_set_syntax(value);
   // @@protoc_insertion_point(field_set:google.protobuf.Type.syntax)
 }
-inline ::google::protobuf::Syntax Type::_internal_syntax() const {
+inline ::google::protobuf_inworld::Syntax Type::_internal_syntax() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return static_cast<::google::protobuf::Syntax>(_impl_.syntax_);
+  return static_cast<::google::protobuf_inworld::Syntax>(_impl_.syntax_);
 }
-inline void Type::_internal_set_syntax(::google::protobuf::Syntax value) {
+inline void Type::_internal_set_syntax(::google::protobuf_inworld::Syntax value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.syntax_ = value;
@@ -1997,19 +1997,19 @@ inline void Field::clear_kind() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.kind_ = 0;
 }
-inline ::google::protobuf::Field_Kind Field::kind() const {
+inline ::google::protobuf_inworld::Field_Kind Field::kind() const {
   // @@protoc_insertion_point(field_get:google.protobuf.Field.kind)
   return _internal_kind();
 }
-inline void Field::set_kind(::google::protobuf::Field_Kind value) {
+inline void Field::set_kind(::google::protobuf_inworld::Field_Kind value) {
   _internal_set_kind(value);
   // @@protoc_insertion_point(field_set:google.protobuf.Field.kind)
 }
-inline ::google::protobuf::Field_Kind Field::_internal_kind() const {
+inline ::google::protobuf_inworld::Field_Kind Field::_internal_kind() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return static_cast<::google::protobuf::Field_Kind>(_impl_.kind_);
+  return static_cast<::google::protobuf_inworld::Field_Kind>(_impl_.kind_);
 }
-inline void Field::_internal_set_kind(::google::protobuf::Field_Kind value) {
+inline void Field::_internal_set_kind(::google::protobuf_inworld::Field_Kind value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.kind_ = value;
@@ -2020,19 +2020,19 @@ inline void Field::clear_cardinality() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.cardinality_ = 0;
 }
-inline ::google::protobuf::Field_Cardinality Field::cardinality() const {
+inline ::google::protobuf_inworld::Field_Cardinality Field::cardinality() const {
   // @@protoc_insertion_point(field_get:google.protobuf.Field.cardinality)
   return _internal_cardinality();
 }
-inline void Field::set_cardinality(::google::protobuf::Field_Cardinality value) {
+inline void Field::set_cardinality(::google::protobuf_inworld::Field_Cardinality value) {
   _internal_set_cardinality(value);
   // @@protoc_insertion_point(field_set:google.protobuf.Field.cardinality)
 }
-inline ::google::protobuf::Field_Cardinality Field::_internal_cardinality() const {
+inline ::google::protobuf_inworld::Field_Cardinality Field::_internal_cardinality() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return static_cast<::google::protobuf::Field_Cardinality>(_impl_.cardinality_);
+  return static_cast<::google::protobuf_inworld::Field_Cardinality>(_impl_.cardinality_);
 }
-inline void Field::_internal_set_cardinality(::google::protobuf::Field_Cardinality value) {
+inline void Field::_internal_set_cardinality(::google::protobuf_inworld::Field_Cardinality value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.cardinality_ = value;
@@ -2224,39 +2224,39 @@ inline void Field::clear_options() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.options_.Clear();
 }
-inline ::google::protobuf::Option* Field::mutable_options(int index)
+inline ::google::protobuf_inworld::Option* Field::mutable_options(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:google.protobuf.Field.options)
   return _internal_mutable_options()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* Field::mutable_options()
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* Field::mutable_options()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.Field.options)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_options();
 }
-inline const ::google::protobuf::Option& Field::options(int index) const
+inline const ::google::protobuf_inworld::Option& Field::options(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Field.options)
   return _internal_options().Get(index);
 }
-inline ::google::protobuf::Option* Field::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf_inworld::Option* Field::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::google::protobuf::Option* _add = _internal_mutable_options()->Add();
+  ::google::protobuf_inworld::Option* _add = _internal_mutable_options()->Add();
   // @@protoc_insertion_point(field_add:google.protobuf.Field.options)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& Field::options() const
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& Field::options() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.Field.options)
   return _internal_options();
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>&
 Field::_internal_options() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.options_;
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>*
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>*
 Field::_internal_mutable_options() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.options_;
@@ -2436,39 +2436,39 @@ inline void Enum::clear_enumvalue() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.enumvalue_.Clear();
 }
-inline ::google::protobuf::EnumValue* Enum::mutable_enumvalue(int index)
+inline ::google::protobuf_inworld::EnumValue* Enum::mutable_enumvalue(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:google.protobuf.Enum.enumvalue)
   return _internal_mutable_enumvalue()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::EnumValue>* Enum::mutable_enumvalue()
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::EnumValue>* Enum::mutable_enumvalue()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.Enum.enumvalue)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_enumvalue();
 }
-inline const ::google::protobuf::EnumValue& Enum::enumvalue(int index) const
+inline const ::google::protobuf_inworld::EnumValue& Enum::enumvalue(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Enum.enumvalue)
   return _internal_enumvalue().Get(index);
 }
-inline ::google::protobuf::EnumValue* Enum::add_enumvalue() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf_inworld::EnumValue* Enum::add_enumvalue() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::google::protobuf::EnumValue* _add = _internal_mutable_enumvalue()->Add();
+  ::google::protobuf_inworld::EnumValue* _add = _internal_mutable_enumvalue()->Add();
   // @@protoc_insertion_point(field_add:google.protobuf.Enum.enumvalue)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::EnumValue>& Enum::enumvalue() const
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::EnumValue>& Enum::enumvalue() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.Enum.enumvalue)
   return _internal_enumvalue();
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::EnumValue>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::EnumValue>&
 Enum::_internal_enumvalue() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.enumvalue_;
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::EnumValue>*
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::EnumValue>*
 Enum::_internal_mutable_enumvalue() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.enumvalue_;
@@ -2485,39 +2485,39 @@ inline void Enum::clear_options() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.options_.Clear();
 }
-inline ::google::protobuf::Option* Enum::mutable_options(int index)
+inline ::google::protobuf_inworld::Option* Enum::mutable_options(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:google.protobuf.Enum.options)
   return _internal_mutable_options()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* Enum::mutable_options()
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* Enum::mutable_options()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.Enum.options)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_options();
 }
-inline const ::google::protobuf::Option& Enum::options(int index) const
+inline const ::google::protobuf_inworld::Option& Enum::options(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Enum.options)
   return _internal_options().Get(index);
 }
-inline ::google::protobuf::Option* Enum::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf_inworld::Option* Enum::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::google::protobuf::Option* _add = _internal_mutable_options()->Add();
+  ::google::protobuf_inworld::Option* _add = _internal_mutable_options()->Add();
   // @@protoc_insertion_point(field_add:google.protobuf.Enum.options)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& Enum::options() const
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& Enum::options() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.Enum.options)
   return _internal_options();
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>&
 Enum::_internal_options() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.options_;
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>*
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>*
 Enum::_internal_mutable_options() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.options_;
@@ -2529,21 +2529,21 @@ inline bool Enum::has_source_context() const {
   PROTOBUF_ASSUME(!value || _impl_.source_context_ != nullptr);
   return value;
 }
-inline const ::google::protobuf::SourceContext& Enum::_internal_source_context() const {
+inline const ::google::protobuf_inworld::SourceContext& Enum::_internal_source_context() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::google::protobuf::SourceContext* p = _impl_.source_context_;
-  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::SourceContext&>(::google::protobuf::_SourceContext_default_instance_);
+  const ::google::protobuf_inworld::SourceContext* p = _impl_.source_context_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf_inworld::SourceContext&>(::google::protobuf_inworld::_SourceContext_default_instance_);
 }
-inline const ::google::protobuf::SourceContext& Enum::source_context() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::google::protobuf_inworld::SourceContext& Enum::source_context() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Enum.source_context)
   return _internal_source_context();
 }
-inline void Enum::unsafe_arena_set_allocated_source_context(::google::protobuf::SourceContext* value) {
+inline void Enum::unsafe_arena_set_allocated_source_context(::google::protobuf_inworld::SourceContext* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.source_context_);
+    delete reinterpret_cast<::google::protobuf_inworld::MessageLite*>(_impl_.source_context_);
   }
-  _impl_.source_context_ = reinterpret_cast<::google::protobuf::SourceContext*>(value);
+  _impl_.source_context_ = reinterpret_cast<::google::protobuf_inworld::SourceContext*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
@@ -2551,67 +2551,67 @@ inline void Enum::unsafe_arena_set_allocated_source_context(::google::protobuf::
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:google.protobuf.Enum.source_context)
 }
-inline ::google::protobuf::SourceContext* Enum::release_source_context() {
+inline ::google::protobuf_inworld::SourceContext* Enum::release_source_context() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::SourceContext* released = _impl_.source_context_;
+  ::google::protobuf_inworld::SourceContext* released = _impl_.source_context_;
   _impl_.source_context_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  auto* old = reinterpret_cast<::google::protobuf_inworld::MessageLite*>(released);
+  released = ::google::protobuf_inworld::internal::DuplicateIfNonNull(released);
   if (GetArenaForAllocation() == nullptr) {
     delete old;
   }
 #else   // PROTOBUF_FORCE_COPY_IN_RELEASE
   if (GetArenaForAllocation() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    released = ::google::protobuf_inworld::internal::DuplicateIfNonNull(released);
   }
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return released;
 }
-inline ::google::protobuf::SourceContext* Enum::unsafe_arena_release_source_context() {
+inline ::google::protobuf_inworld::SourceContext* Enum::unsafe_arena_release_source_context() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   // @@protoc_insertion_point(field_release:google.protobuf.Enum.source_context)
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::SourceContext* temp = _impl_.source_context_;
+  ::google::protobuf_inworld::SourceContext* temp = _impl_.source_context_;
   _impl_.source_context_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::SourceContext* Enum::_internal_mutable_source_context() {
+inline ::google::protobuf_inworld::SourceContext* Enum::_internal_mutable_source_context() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.source_context_ == nullptr) {
-    auto* p = CreateMaybeMessage<::google::protobuf::SourceContext>(GetArenaForAllocation());
-    _impl_.source_context_ = reinterpret_cast<::google::protobuf::SourceContext*>(p);
+    auto* p = CreateMaybeMessage<::google::protobuf_inworld::SourceContext>(GetArenaForAllocation());
+    _impl_.source_context_ = reinterpret_cast<::google::protobuf_inworld::SourceContext*>(p);
   }
   return _impl_.source_context_;
 }
-inline ::google::protobuf::SourceContext* Enum::mutable_source_context() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::google::protobuf::SourceContext* _msg = _internal_mutable_source_context();
+inline ::google::protobuf_inworld::SourceContext* Enum::mutable_source_context() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf_inworld::SourceContext* _msg = _internal_mutable_source_context();
   // @@protoc_insertion_point(field_mutable:google.protobuf.Enum.source_context)
   return _msg;
 }
-inline void Enum::set_allocated_source_context(::google::protobuf::SourceContext* value) {
-  ::google::protobuf::Arena* message_arena = GetArenaForAllocation();
+inline void Enum::set_allocated_source_context(::google::protobuf_inworld::SourceContext* value) {
+  ::google::protobuf_inworld::Arena* message_arena = GetArenaForAllocation();
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.source_context_);
+    delete reinterpret_cast<::google::protobuf_inworld::MessageLite*>(_impl_.source_context_);
   }
 
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena =
-        ::google::protobuf::Arena::InternalGetOwningArena(reinterpret_cast<::google::protobuf::MessageLite*>(value));
+    ::google::protobuf_inworld::Arena* submessage_arena =
+        ::google::protobuf_inworld::Arena::InternalGetOwningArena(reinterpret_cast<::google::protobuf_inworld::MessageLite*>(value));
     if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+      value = ::google::protobuf_inworld::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
 
-  _impl_.source_context_ = reinterpret_cast<::google::protobuf::SourceContext*>(value);
+  _impl_.source_context_ = reinterpret_cast<::google::protobuf_inworld::SourceContext*>(value);
   // @@protoc_insertion_point(field_set_allocated:google.protobuf.Enum.source_context)
 }
 
@@ -2620,19 +2620,19 @@ inline void Enum::clear_syntax() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.syntax_ = 0;
 }
-inline ::google::protobuf::Syntax Enum::syntax() const {
+inline ::google::protobuf_inworld::Syntax Enum::syntax() const {
   // @@protoc_insertion_point(field_get:google.protobuf.Enum.syntax)
   return _internal_syntax();
 }
-inline void Enum::set_syntax(::google::protobuf::Syntax value) {
+inline void Enum::set_syntax(::google::protobuf_inworld::Syntax value) {
   _internal_set_syntax(value);
   // @@protoc_insertion_point(field_set:google.protobuf.Enum.syntax)
 }
-inline ::google::protobuf::Syntax Enum::_internal_syntax() const {
+inline ::google::protobuf_inworld::Syntax Enum::_internal_syntax() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return static_cast<::google::protobuf::Syntax>(_impl_.syntax_);
+  return static_cast<::google::protobuf_inworld::Syntax>(_impl_.syntax_);
 }
-inline void Enum::_internal_set_syntax(::google::protobuf::Syntax value) {
+inline void Enum::_internal_set_syntax(::google::protobuf_inworld::Syntax value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.syntax_ = value;
@@ -2782,39 +2782,39 @@ inline void EnumValue::clear_options() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.options_.Clear();
 }
-inline ::google::protobuf::Option* EnumValue::mutable_options(int index)
+inline ::google::protobuf_inworld::Option* EnumValue::mutable_options(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:google.protobuf.EnumValue.options)
   return _internal_mutable_options()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>* EnumValue::mutable_options()
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>* EnumValue::mutable_options()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.EnumValue.options)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_options();
 }
-inline const ::google::protobuf::Option& EnumValue::options(int index) const
+inline const ::google::protobuf_inworld::Option& EnumValue::options(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.EnumValue.options)
   return _internal_options().Get(index);
 }
-inline ::google::protobuf::Option* EnumValue::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf_inworld::Option* EnumValue::add_options() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::google::protobuf::Option* _add = _internal_mutable_options()->Add();
+  ::google::protobuf_inworld::Option* _add = _internal_mutable_options()->Add();
   // @@protoc_insertion_point(field_add:google.protobuf.EnumValue.options)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>& EnumValue::options() const
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>& EnumValue::options() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.EnumValue.options)
   return _internal_options();
 }
-inline const ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>&
 EnumValue::_internal_options() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.options_;
 }
-inline ::google::protobuf::RepeatedPtrField<::google::protobuf::Option>*
+inline ::google::protobuf_inworld::RepeatedPtrField<::google::protobuf_inworld::Option>*
 EnumValue::_internal_mutable_options() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.options_;
@@ -2883,21 +2883,21 @@ inline bool Option::has_value() const {
   PROTOBUF_ASSUME(!value || _impl_.value_ != nullptr);
   return value;
 }
-inline const ::google::protobuf::Any& Option::_internal_value() const {
+inline const ::google::protobuf_inworld::Any& Option::_internal_value() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::google::protobuf::Any* p = _impl_.value_;
-  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Any&>(::google::protobuf::_Any_default_instance_);
+  const ::google::protobuf_inworld::Any* p = _impl_.value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf_inworld::Any&>(::google::protobuf_inworld::_Any_default_instance_);
 }
-inline const ::google::protobuf::Any& Option::value() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::google::protobuf_inworld::Any& Option::value() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:google.protobuf.Option.value)
   return _internal_value();
 }
-inline void Option::unsafe_arena_set_allocated_value(::google::protobuf::Any* value) {
+inline void Option::unsafe_arena_set_allocated_value(::google::protobuf_inworld::Any* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.value_);
+    delete reinterpret_cast<::google::protobuf_inworld::MessageLite*>(_impl_.value_);
   }
-  _impl_.value_ = reinterpret_cast<::google::protobuf::Any*>(value);
+  _impl_.value_ = reinterpret_cast<::google::protobuf_inworld::Any*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
@@ -2905,67 +2905,67 @@ inline void Option::unsafe_arena_set_allocated_value(::google::protobuf::Any* va
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:google.protobuf.Option.value)
 }
-inline ::google::protobuf::Any* Option::release_value() {
+inline ::google::protobuf_inworld::Any* Option::release_value() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::Any* released = _impl_.value_;
+  ::google::protobuf_inworld::Any* released = _impl_.value_;
   _impl_.value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+  auto* old = reinterpret_cast<::google::protobuf_inworld::MessageLite*>(released);
+  released = ::google::protobuf_inworld::internal::DuplicateIfNonNull(released);
   if (GetArenaForAllocation() == nullptr) {
     delete old;
   }
 #else   // PROTOBUF_FORCE_COPY_IN_RELEASE
   if (GetArenaForAllocation() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    released = ::google::protobuf_inworld::internal::DuplicateIfNonNull(released);
   }
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return released;
 }
-inline ::google::protobuf::Any* Option::unsafe_arena_release_value() {
+inline ::google::protobuf_inworld::Any* Option::unsafe_arena_release_value() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   // @@protoc_insertion_point(field_release:google.protobuf.Option.value)
 
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::Any* temp = _impl_.value_;
+  ::google::protobuf_inworld::Any* temp = _impl_.value_;
   _impl_.value_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::Any* Option::_internal_mutable_value() {
+inline ::google::protobuf_inworld::Any* Option::_internal_mutable_value() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.value_ == nullptr) {
-    auto* p = CreateMaybeMessage<::google::protobuf::Any>(GetArenaForAllocation());
-    _impl_.value_ = reinterpret_cast<::google::protobuf::Any*>(p);
+    auto* p = CreateMaybeMessage<::google::protobuf_inworld::Any>(GetArenaForAllocation());
+    _impl_.value_ = reinterpret_cast<::google::protobuf_inworld::Any*>(p);
   }
   return _impl_.value_;
 }
-inline ::google::protobuf::Any* Option::mutable_value() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::google::protobuf::Any* _msg = _internal_mutable_value();
+inline ::google::protobuf_inworld::Any* Option::mutable_value() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf_inworld::Any* _msg = _internal_mutable_value();
   // @@protoc_insertion_point(field_mutable:google.protobuf.Option.value)
   return _msg;
 }
-inline void Option::set_allocated_value(::google::protobuf::Any* value) {
-  ::google::protobuf::Arena* message_arena = GetArenaForAllocation();
+inline void Option::set_allocated_value(::google::protobuf_inworld::Any* value) {
+  ::google::protobuf_inworld::Arena* message_arena = GetArenaForAllocation();
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.value_);
+    delete reinterpret_cast<::google::protobuf_inworld::MessageLite*>(_impl_.value_);
   }
 
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena =
-        ::google::protobuf::Arena::InternalGetOwningArena(reinterpret_cast<::google::protobuf::MessageLite*>(value));
+    ::google::protobuf_inworld::Arena* submessage_arena =
+        ::google::protobuf_inworld::Arena::InternalGetOwningArena(reinterpret_cast<::google::protobuf_inworld::MessageLite*>(value));
     if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+      value = ::google::protobuf_inworld::internal::GetOwnedMessage(message_arena, value, submessage_arena);
     }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
 
-  _impl_.value_ = reinterpret_cast<::google::protobuf::Any*>(value);
+  _impl_.value_ = reinterpret_cast<::google::protobuf_inworld::Any*>(value);
   // @@protoc_insertion_point(field_set_allocated:google.protobuf.Option.value)
 }
 
@@ -2974,33 +2974,33 @@ inline void Option::set_allocated_value(::google::protobuf::Any* value) {
 #endif  // __GNUC__
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 template <>
-struct is_proto_enum<::google::protobuf::Field_Kind> : std::true_type {};
+struct is_proto_enum<::google::protobuf_inworld::Field_Kind> : std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor<::google::protobuf::Field_Kind>() {
-  return ::google::protobuf::Field_Kind_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor<::google::protobuf_inworld::Field_Kind>() {
+  return ::google::protobuf_inworld::Field_Kind_descriptor();
 }
 template <>
-struct is_proto_enum<::google::protobuf::Field_Cardinality> : std::true_type {};
+struct is_proto_enum<::google::protobuf_inworld::Field_Cardinality> : std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor<::google::protobuf::Field_Cardinality>() {
-  return ::google::protobuf::Field_Cardinality_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor<::google::protobuf_inworld::Field_Cardinality>() {
+  return ::google::protobuf_inworld::Field_Cardinality_descriptor();
 }
 template <>
-struct is_proto_enum<::google::protobuf::Syntax> : std::true_type {};
+struct is_proto_enum<::google::protobuf_inworld::Syntax> : std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor<::google::protobuf::Syntax>() {
-  return ::google::protobuf::Syntax_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor<::google::protobuf_inworld::Syntax>() {
+  return ::google::protobuf_inworld::Syntax_descriptor();
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // @@protoc_insertion_point(global_scope)

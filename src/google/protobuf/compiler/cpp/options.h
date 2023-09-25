@@ -38,7 +38,7 @@
 #include "absl/container/flat_hash_set.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 class AccessInfoMap;
 class SplitMap;
@@ -89,7 +89,7 @@ struct Options {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CPP_OPTIONS_H__

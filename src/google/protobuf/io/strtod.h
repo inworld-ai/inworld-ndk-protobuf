@@ -41,7 +41,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 
 // ----------------------------------------------------------------------
@@ -68,7 +68,7 @@ PROTOBUF_EXPORT double NoLocaleStrtod(const char* str, char** endptr);
 PROTOBUF_EXPORT float SafeDoubleToFloat(double value);
 
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -57,13 +57,13 @@ struct timeval {
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
 // Utility functions for Timestamp and Duration.
 class PROTOBUF_EXPORT TimeUtil {
-  typedef google::protobuf::Timestamp Timestamp;
-  typedef google::protobuf::Duration Duration;
+  typedef google::protobuf_inworld::Timestamp Timestamp;
+  typedef google::protobuf_inworld::Duration Duration;
 
  public:
   // The min/max Timestamp/Duration values we support.
@@ -183,11 +183,11 @@ class PROTOBUF_EXPORT TimeUtil {
 };
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 // Overloaded operators for Duration.
 //
 // Assignment operators.
@@ -270,7 +270,7 @@ inline Duration operator%(const Duration& d1, const Duration& d2) {
 }
 
 inline std::ostream& operator<<(std::ostream& out, const Duration& d) {
-  out << google::protobuf::util::TimeUtil::ToString(d);
+  out << google::protobuf_inworld::util::TimeUtil::ToString(d);
   return out;
 }
 
@@ -319,11 +319,11 @@ inline Timestamp operator-(const Timestamp& t, const Duration& d) {
 PROTOBUF_EXPORT Duration operator-(const Timestamp& t1, const Timestamp& t2);
 
 inline std::ostream& operator<<(std::ostream& out, const Timestamp& t) {
-  out << google::protobuf::util::TimeUtil::ToString(t);
+  out << google::protobuf_inworld::util::TimeUtil::ToString(t);
   return out;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

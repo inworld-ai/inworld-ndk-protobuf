@@ -41,7 +41,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class DescriptorPool;
 namespace util {
 class TypeResolver;
@@ -52,15 +52,15 @@ PROTOBUF_EXPORT TypeResolver* NewTypeResolverForDescriptorPool(
     absl::string_view url_prefix, const DescriptorPool* pool);
 
 // Performs a direct conversion from a descriptor to a type proto.
-PROTOBUF_EXPORT google::protobuf::Type ConvertDescriptorToType(
+PROTOBUF_EXPORT google::protobuf_inworld::Type ConvertDescriptorToType(
     absl::string_view url_prefix, const Descriptor& descriptor);
 
 // Performs a direct conversion from an enum descriptor to a type proto.
-PROTOBUF_EXPORT google::protobuf::Enum ConvertDescriptorToType(
+PROTOBUF_EXPORT google::protobuf_inworld::Enum ConvertDescriptorToType(
     const EnumDescriptor& descriptor);
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

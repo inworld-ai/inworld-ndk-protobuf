@@ -53,7 +53,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // Provide a base class for testing the protoc CLI and plugins.
@@ -170,7 +170,7 @@ class CommandLineInterfaceTester : public testing::Test {
 };
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

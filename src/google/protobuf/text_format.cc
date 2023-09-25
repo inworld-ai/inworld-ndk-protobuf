@@ -75,7 +75,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 using internal::FieldReporterLevel;
 using internal::ReflectionMode;
@@ -2920,7 +2920,7 @@ bool TextFormat::Printer::TryRedactFieldValue(
   return false;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

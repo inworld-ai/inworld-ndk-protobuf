@@ -40,29 +40,29 @@
 #define PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ffield_5fmask_2eproto PROTOBUF_EXPORT
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class AnyMetadata;
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // Internal implementation detail -- do not use these members.
 struct PROTOBUF_EXPORT TableStruct_google_2fprotobuf_2ffield_5fmask_2eproto {
   static const ::uint32_t offsets[];
 };
-PROTOBUF_EXPORT extern const ::google::protobuf::internal::DescriptorTable
+PROTOBUF_EXPORT extern const ::google::protobuf_inworld::internal::DescriptorTable
     descriptor_table_google_2fprotobuf_2ffield_5fmask_2eproto;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class FieldMask;
 struct FieldMaskDefaultTypeInternal;
 PROTOBUF_EXPORT extern FieldMaskDefaultTypeInternal _FieldMask_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // ===================================================================
 
@@ -70,14 +70,14 @@ namespace protobuf {
 // -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT FieldMask final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:google.protobuf.FieldMask) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:google.protobuf.FieldMask) */ {
  public:
   inline FieldMask() : FieldMask(nullptr) {}
   ~FieldMask() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR FieldMask(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR FieldMask(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  FieldMask(::google::protobuf::Arena* arena, const FieldMask& from);
+  FieldMask(::google::protobuf_inworld::Arena* arena, const FieldMask& from);
   inline FieldMask(const FieldMask& from)
       : FieldMask(nullptr, from) {}
   FieldMask(FieldMask&& from) noexcept
@@ -103,22 +103,22 @@ class PROTOBUF_EXPORT FieldMask final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const FieldMask& default_instance() {
@@ -144,7 +144,7 @@ class PROTOBUF_EXPORT FieldMask final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(FieldMask* other) {
@@ -155,46 +155,46 @@ class PROTOBUF_EXPORT FieldMask final :
 
   // implements Message ----------------------------------------------
 
-  FieldMask* New(::google::protobuf::Arena* arena = nullptr) const final {
+  FieldMask* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<FieldMask>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const FieldMask& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const FieldMask& from) {
     FieldMask::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(FieldMask* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.FieldMask";
   }
   protected:
-  explicit FieldMask(::google::protobuf::Arena* arena);
+  explicit FieldMask(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -223,38 +223,38 @@ class PROTOBUF_EXPORT FieldMask final :
   void add_paths(const char* value);
   void add_paths(const char* value, std::size_t size);
   void add_paths(absl::string_view value);
-  const ::google::protobuf::RepeatedPtrField<std::string>& paths() const;
-  ::google::protobuf::RepeatedPtrField<std::string>* mutable_paths();
+  const ::google::protobuf_inworld::RepeatedPtrField<std::string>& paths() const;
+  ::google::protobuf_inworld::RepeatedPtrField<std::string>* mutable_paths();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<std::string>& _internal_paths() const;
-  ::google::protobuf::RepeatedPtrField<std::string>* _internal_mutable_paths();
+  const ::google::protobuf_inworld::RepeatedPtrField<std::string>& _internal_paths() const;
+  ::google::protobuf_inworld::RepeatedPtrField<std::string>* _internal_mutable_paths();
 
   public:
   // @@protoc_insertion_point(class_scope:google.protobuf.FieldMask)
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       0, 1, 0,
       39, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::RepeatedPtrField<std::string> paths_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::RepeatedPtrField<std::string> paths_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -356,23 +356,23 @@ inline void FieldMask::add_paths(absl::string_view value) {
   _internal_mutable_paths()->Add()->assign(value.data(), value.size());
   // @@protoc_insertion_point(field_add_string_piece:google.protobuf.FieldMask.paths)
 }
-inline const ::google::protobuf::RepeatedPtrField<std::string>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<std::string>&
 FieldMask::paths() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:google.protobuf.FieldMask.paths)
   return _internal_paths();
 }
-inline ::google::protobuf::RepeatedPtrField<std::string>*
+inline ::google::protobuf_inworld::RepeatedPtrField<std::string>*
 FieldMask::mutable_paths() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:google.protobuf.FieldMask.paths)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_paths();
 }
-inline const ::google::protobuf::RepeatedPtrField<std::string>&
+inline const ::google::protobuf_inworld::RepeatedPtrField<std::string>&
 FieldMask::_internal_paths() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.paths_;
 }
-inline ::google::protobuf::RepeatedPtrField<std::string>*
+inline ::google::protobuf_inworld::RepeatedPtrField<std::string>*
 FieldMask::_internal_mutable_paths() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.paths_;
@@ -383,7 +383,7 @@ FieldMask::_internal_mutable_paths() {
 #endif  // __GNUC__
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 

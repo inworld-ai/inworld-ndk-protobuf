@@ -43,7 +43,7 @@ namespace protos_generator {
 
 class Output {
  public:
-  Output(google::protobuf::io::ZeroCopyOutputStream* stream) : stream_(stream) {}
+  Output(google::protobuf_inworld::io::ZeroCopyOutputStream* stream) : stream_(stream) {}
   ~Output() { stream_->BackUp((int)buffer_size_); }
 
   template <class... Arg>
@@ -137,7 +137,7 @@ class Output {
     }
   }
 
-  google::protobuf::io::ZeroCopyOutputStream* stream_;
+  google::protobuf_inworld::io::ZeroCopyOutputStream* stream_;
   char* output_buffer_ = nullptr;
   size_t buffer_size_ = 0;
   // Current indentation size in characters.
@@ -163,11 +163,11 @@ class OutputIndenter {
 std::string StripExtension(absl::string_view fname);
 std::string ToCIdent(absl::string_view str);
 std::string ToPreproc(absl::string_view str);
-void EmitFileWarning(const google::protobuf::FileDescriptor* file, Output& output);
-std::string MessageName(const google::protobuf::Descriptor* descriptor);
-std::string FileLayoutName(const google::protobuf::FileDescriptor* file);
-std::string CHeaderFilename(const google::protobuf::FileDescriptor* file);
-std::string CSourceFilename(const google::protobuf::FileDescriptor* file);
+void EmitFileWarning(const google::protobuf_inworld::FileDescriptor* file, Output& output);
+std::string MessageName(const google::protobuf_inworld::Descriptor* descriptor);
+std::string FileLayoutName(const google::protobuf_inworld::FileDescriptor* file);
+std::string CHeaderFilename(const google::protobuf_inworld::FileDescriptor* file);
+std::string CSourceFilename(const google::protobuf_inworld::FileDescriptor* file);
 
 }  // namespace protos_generator
 

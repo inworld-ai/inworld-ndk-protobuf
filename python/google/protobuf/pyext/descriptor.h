@@ -39,7 +39,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 extern PyTypeObject PyMessageDescriptor_Type;
@@ -99,7 +99,7 @@ bool _CalledFromGeneratedFile(int stacklevel);
 bool InitDescriptor();
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_DESCRIPTOR_H__

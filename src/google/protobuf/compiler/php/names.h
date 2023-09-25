@@ -39,7 +39,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace php {
 
@@ -65,7 +65,7 @@ PROTOC_EXPORT std::string GeneratedClassName(const ServiceDescriptor* desc);
 
 }  // namespace php
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

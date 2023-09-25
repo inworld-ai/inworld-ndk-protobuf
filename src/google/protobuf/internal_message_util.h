@@ -37,14 +37,14 @@
 #include "google/protobuf/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Walks the entire message tree and eager parses all lazy fields.
 void EagerParseLazyField(Message& message);
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_INTERNAL_MESSAGE_UTIL_H__

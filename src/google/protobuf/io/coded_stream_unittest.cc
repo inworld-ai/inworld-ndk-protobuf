@@ -61,7 +61,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace {
 
@@ -1528,7 +1528,7 @@ TEST_F(CodedStreamTest, InputOver2G) {
 
 }  // namespace
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

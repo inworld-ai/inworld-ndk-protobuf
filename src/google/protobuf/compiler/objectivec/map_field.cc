@@ -44,7 +44,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 
@@ -229,5 +229,5 @@ void MapFieldGenerator::DetermineNeededFiles(
 
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -33,7 +33,7 @@
 #include "google/protobuf/compiler/allowlists/allowlists.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // NOTE: Allowlists in this file are not accepting new entries unless otherwise
@@ -55,5 +55,5 @@ bool IsOpenEnumMessage(absl::string_view msg) {
   return kOpenEnumMessages.Allows(msg);
 }
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

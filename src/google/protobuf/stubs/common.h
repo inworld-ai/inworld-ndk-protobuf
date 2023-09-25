@@ -60,7 +60,7 @@
 namespace std {}
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Some of these constants are macros rather than const ints so that they can
@@ -106,7 +106,7 @@ ProtocVersionString(int version);  // NOLINT(runtime/string)
 // matches the headers you compiled against.  If a version mismatch is
 // detected, the process will abort.
 #define GOOGLE_PROTOBUF_VERIFY_VERSION         \
-  ::google::protobuf::internal::VerifyVersion( \
+  ::google::protobuf_inworld::internal::VerifyVersion( \
       GOOGLE_PROTOBUF_VERSION, GOOGLE_PROTOBUF_MIN_LIBRARY_VERSION, __FILE__)
 
 // This lives in message_lite.h now, but we leave this here for any users that
@@ -124,7 +124,7 @@ void StrongReference(const T& var) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

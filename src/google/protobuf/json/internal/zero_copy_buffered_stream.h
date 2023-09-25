@@ -53,7 +53,7 @@
 // Utilities for parsing contiguous buffers out of ZeroCopyInputStreams.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 // Forward decl. for use by helper types below.
 class ZeroCopyBufferedStream;
@@ -348,7 +348,7 @@ inline absl::string_view ZeroCopyBufferedStream::RawBuffer(size_t start,
   return view.substr(start, len);
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

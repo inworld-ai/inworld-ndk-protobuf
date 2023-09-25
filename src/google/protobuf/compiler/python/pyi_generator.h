@@ -46,7 +46,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class Descriptor;
 class EnumDescriptor;
 class FieldDescriptor;
@@ -60,7 +60,7 @@ class Printer;
 namespace compiler {
 namespace python {
 
-class PROTOC_EXPORT PyiGenerator : public google::protobuf::compiler::CodeGenerator {
+class PROTOC_EXPORT PyiGenerator : public google::protobuf_inworld::compiler::CodeGenerator {
  public:
   PyiGenerator();
   PyiGenerator(const PyiGenerator&) = delete;
@@ -113,7 +113,7 @@ class PROTOC_EXPORT PyiGenerator : public google::protobuf::compiler::CodeGenera
 
 }  // namespace python
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

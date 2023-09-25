@@ -63,7 +63,7 @@
 // Traits for working with descriptor.proto and type.proto generically.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 enum class MessageType {
   kNotWellKnown,
@@ -420,12 +420,12 @@ struct Proto3Type {
 
   static bool Is32Bit(Field f) {
     switch (f->proto().kind()) {
-      case google::protobuf::Field::TYPE_INT32:
-      case google::protobuf::Field::TYPE_SINT32:
-      case google::protobuf::Field::TYPE_UINT32:
-      case google::protobuf::Field::TYPE_FIXED32:
-      case google::protobuf::Field::TYPE_SFIXED32:
-      case google::protobuf::Field::TYPE_FLOAT:
+      case google::protobuf_inworld::Field::TYPE_INT32:
+      case google::protobuf_inworld::Field::TYPE_SINT32:
+      case google::protobuf_inworld::Field::TYPE_UINT32:
+      case google::protobuf_inworld::Field::TYPE_FIXED32:
+      case google::protobuf_inworld::Field::TYPE_SFIXED32:
+      case google::protobuf_inworld::Field::TYPE_FLOAT:
         return true;
       default:
         return false;
@@ -434,7 +434,7 @@ struct Proto3Type {
 
   static const Desc& ContainingType(Field f) { return f->parent(); }
   static bool IsMap(Field f) {
-    if (f->proto().kind() != google::protobuf::Field::TYPE_MESSAGE) {
+    if (f->proto().kind() != google::protobuf_inworld::Field::TYPE_MESSAGE) {
       return false;
     }
 
@@ -450,20 +450,20 @@ struct Proto3Type {
 
   static bool IsRepeated(Field f) {
     return f->proto().cardinality() ==
-           google::protobuf::Field::CARDINALITY_REPEATED;
+           google::protobuf_inworld::Field::CARDINALITY_REPEATED;
   }
 
   static bool IsOptional(Field f) {
     // Implicit presence requires this weird check: in proto3, everything is
     // implicit presence, except for things that are members of oneofs,
     // which is how proto3 optional is represented.
-    if (f->parent().proto().syntax() == google::protobuf::SYNTAX_PROTO3) {
+    if (f->parent().proto().syntax() == google::protobuf_inworld::SYNTAX_PROTO3) {
       return f->proto().oneof_index() != 0;
     }
 
     return f->proto().cardinality() ==
-               google::protobuf::Field::CARDINALITY_OPTIONAL ||
-           google::protobuf::Field::CARDINALITY_REQUIRED;
+               google::protobuf_inworld::Field::CARDINALITY_OPTIONAL ||
+           google::protobuf_inworld::Field::CARDINALITY_REQUIRED;
   }
 
   static bool IsImplicitPresence(Field f) {
@@ -523,7 +523,7 @@ struct Proto3Type {
   }
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

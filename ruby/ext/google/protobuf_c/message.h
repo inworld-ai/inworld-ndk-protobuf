@@ -51,7 +51,7 @@ VALUE Message_GetArena(VALUE value);
 // particular type.
 //
 // This will perform automatic conversions in some cases (for example, Time ->
-// Google::Protobuf::Timestamp). If any new message is created, it will be
+// Google::protobuf_inworld::Timestamp). If any new message is created, it will be
 // created on |arena|, and any existing message will have its arena fused with
 // |arena|.
 const upb_Message* Message_GetUpbMessage(VALUE value, const upb_MessageDef* m,

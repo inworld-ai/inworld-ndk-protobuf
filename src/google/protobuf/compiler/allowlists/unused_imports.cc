@@ -33,7 +33,7 @@
 #include "google/protobuf/compiler/allowlists/allowlists.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // NOTE: Allowlists in this file are not accepting new entries unless otherwise
@@ -47,5 +47,5 @@ bool IsUnusedImportFile(absl::string_view file) {
   return kUnusedImports.Allows(file);
 }
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

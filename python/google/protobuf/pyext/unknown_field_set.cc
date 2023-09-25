@@ -43,7 +43,7 @@
 #include "google/protobuf/wire_format_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace unknown_field_set {
@@ -110,7 +110,7 @@ PyObject* New(PyTypeObject* type, PyObject* args, PyObject* kwargs) {
   // Copy c_message's UnknownFieldSet.
   Message* message = reinterpret_cast<CMessage*>(c_message)->message;
   const Reflection* reflection = message->GetReflection();
-  self->fields = new google::protobuf::UnknownFieldSet;
+  self->fields = new google::protobuf_inworld::UnknownFieldSet;
   self->fields->MergeFrom(reflection->GetUnknownFields(*message));
   return reinterpret_cast<PyObject*>(self);
 }
@@ -351,5 +351,5 @@ PyTypeObject PyUnknownField_Type = {
 };
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

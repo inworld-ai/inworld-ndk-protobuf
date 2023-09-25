@@ -39,7 +39,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 class ZipWriter {
@@ -63,7 +63,7 @@ class ZipWriter {
 };
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_ZIP_WRITER_H__

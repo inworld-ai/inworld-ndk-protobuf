@@ -53,7 +53,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // Defined in this file.
 class DescriptorDatabase;
@@ -395,7 +395,7 @@ class PROTOBUF_EXPORT MergedDescriptorDatabase : public DescriptorDatabase {
   std::vector<DescriptorDatabase*> sources_;
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

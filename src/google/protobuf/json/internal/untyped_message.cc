@@ -61,15 +61,15 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
-using ::google::protobuf::Field;
-using ::google::protobuf::internal::WireFormatLite;
+using ::google::protobuf_inworld::Field;
+using ::google::protobuf_inworld::internal::WireFormatLite;
 
 absl::StatusOr<const ResolverPool::Message*> ResolverPool::Field::MessageType()
     const {
-  ABSL_CHECK(proto().kind() == google::protobuf::Field::TYPE_MESSAGE ||
-             proto().kind() == google::protobuf::Field::TYPE_GROUP)
+  ABSL_CHECK(proto().kind() == google::protobuf_inworld::Field::TYPE_MESSAGE ||
+             proto().kind() == google::protobuf_inworld::Field::TYPE_GROUP)
       << proto().kind();
   if (type_ == nullptr) {
     auto type = pool_->FindMessage(proto().type_url());
@@ -81,7 +81,7 @@ absl::StatusOr<const ResolverPool::Message*> ResolverPool::Field::MessageType()
 
 absl::StatusOr<const ResolverPool::Enum*> ResolverPool::Field::EnumType()
     const {
-  ABSL_CHECK(proto().kind() == google::protobuf::Field::TYPE_ENUM)
+  ABSL_CHECK(proto().kind() == google::protobuf_inworld::Field::TYPE_ENUM)
       << proto().kind();
   if (type_ == nullptr) {
     auto type = pool_->FindEnum(proto().type_url());
@@ -453,7 +453,7 @@ absl::Status UntypedMessage::DecodeDelimited(io::CodedInputStream& stream,
         return absl::InvalidArgumentError("unexpected EOF");
       }
       if (field.proto().kind() == Field::TYPE_STRING) {
-        if (desc_->proto().syntax() == google::protobuf::SYNTAX_PROTO3 &&
+        if (desc_->proto().syntax() == google::protobuf_inworld::SYNTAX_PROTO3 &&
             utf8_range::IsStructurallyValid(buf)) {
           return absl::InvalidArgumentError("proto3 strings must be UTF-8");
         }
@@ -518,7 +518,7 @@ absl::Status UntypedMessage::InsertField(const ResolverPool::Field& field,
   }
 
   if (field.proto().cardinality() !=
-      google::protobuf::Field::CARDINALITY_REPEATED) {
+      google::protobuf_inworld::Field::CARDINALITY_REPEATED) {
     return absl::InvalidArgumentError(
         absl::StrCat("repeated entries for singular field number ", number));
   }
@@ -534,7 +534,7 @@ absl::Status UntypedMessage::InsertField(const ResolverPool::Field& field,
     extant->push_back(std::move(value));
   } else {
     absl::optional<absl::string_view> name =
-        google::protobuf::internal::RttiTypeName<T>();
+        google::protobuf_inworld::internal::RttiTypeName<T>();
     if (!name.has_value()) {
       name = "<unknown>";
     }
@@ -549,5 +549,5 @@ absl::Status UntypedMessage::InsertField(const ResolverPool::Field& field,
 }
 
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -62,10 +62,10 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json {
 namespace {
-using ::google::protobuf::util::TypeResolver;
+using ::google::protobuf_inworld::util::TypeResolver;
 using ::proto3::MapIn;
 using ::proto3::TestAny;
 using ::proto3::TestEnumValue;
@@ -161,7 +161,7 @@ class JsonTest : public testing::TestWithParam<Codec> {
   }
 
   std::unique_ptr<TypeResolver> resolver_{
-      google::protobuf::util::NewTypeResolverForDescriptorPool(
+      google::protobuf_inworld::util::NewTypeResolverForDescriptorPool(
           "type.googleapis.com", DescriptorPool::generated_pool())};
 };
 
@@ -496,7 +496,7 @@ TEST_P(JsonTest, CurseOfAtob) {
 }
 
 TEST_P(JsonTest, FloatPrecision) {
-  google::protobuf::Value v;
+  google::protobuf_inworld::Value v;
   v.mutable_list_value()->add_values()->set_number_value(0.9900000095367432);
   v.mutable_list_value()->add_values()->set_number_value(0.8799999952316284);
 
@@ -793,7 +793,7 @@ TEST_P(JsonTest, TestParsingNestedAnys) {
   )json");
   ASSERT_OK(m);
 
-  google::protobuf::Any inner;
+  google::protobuf_inworld::Any inner;
   ASSERT_TRUE(m->value().UnpackTo(&inner));
 
   TestMessage t;
@@ -854,8 +854,8 @@ TEST_P(JsonTest, TestFlatList) {
   ASSERT_OK(m);
   EXPECT_THAT(m->repeated_int32_value(), ElementsAre(5, 6));
 
-  // The above flatteing behavior is suppressed for google::protobuf::ListValue.
-  auto m2 = ToProto<google::protobuf::Value>(R"json(
+  // The above flatteing behavior is suppressed for google::protobuf_inworld::ListValue.
+  auto m2 = ToProto<google::protobuf_inworld::Value>(R"json(
     {
       "repeatedInt32Value": [[[5]], [6]]
     }
@@ -1203,7 +1203,7 @@ TEST_P(JsonTest, TestTimestamp) {
 // we must be extremely careful with integer fields, because they need to
 // round-trip through doubles. This happens all over Envoy. :(
 TEST_P(JsonTest, TestEnvoyRoundTrip) {
-  auto m = ToProto<google::protobuf::Value>(R"json(
+  auto m = ToProto<google::protobuf_inworld::Value>(R"json(
     {
       "value": {"seconds": 1234567891, "nanos": 234000000},
     }
@@ -1261,7 +1261,7 @@ TEST_P(JsonTest, TestLegalNullsInArray) {
   ASSERT_OK(m);
 
   EXPECT_THAT(m->repeated_null_value(),
-              ElementsAre(google::protobuf::NULL_VALUE));
+              ElementsAre(google::protobuf_inworld::NULL_VALUE));
 
   auto m2 = ToProto<proto3::TestValue>(R"json({
     "repeatedValue": [null]
@@ -1280,10 +1280,10 @@ TEST_P(JsonTest, TestLegalNullsInArray) {
 }
 
 TEST_P(JsonTest, EmptyValue) {
-  EXPECT_THAT(ToJson(google::protobuf::Value()), IsOkAndHolds(""));
+  EXPECT_THAT(ToJson(google::protobuf_inworld::Value()), IsOkAndHolds(""));
 
-  google::protobuf::Struct s;
-  s.mutable_fields()->emplace("empty", google::protobuf::Value());
+  google::protobuf_inworld::Struct s;
+  s.mutable_fields()->emplace("empty", google::protobuf_inworld::Value());
   EXPECT_THAT(ToJson(s), IsOkAndHolds("{}"));
 }
 
@@ -1343,12 +1343,12 @@ TEST_P(JsonTest, FieldOrder) {
 // JSON values get special treatment when it comes to pre-existing values in
 // their repeated fields, when parsing through their dedicated syntax.
 TEST_P(JsonTest, ClearPreExistingRepeatedInJsonValues) {
-  google::protobuf::ListValue l;
+  google::protobuf_inworld::ListValue l;
   l.add_values()->set_string_value("hello");
   ASSERT_OK(JsonStringToMessage("[]", &l));
   EXPECT_THAT(l.values(), IsEmpty());
 
-  google::protobuf::Struct s;
+  google::protobuf_inworld::Struct s;
   (*s.mutable_fields())["hello"].set_string_value("world");
   ASSERT_OK(JsonStringToMessage("{}", &s));
   EXPECT_THAT(s.fields(), IsEmpty());
@@ -1356,5 +1356,5 @@ TEST_P(JsonTest, ClearPreExistingRepeatedInJsonValues) {
 
 }  // namespace
 }  // namespace json
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

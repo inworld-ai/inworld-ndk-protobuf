@@ -86,7 +86,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 
 // Defined in this file.
@@ -257,7 +257,7 @@ class PROTOBUF_EXPORT LazyDescriptor {
 
 class PROTOBUF_EXPORT SymbolBase {
  private:
-  friend class google::protobuf::Symbol;
+  friend class google::protobuf_inworld::Symbol;
   uint8_t symbol_type_;
 };
 
@@ -280,8 +280,8 @@ class PROTOBUF_EXPORT InternalFeatureHelper {
   }
 
  private:
-  friend class ::google::protobuf::compiler::CodeGenerator;
-  friend class ::google::protobuf::compiler::CommandLineInterface;
+  friend class ::google::protobuf_inworld::compiler::CodeGenerator;
+  friend class ::google::protobuf_inworld::compiler::CommandLineInterface;
 
   // Provides a restricted view exclusively to code generators to query their
   // own unresolved features.  Unresolved features are virtually meaningless to
@@ -292,7 +292,7 @@ class PROTOBUF_EXPORT InternalFeatureHelper {
             bool is_packed>
   static typename TypeTraitsT::ConstType GetUnresolvedFeatures(
       const DescriptorT& descriptor,
-      const google::protobuf::internal::ExtensionIdentifier<
+      const google::protobuf_inworld::internal::ExtensionIdentifier<
           FeatureSet, TypeTraitsT, field_type, is_packed>& extension) {
     return descriptor.proto_features_->GetExtension(extension);
   }
@@ -2417,7 +2417,7 @@ class PROTOBUF_EXPORT DescriptorPool {
   friend class FileDescriptor;
   friend class DescriptorBuilder;
   friend class FileDescriptorTables;
-  friend class google::protobuf::descriptor_unittest::ValidationErrorTest;
+  friend class google::protobuf_inworld::descriptor_unittest::ValidationErrorTest;
 
   // Return true if the given name is a sub-symbol of any non-package
   // descriptor that already exists in the descriptor pool.  (The full
@@ -2923,7 +2923,7 @@ struct FieldRangeImpl {
 // to the reflection based method, which requires the Descriptor. However, while
 // building the descriptors, this causes deadlock. We also must disable lazy
 // parsing because that uses reflection to verify consistency.
-bool ParseNoReflection(absl::string_view from, google::protobuf::MessageLite& to);
+bool ParseNoReflection(absl::string_view from, google::protobuf_inworld::MessageLite& to);
 
 // The context for these functions under `cpp` is "for the C++ implementation".
 // In particular, questions like "does this field have a has bit?" have a
@@ -2969,7 +2969,7 @@ PROTOBUF_EXPORT bool IsLazilyInitializedFile(absl::string_view filename);
 }  // namespace cpp
 }  // namespace internal
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #undef PROTOBUF_INTERNAL_CHECK_CLASS_SIZE

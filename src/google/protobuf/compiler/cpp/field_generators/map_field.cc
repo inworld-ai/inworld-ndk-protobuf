@@ -43,11 +43,11 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using Sub = ::google::protobuf::io::Printer::Sub;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts,
                       bool lite) {
@@ -69,7 +69,7 @@ std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts,
   }
 
   return {
-      {"Map", absl::Substitute("::google::protobuf::Map<$0, $1>", key_type, val_type)},
+      {"Map", absl::Substitute("::google::protobuf_inworld::Map<$0, $1>", key_type, val_type)},
       {"Entry", ClassName(field->message_type(), false)},
       {"Key", PrimitiveTypeName(opts, key->cpp_type())},
       {"Val", val_type},
@@ -340,5 +340,5 @@ std::unique_ptr<FieldGeneratorBase> MakeMapGenerator(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

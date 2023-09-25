@@ -40,7 +40,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 template <typename T, bool use_arena>
 void TestParseCorruptedString(const T& message) {
@@ -130,8 +130,8 @@ class ArenaHolder {
   explicit ArenaHolder(Arena* arena)
       : field_(Arena::CreateMessage<T>(arena)),
         owned_by_arena_(arena != nullptr) {
-    ABSL_DCHECK(google::protobuf::Arena::is_arena_constructable<T>::value);
-    ABSL_DCHECK(google::protobuf::Arena::is_destructor_skippable<T>::value);
+    ABSL_DCHECK(google::protobuf_inworld::Arena::is_arena_constructable<T>::value);
+    ABSL_DCHECK(google::protobuf_inworld::Arena::is_destructor_skippable<T>::value);
   }
 
   ~ArenaHolder() {
@@ -150,7 +150,7 @@ class ArenaHolder {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_ARENA_TEST_UTIL_H__

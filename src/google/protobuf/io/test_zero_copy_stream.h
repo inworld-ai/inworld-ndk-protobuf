@@ -44,7 +44,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace internal {
 
@@ -125,7 +125,7 @@ class TestZeroCopyInputStream final : public ZeroCopyInputStream {
 
 }  // namespace internal
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

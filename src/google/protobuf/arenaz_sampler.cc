@@ -40,7 +40,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 ThreadSafeArenazSampler& GlobalThreadSafeArenazSampler() {
@@ -242,5 +242,5 @@ void SetThreadSafeArenazGlobalNextSample(int64_t next_sample) {}
 #endif  // defined(PROTOBUF_ARENAZ_SAMPLE)
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

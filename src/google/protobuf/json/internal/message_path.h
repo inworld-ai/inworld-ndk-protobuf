@@ -39,7 +39,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 // A path in a Protobuf message, annotated specifically for producing nice
 // errors.
@@ -78,7 +78,7 @@ class MessagePath {
   std::vector<Component> components_;
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_JSON_INTERNAL_MESSAGE_PATH_H__

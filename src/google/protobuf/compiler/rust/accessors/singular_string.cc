@@ -39,7 +39,7 @@
 #include "google/protobuf/descriptor.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 
@@ -220,9 +220,9 @@ void SingularString::InThunkCc(Context<FieldDescriptor> field) const {
                }}},
              R"cc(
                $hazzer$;
-               ::google::protobuf::rust_internal::PtrAndLen $getter_thunk$($QualifiedMsg$* msg) {
+               ::google::protobuf_inworld::rust_internal::PtrAndLen $getter_thunk$($QualifiedMsg$* msg) {
                  absl::string_view val = msg->$field$();
-                 return google::protobuf::rust_internal::PtrAndLen(val.data(), val.size());
+                 return google::protobuf_inworld::rust_internal::PtrAndLen(val.data(), val.size());
                }
                void $setter_thunk$($QualifiedMsg$* msg, const char* ptr, ::std::size_t size) {
                  msg->set_$field$(absl::string_view(ptr, size));
@@ -232,5 +232,5 @@ void SingularString::InThunkCc(Context<FieldDescriptor> field) const {
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -68,7 +68,7 @@
   } while (0)
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 template <typename... Args>
@@ -328,7 +328,7 @@ absl::StatusOr<FeatureSet> FeatureResolver::MergeFeatures(
   return merged;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

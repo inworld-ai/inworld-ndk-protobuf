@@ -42,15 +42,15 @@
 namespace upbc {
 
 using NameToFieldDescriptorMap =
-    absl::flat_hash_map<absl::string_view, const google::protobuf::FieldDescriptor*>;
+    absl::flat_hash_map<absl::string_view, const google::protobuf_inworld::FieldDescriptor*>;
 
 // Returns field name by resolving naming conflicts across
 // proto field names (such as clear_ prefixes).
-std::string ResolveFieldName(const google::protobuf::FieldDescriptor* field,
+std::string ResolveFieldName(const google::protobuf_inworld::FieldDescriptor* field,
                              const NameToFieldDescriptorMap& field_names);
 
 // Returns field map by name to use for conflict checks.
-NameToFieldDescriptorMap CreateFieldNameMap(const google::protobuf::Descriptor* message);
+NameToFieldDescriptorMap CreateFieldNameMap(const google::protobuf_inworld::Descriptor* message);
 
 using NameToFieldDefMap =
     absl::flat_hash_map<absl::string_view, upb::FieldDefPtr>;

@@ -47,7 +47,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // StringBlock provides heap allocated, dynamically sized blocks (mini arenas)
@@ -194,7 +194,7 @@ ABSL_ATTRIBUTE_RETURNS_NONNULL inline std::string* StringBlock::end() {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

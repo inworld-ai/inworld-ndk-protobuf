@@ -38,7 +38,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 namespace {
@@ -245,7 +245,7 @@ TEST(ObjCHelperDeathTest, TextFormatDecodeData_Failures) {
 }  // namespace
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -51,11 +51,11 @@
 #include "google/protobuf/generated_enum_util.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using Sub = ::google::protobuf::io::Printer::Sub;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 absl::flat_hash_map<absl::string_view, std::string> EnumVars(
     const EnumDescriptor* enum_, const Options& options,
@@ -388,7 +388,7 @@ void EnumGenerator::GenerateMethods(int idx, io::Printer* p) {
   // will drop it.
   p->Emit({{"encoded",
             [&] {
-              for (uint32_t n : google::protobuf::internal::GenerateEnumData(numbers)) {
+              for (uint32_t n : google::protobuf_inworld::internal::GenerateEnumData(numbers)) {
                 p->Emit({{"n", n}}, "$n$u, ");
               }
             }}},
@@ -606,5 +606,5 @@ void EnumGenerator::GenerateMethods(int idx, io::Printer* p) {
 }
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

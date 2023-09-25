@@ -52,15 +52,15 @@
 #include "google/protobuf/wire_format_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
 namespace {
 using internal::TailCallTableInfo;
 using internal::cpp::Utf8CheckMode;
-using google::protobuf::internal::WireFormat;
-using google::protobuf::internal::WireFormatLite;
+using google::protobuf_inworld::internal::WireFormat;
+using google::protobuf_inworld::internal::WireFormatLite;
 
 bool HasWeakFields(const Descriptor* descriptor) {
   for (int i = 0; i < descriptor->field_count(); i++) {
@@ -850,5 +850,5 @@ void ParseFunctionGenerator::GenerateFieldNames(Formatter& format) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -40,7 +40,7 @@
 PROTOBUF_PRAGMA_INIT_SEG
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 const char* ImplicitWeakMessage::_InternalParse(const char* ptr,
@@ -66,7 +66,7 @@ const ImplicitWeakMessage* ImplicitWeakMessage::default_instance() {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

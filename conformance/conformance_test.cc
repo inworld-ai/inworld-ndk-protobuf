@@ -51,9 +51,9 @@
 using conformance::ConformanceRequest;
 using conformance::ConformanceResponse;
 using conformance::WireFormat;
-using google::protobuf::TextFormat;
-using google::protobuf::util::DefaultFieldComparator;
-using google::protobuf::util::MessageDifferencer;
+using google::protobuf_inworld::TextFormat;
+using google::protobuf_inworld::util::DefaultFieldComparator;
+using google::protobuf_inworld::util::MessageDifferencer;
 using std::string;
 
 namespace {
@@ -113,7 +113,7 @@ bool CheckSetEmpty(const SetT& set_to_check, absl::string_view write_to_file,
 }  // namespace
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 ConformanceTestSuite::ConformanceRequestSetting::ConformanceRequestSetting(
     ConformanceLevel level, conformance::WireFormat input_format,
@@ -531,5 +531,5 @@ bool ConformanceTestSuite::RunSuite(ConformanceTestRunner* runner,
   return ok;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

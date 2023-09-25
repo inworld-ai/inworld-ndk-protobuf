@@ -894,10 +894,10 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
 // reasons. In order to efficiently read the second byte of `data` we need it to
 // be passed in RDX or RCX.
 #define PROTOBUF_TC_PARAM_DECL                 \
-  ::google::protobuf::MessageLite *msg, const char *ptr, \
-      ::google::protobuf::internal::ParseContext *ctx,   \
-      ::google::protobuf::internal::TcFieldData data,    \
-      const ::google::protobuf::internal::TcParseTableBase *table, uint64_t hasbits
+  ::google::protobuf_inworld::MessageLite *msg, const char *ptr, \
+      ::google::protobuf_inworld::internal::ParseContext *ctx,   \
+      ::google::protobuf_inworld::internal::TcFieldData data,    \
+      const ::google::protobuf_inworld::internal::TcParseTableBase *table, uint64_t hasbits
 // PROTOBUF_TC_PARAM_PASS passes values to match PROTOBUF_TC_PARAM_DECL.
 #define PROTOBUF_TC_PARAM_PASS msg, ptr, ctx, data, table, hasbits
 
@@ -908,11 +908,11 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
 // up the register holding that value, which may matter in highly optimized
 // functions such as varint parsing.
 #define PROTOBUF_TC_PARAM_NO_DATA_DECL                                        \
-  ::google::protobuf::MessageLite *msg, const char *ptr,                                \
-      ::google::protobuf::internal::ParseContext *ctx, ::google::protobuf::internal::TcFieldData, \
-      const ::google::protobuf::internal::TcParseTableBase *table, uint64_t hasbits
+  ::google::protobuf_inworld::MessageLite *msg, const char *ptr,                                \
+      ::google::protobuf_inworld::internal::ParseContext *ctx, ::google::protobuf_inworld::internal::TcFieldData, \
+      const ::google::protobuf_inworld::internal::TcParseTableBase *table, uint64_t hasbits
 #define PROTOBUF_TC_PARAM_NO_DATA_PASS \
-  msg, ptr, ctx, ::google::protobuf::internal::TcFieldData::DefaultInit(), table, hasbits
+  msg, ptr, ctx, ::google::protobuf_inworld::internal::TcFieldData::DefaultInit(), table, hasbits
 
 #ifdef PROTOBUF_UNUSED
 #error PROTOBUF_UNUSED was previously defined
@@ -1167,12 +1167,12 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
 // implement our own simple `protobuf_assumption_failed()` function for
 // asserting PROTOBUF_ASSUME predicates in debug builds.
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 PROTOBUF_EXPORT void protobuf_assumption_failed(const char *pred,
                                                 const char *file, int line);
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // PROTOBUF_ASSUME(pred) tells the compiler that it can assume pred is true.
@@ -1189,7 +1189,7 @@ PROTOBUF_EXPORT void protobuf_assumption_failed(const char *pred,
 #else  // NDEBUG
 #define PROTOBUF_ASSUME(pred)                                                  \
   if (!(pred)) {                                                               \
-    ::google::protobuf::internal::protobuf_assumption_failed(#pred, __FILE__, __LINE__); \
+    ::google::protobuf_inworld::internal::protobuf_assumption_failed(#pred, __FILE__, __LINE__); \
   }                                                                            \
   __builtin_assume(pred)
 #endif  // NDEBUG
@@ -1197,7 +1197,7 @@ PROTOBUF_EXPORT void protobuf_assumption_failed(const char *pred,
 #ifndef NDEBUG
 #define PROTOBUF_ASSUME(pred)                                                  \
   if (!(pred)) {                                                               \
-    ::google::protobuf::internal::protobuf_assumption_failed(#pred, __FILE__, __LINE__); \
+    ::google::protobuf_inworld::internal::protobuf_assumption_failed(#pred, __FILE__, __LINE__); \
   }
 #else  // !NDEBUG
 #define PROTOBUF_ASSUME(pred)

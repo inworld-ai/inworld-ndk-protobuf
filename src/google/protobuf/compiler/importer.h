@@ -50,7 +50,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace io {
 class ZeroCopyInputStream;
@@ -348,7 +348,7 @@ class PROTOBUF_EXPORT DiskSourceTree : public SourceTree {
 };
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

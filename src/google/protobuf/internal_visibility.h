@@ -31,7 +31,7 @@
 #define GOOGLE_PROTOBUF_INTERNAL_VISIBILITY_H__
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Arena;
 class Message;
@@ -49,9 +49,9 @@ class InternalVisibility {
   // ctor outside of the class to force a private ctor instance.
   explicit constexpr InternalVisibility();
 
-  friend class ::google::protobuf::Arena;
-  friend class ::google::protobuf::Message;
-  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  friend class ::google::protobuf_inworld::Message;
+  friend class ::google::protobuf_inworld::MessageLite;
 
   friend class InternalVisibilityForTesting;
 };
@@ -59,7 +59,7 @@ class InternalVisibility {
 inline constexpr InternalVisibility::InternalVisibility() = default;
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_INTERNAL_VISIBILITY_H__

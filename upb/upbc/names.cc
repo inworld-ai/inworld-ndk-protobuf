@@ -39,7 +39,7 @@
 
 namespace upbc {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 // Prefixes used by C code generator for field access.
 static constexpr absl::string_view kClearMethodPrefix = "clear_";
@@ -62,7 +62,7 @@ static constexpr absl::string_view kAccessorPrefixes[] = {
     kClearMethodPrefix,       kDeleteMethodPrefix, kAddToRepeatedMethodPrefix,
     kResizeArrayMethodPrefix, kSetMethodPrefix,    kHasMethodPrefix};
 
-std::string ResolveFieldName(const protobuf::FieldDescriptor* field,
+std::string ResolveFieldName(const protobuf_inworld::FieldDescriptor* field,
                              const NameToFieldDescriptorMap& field_names) {
   absl::string_view field_name = field->name();
   for (const auto prefix : kAccessorPrefixes) {
@@ -75,7 +75,7 @@ std::string ResolveFieldName(const protobuf::FieldDescriptor* field,
         const auto* candidate = match->second;
         if (candidate->is_repeated() || candidate->is_map() ||
             (candidate->cpp_type() ==
-                 protobuf::FieldDescriptor::CPPTYPE_STRING &&
+                 protobuf_inworld::FieldDescriptor::CPPTYPE_STRING &&
              prefix == kClearMethodPrefix) ||
             prefix == kSetMethodPrefix || prefix == kHasMethodPrefix) {
           return absl::StrCat(field_name, "_");
@@ -88,10 +88,10 @@ std::string ResolveFieldName(const protobuf::FieldDescriptor* field,
 
 // Returns field map by name to use for conflict checks.
 NameToFieldDescriptorMap CreateFieldNameMap(
-    const protobuf::Descriptor* message) {
+    const protobuf_inworld::Descriptor* message) {
   NameToFieldDescriptorMap field_names;
   for (int i = 0; i < message->field_count(); i++) {
-    const protobuf::FieldDescriptor* field = message->field(i);
+    const protobuf_inworld::FieldDescriptor* field = message->field(i);
     field_names.emplace(field->name(), field);
   }
   return field_names;

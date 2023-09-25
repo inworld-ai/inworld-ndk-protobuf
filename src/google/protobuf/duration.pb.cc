@@ -17,11 +17,11 @@
 // Must be included last.
 #include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+namespace _pb = ::google::protobuf_inworld;
+namespace _pbi = ::google::protobuf_inworld::internal;
+namespace _fl = ::google::protobuf_inworld::internal::field_layout;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 inline constexpr Duration::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -42,7 +42,7 @@ struct DurationDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_EXPORT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DurationDefaultTypeInternal _Duration_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 static ::_pb::Metadata file_level_metadata_google_2fprotobuf_2fduration_2eproto[1];
 static constexpr const ::_pb::EnumDescriptor**
@@ -52,24 +52,24 @@ static constexpr const ::_pb::ServiceDescriptor**
 const ::uint32_t TableStruct_google_2fprotobuf_2fduration_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::google::protobuf::Duration, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::google::protobuf_inworld::Duration, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::google::protobuf::Duration, _impl_.seconds_),
-    PROTOBUF_FIELD_OFFSET(::google::protobuf::Duration, _impl_.nanos_),
+    PROTOBUF_FIELD_OFFSET(::google::protobuf_inworld::Duration, _impl_.seconds_),
+    PROTOBUF_FIELD_OFFSET(::google::protobuf_inworld::Duration, _impl_.nanos_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::google::protobuf::Duration)},
+        {0, -1, -1, sizeof(::google::protobuf_inworld::Duration)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::google::protobuf::_Duration_default_instance_._instance,
+    &::google::protobuf_inworld::_Duration_default_instance_._instance,
 };
 const char descriptor_table_protodef_google_2fprotobuf_2fduration_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\036google/protobuf/duration.proto\022\017google"
@@ -116,26 +116,26 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_google_2
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_google_2fprotobuf_2fduration_2eproto(&descriptor_table_google_2fprotobuf_2fduration_2eproto);
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 // ===================================================================
 
 class Duration::_Internal {
  public:
 };
 
-Duration::Duration(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
+Duration::Duration(::google::protobuf_inworld::Arena* arena)
+    : ::google::protobuf_inworld::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:google.protobuf.Duration)
 }
 Duration::Duration(
-    ::google::protobuf::Arena* arena, const Duration& from)
+    ::google::protobuf_inworld::Arena* arena, const Duration& from)
     : Duration(arena) {
   MergeFrom(from);
 }
 inline PROTOBUF_NDEBUG_INLINE Duration::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* arena)
+    ::google::protobuf_inworld::internal::InternalVisibility visibility,
+    ::google::protobuf_inworld::Arena* arena)
       : _cached_size_{0} {}
 
 inline void Duration::SharedCtor(::_pb::Arena* arena) {
@@ -149,7 +149,7 @@ inline void Duration::SharedCtor(::_pb::Arena* arena) {
 }
 Duration::~Duration() {
   // @@protoc_insertion_point(destructor:google.protobuf.Duration)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Delete<::google::protobuf_inworld::UnknownFieldSet>();
   SharedDtor();
 }
 inline void Duration::SharedDtor() {
@@ -167,7 +167,7 @@ PROTOBUF_NOINLINE void Duration::Clear() {
   ::memset(&_impl_.seconds_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.nanos_) -
       reinterpret_cast<char*>(&_impl_.seconds_)) + sizeof(_impl_.nanos_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf_inworld::UnknownFieldSet>();
 }
 
 const char* Duration::_InternalParse(
@@ -215,21 +215,21 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Duration::_table_ = {
 
 ::uint8_t* Duration::_InternalSerialize(
     ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:google.protobuf.Duration)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
   // int64 seconds = 1;
   if (this->_internal_seconds() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
+    target = ::google::protobuf_inworld::internal::WireFormatLite::
         WriteInt64ToArrayWithField<1>(
             stream, this->_internal_seconds(), target);
   }
 
   // int32 nanos = 2;
   if (this->_internal_nanos() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
+    target = ::google::protobuf_inworld::internal::WireFormatLite::
         WriteInt32ToArrayWithField<2>(
             stream, this->_internal_nanos(), target);
   }
@@ -237,7 +237,7 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Duration::_table_ = {
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+            _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:google.protobuf.Duration)
   return target;
@@ -266,14 +266,14 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Duration::_table_ = {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Duration::_class_data_ = {
+const ::google::protobuf_inworld::Message::ClassData Duration::_class_data_ = {
     Duration::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData* Duration::GetClassData() const {
+const ::google::protobuf_inworld::Message::ClassData* Duration::GetClassData() const {
   return &_class_data_;
 }
 
-void Duration::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Duration::MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg) {
   auto* const _this = static_cast<Duration*>(&to_msg);
   auto& from = static_cast<const Duration&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:google.protobuf.Duration)
@@ -287,7 +287,7 @@ void Duration::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pr
   if (from._internal_nanos() != 0) {
     _this->_internal_set_nanos(from._internal_nanos());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf_inworld::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Duration::CopyFrom(const Duration& from) {
@@ -307,7 +307,7 @@ PROTOBUF_NOINLINE bool Duration::IsInitialized() const {
 void Duration::InternalSwap(Duration* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::google::protobuf_inworld::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Duration, _impl_.nanos_)
       + sizeof(Duration::_impl_.nanos_)
       - PROTOBUF_FIELD_OFFSET(Duration, _impl_.seconds_)>(
@@ -315,17 +315,17 @@ void Duration::InternalSwap(Duration* PROTOBUF_RESTRICT other) {
           reinterpret_cast<char*>(&other->_impl_.seconds_));
 }
 
-::google::protobuf::Metadata Duration::GetMetadata() const {
+::google::protobuf_inworld::Metadata Duration::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_google_2fprotobuf_2fduration_2eproto_getter, &descriptor_table_google_2fprotobuf_2fduration_2eproto_once,
       file_level_metadata_google_2fprotobuf_2fduration_2eproto[0]);
 }
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 namespace google {
-namespace protobuf {
-}  // namespace protobuf
+namespace protobuf_inworld {
+}  // namespace protobuf_inworld
 }  // namespace google
 // @@protoc_insertion_point(global_scope)
 #include "google/protobuf/port_undef.inc"

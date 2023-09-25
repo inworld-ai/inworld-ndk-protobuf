@@ -54,7 +54,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace io {
 class ZeroCopyOutputStream;
@@ -163,7 +163,7 @@ class PROTOC_EXPORT CodeGenerator {
   // feature-based decisions during code generation.
   template <typename DescriptorT>
   static const FeatureSet& GetResolvedSourceFeatures(const DescriptorT& desc) {
-    return ::google::protobuf::internal::InternalFeatureHelper::GetFeatures(desc);
+    return ::google::protobuf_inworld::internal::InternalFeatureHelper::GetFeatures(desc);
   }
 
   // Retrieves the unresolved source features for a given descriptor.  These
@@ -174,9 +174,9 @@ class PROTOC_EXPORT CodeGenerator {
             bool is_packed>
   static typename TypeTraitsT::ConstType GetUnresolvedSourceFeatures(
       const DescriptorT& descriptor,
-      const google::protobuf::internal::ExtensionIdentifier<
+      const google::protobuf_inworld::internal::ExtensionIdentifier<
           FeatureSet, TypeTraitsT, field_type, is_packed>& extension) {
-    return ::google::protobuf::internal::InternalFeatureHelper::GetUnresolvedFeatures(
+    return ::google::protobuf_inworld::internal::InternalFeatureHelper::GetUnresolvedFeatures(
         descriptor, extension);
   }
 };
@@ -224,7 +224,7 @@ class PROTOC_EXPORT GeneratorContext {
   // WARNING:  This feature will be REMOVED in the near future.
   virtual io::ZeroCopyOutputStream* OpenForInsertWithGeneratedCodeInfo(
       const std::string& filename, const std::string& insertion_point,
-      const google::protobuf::GeneratedCodeInfo& info);
+      const google::protobuf_inworld::GeneratedCodeInfo& info);
 
   // Returns a vector of FileDescriptors for all the files being compiled
   // in this run.  Useful for languages, such as Go, that treat files
@@ -254,7 +254,7 @@ PROTOC_EXPORT void ParseGeneratorParameter(
 PROTOC_EXPORT std::string StripProto(absl::string_view filename);
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

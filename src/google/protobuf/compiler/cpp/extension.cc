@@ -42,11 +42,11 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
-using ::google::protobuf::internal::cpp::IsLazilyInitializedFile;
+using ::google::protobuf_inworld::internal::cpp::IsLazilyInitializedFile;
 
 ExtensionGenerator::ExtensionGenerator(const FieldDescriptor* descriptor,
                                        const Options& options,
@@ -195,5 +195,5 @@ void ExtensionGenerator::GenerateDefinition(io::Printer* printer) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

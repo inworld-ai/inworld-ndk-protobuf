@@ -45,7 +45,7 @@
 #include "absl/strings/str_split.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace {
 
@@ -196,5 +196,5 @@ void CommandLineInterfaceTester::ExpectFileContent(absl::string_view filename,
 }
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

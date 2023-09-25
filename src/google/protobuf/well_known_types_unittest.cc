@@ -34,7 +34,7 @@
 #include "google/protobuf/unittest_well_known_types.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 // This test only checks whether well-known types are included in protobuf
@@ -55,5 +55,5 @@ TEST(WellKnownTypesTest, AllKnownTypesAreIncluded) {
 
 }  // namespace
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

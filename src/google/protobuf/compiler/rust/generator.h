@@ -40,12 +40,12 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 
 class PROTOC_EXPORT RustGenerator final
-    : public google::protobuf::compiler::CodeGenerator {
+    : public google::protobuf_inworld::compiler::CodeGenerator {
  public:
   RustGenerator() = default;
   RustGenerator(const RustGenerator&) = delete;
@@ -63,7 +63,7 @@ class PROTOC_EXPORT RustGenerator final
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

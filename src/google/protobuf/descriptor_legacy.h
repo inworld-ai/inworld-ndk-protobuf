@@ -65,7 +65,7 @@
 // us to control visibility.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 PROTOBUF_IGNORE_DEPRECATION_START
 
 // Wraps FileDescriptor.
@@ -112,7 +112,7 @@ class PROTOBUF_EXPORT OneofDescriptorLegacy {
 };
 
 PROTOBUF_IGNORE_DEPRECATION_STOP
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

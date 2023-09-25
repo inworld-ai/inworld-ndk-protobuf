@@ -36,7 +36,7 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 namespace {
 
@@ -55,7 +55,7 @@ std::string Namespace(const std::string& package) {
 }
 
 // Return the qualified C++ name for a file level symbol.
-std::string QualifiedFileLevelSymbol(const protobuf::FileDescriptor* file,
+std::string QualifiedFileLevelSymbol(const protobuf_inworld::FileDescriptor* file,
                                      const std::string& name) {
   if (file->package().empty()) {
     return absl::StrCat("::", name);
@@ -64,11 +64,11 @@ std::string QualifiedFileLevelSymbol(const protobuf::FileDescriptor* file,
   return absl::StrCat(Namespace(file->package()), "::protos::", name);
 }
 
-std::string CppTypeInternal(const protobuf::FieldDescriptor* field,
+std::string CppTypeInternal(const protobuf_inworld::FieldDescriptor* field,
                             bool is_const, bool is_type_parameter) {
   std::string maybe_const = is_const ? "const " : "";
   switch (field->cpp_type()) {
-    case protobuf::FieldDescriptor::CPPTYPE_MESSAGE: {
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE: {
       if (is_type_parameter) {
         return absl::StrCat(maybe_const,
                             QualifiedClassName(field->message_type()));
@@ -77,22 +77,22 @@ std::string CppTypeInternal(const protobuf::FieldDescriptor* field,
                             QualifiedClassName(field->message_type()), "*");
       }
     }
-    case protobuf::FieldDescriptor::CPPTYPE_BOOL:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_BOOL:
       return "bool";
-    case protobuf::FieldDescriptor::CPPTYPE_FLOAT:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_FLOAT:
       return "float";
-    case protobuf::FieldDescriptor::CPPTYPE_INT32:
-    case protobuf::FieldDescriptor::CPPTYPE_ENUM:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_INT32:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_ENUM:
       return "int32_t";
-    case protobuf::FieldDescriptor::CPPTYPE_UINT32:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_UINT32:
       return "uint32_t";
-    case protobuf::FieldDescriptor::CPPTYPE_DOUBLE:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_DOUBLE:
       return "double";
-    case protobuf::FieldDescriptor::CPPTYPE_INT64:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_INT64:
       return "int64_t";
-    case protobuf::FieldDescriptor::CPPTYPE_UINT64:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_UINT64:
       return "uint64_t";
-    case protobuf::FieldDescriptor::CPPTYPE_STRING:
+    case protobuf_inworld::FieldDescriptor::CPPTYPE_STRING:
       return "absl::string_view";
     default:
       ABSL_LOG(FATAL) << "Unexpected type: " << field->cpp_type();
@@ -101,8 +101,8 @@ std::string CppTypeInternal(const protobuf::FieldDescriptor* field,
 
 }  // namespace
 
-std::string ClassName(const protobuf::Descriptor* descriptor) {
-  const protobuf::Descriptor* parent = descriptor->containing_type();
+std::string ClassName(const protobuf_inworld::Descriptor* descriptor) {
+  const protobuf_inworld::Descriptor* parent = descriptor->containing_type();
   std::string res;
   // Classes in global namespace without package names are prefixed
   // by protos_ to avoid collision with C compiler structs defined in
@@ -116,32 +116,32 @@ std::string ClassName(const protobuf::Descriptor* descriptor) {
   return ::upbc::ResolveKeywordConflict(res);
 }
 
-std::string QualifiedClassName(const protobuf::Descriptor* descriptor) {
+std::string QualifiedClassName(const protobuf_inworld::Descriptor* descriptor) {
   return QualifiedFileLevelSymbol(descriptor->file(), ClassName(descriptor));
 }
 
-std::string QualifiedInternalClassName(const protobuf::Descriptor* descriptor) {
+std::string QualifiedInternalClassName(const protobuf_inworld::Descriptor* descriptor) {
   return QualifiedFileLevelSymbol(
       descriptor->file(), absl::StrCat("internal::", ClassName(descriptor)));
 }
 
-std::string CppSourceFilename(const google::protobuf::FileDescriptor* file) {
+std::string CppSourceFilename(const google::protobuf_inworld::FileDescriptor* file) {
   return StripExtension(file->name()) + ".upb.proto.cc";
 }
 
-std::string ForwardingHeaderFilename(const google::protobuf::FileDescriptor* file) {
+std::string ForwardingHeaderFilename(const google::protobuf_inworld::FileDescriptor* file) {
   return StripExtension(file->name()) + ".upb.fwd.h";
 }
 
-std::string UpbCFilename(const google::protobuf::FileDescriptor* file) {
+std::string UpbCFilename(const google::protobuf_inworld::FileDescriptor* file) {
   return StripExtension(file->name()) + ".upb.h";
 }
 
-std::string CppHeaderFilename(const google::protobuf::FileDescriptor* file) {
+std::string CppHeaderFilename(const google::protobuf_inworld::FileDescriptor* file) {
   return StripExtension(file->name()) + ".upb.proto.h";
 }
 
-void WriteStartNamespace(const protobuf::FileDescriptor* file, Output& output) {
+void WriteStartNamespace(const protobuf_inworld::FileDescriptor* file, Output& output) {
   // Skip namespace generation if package name is not specified.
   if (file->package().empty()) {
     return;
@@ -150,49 +150,49 @@ void WriteStartNamespace(const protobuf::FileDescriptor* file, Output& output) {
   output("namespace $0 {\n\n", NamespaceFromPackageName(file->package()));
 }
 
-void WriteEndNamespace(const protobuf::FileDescriptor* file, Output& output) {
+void WriteEndNamespace(const protobuf_inworld::FileDescriptor* file, Output& output) {
   if (file->package().empty()) {
     return;
   }
   output("} //  namespace $0\n\n", NamespaceFromPackageName(file->package()));
 }
 
-std::string CppConstType(const protobuf::FieldDescriptor* field) {
+std::string CppConstType(const protobuf_inworld::FieldDescriptor* field) {
   return CppTypeInternal(field, /* is_const= */ true,
                          /* is_type_parameter= */ false);
 }
 
-std::string CppTypeParameterName(const protobuf::FieldDescriptor* field) {
+std::string CppTypeParameterName(const protobuf_inworld::FieldDescriptor* field) {
   return CppTypeInternal(field, /* is_const= */ false,
                          /* is_type_parameter= */ true);
 }
 
-std::string MessageBaseType(const protobuf::FieldDescriptor* field,
+std::string MessageBaseType(const protobuf_inworld::FieldDescriptor* field,
                             bool is_const) {
-  ABSL_DCHECK(field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_MESSAGE);
+  ABSL_DCHECK(field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE);
   std::string maybe_const = is_const ? "const " : "";
   return maybe_const + QualifiedClassName(field->message_type());
 }
 
-std::string MessagePtrConstType(const protobuf::FieldDescriptor* field,
+std::string MessagePtrConstType(const protobuf_inworld::FieldDescriptor* field,
                                 bool is_const) {
-  ABSL_DCHECK(field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_MESSAGE);
+  ABSL_DCHECK(field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE);
   std::string maybe_const = is_const ? "const " : "";
   return "::protos::Ptr<" + maybe_const +
          QualifiedClassName(field->message_type()) + ">";
 }
 
-std::string MessageCProxyType(const protobuf::FieldDescriptor* field,
+std::string MessageCProxyType(const protobuf_inworld::FieldDescriptor* field,
                               bool is_const) {
-  ABSL_DCHECK(field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_MESSAGE);
+  ABSL_DCHECK(field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE);
   std::string maybe_const = is_const ? "const " : "";
   return maybe_const + QualifiedInternalClassName(field->message_type()) +
          "CProxy";
 }
 
-std::string MessageProxyType(const protobuf::FieldDescriptor* field,
+std::string MessageProxyType(const protobuf_inworld::FieldDescriptor* field,
                              bool is_const) {
-  ABSL_DCHECK(field->cpp_type() == protobuf::FieldDescriptor::CPPTYPE_MESSAGE);
+  ABSL_DCHECK(field->cpp_type() == protobuf_inworld::FieldDescriptor::CPPTYPE_MESSAGE);
   std::string maybe_const = is_const ? "const " : "";
   return maybe_const + QualifiedInternalClassName(field->message_type()) +
          "Proxy";

@@ -140,7 +140,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // Defined in this file.
 class Message;
@@ -343,7 +343,7 @@ class PROTOBUF_EXPORT Message : public MessageLite {
   // similar to either `ShortDebugString()` or `DebugString()` to the sink.
   // Do not rely on exact format.
   template <typename Sink>
-  friend void AbslStringify(Sink& sink, const google::protobuf::Message& message) {
+  friend void AbslStringify(Sink& sink, const google::protobuf_inworld::Message& message) {
     sink.Append(internal::StringifyMessage(message));
   }
 
@@ -840,7 +840,7 @@ class PROTOBUF_EXPORT Reflection final {
   //   CPPTYPE_BOOL         bool
   //   CPPTYPE_ENUM         generated enum type or int32_t
   //   CPPTYPE_STRING       std::string
-  //   CPPTYPE_MESSAGE      generated message type or google::protobuf::Message
+  //   CPPTYPE_MESSAGE      generated message type or google::protobuf_inworld::Message
   //
   // A RepeatedFieldRef object can be copied and the resulted object will point
   // to the same repeated field in the same message. The object can be used as
@@ -894,8 +894,8 @@ class PROTOBUF_EXPORT Reflection final {
 
   // DEPRECATED. Please use GetRepeatedFieldRef().
   //
-  // for T = std::string, google::protobuf::internal::StringPieceField
-  //         google::protobuf::Message & descendants.
+  // for T = std::string, google::protobuf_inworld::internal::StringPieceField
+  //         google::protobuf_inworld::Message & descendants.
   template <typename T>
   [[deprecated(
       "Please use GetRepeatedFieldRef() instead")]] const RepeatedPtrField<T>&
@@ -905,8 +905,8 @@ class PROTOBUF_EXPORT Reflection final {
 
   // DEPRECATED. Please use GetMutableRepeatedFieldRef().
   //
-  // for T = std::string, google::protobuf::internal::StringPieceField
-  //         google::protobuf::Message & descendants.
+  // for T = std::string, google::protobuf_inworld::internal::StringPieceField
+  //         google::protobuf_inworld::Message & descendants.
   template <typename T>
   [[deprecated(
       "Please use GetMutableRepeatedFieldRef() instead")]] RepeatedPtrField<T>*
@@ -961,7 +961,7 @@ class PROTOBUF_EXPORT Reflection final {
   // useful for determining if a message is a generated message or not, for
   // example:
   //   if (message->GetReflection()->GetMessageFactory() ==
-  //       google::protobuf::MessageFactory::generated_factory()) {
+  //       google::protobuf_inworld::MessageFactory::generated_factory()) {
   //     // This is a generated message.
   //   }
   // It can also be used to create more messages of this type, though
@@ -1374,7 +1374,7 @@ class PROTOBUF_EXPORT MessageFactory {
   // built lazily, so we can't register types by their descriptor until we
   // know that the descriptor exists.  |filename| must be a permanent string.
   static void InternalRegisterGeneratedFile(
-      const google::protobuf::internal::DescriptorTable* table);
+      const google::protobuf_inworld::internal::DescriptorTable* table);
 
   // For internal use only:  Registers a message type.  Called only by the
   // functions which are registered with InternalRegisterGeneratedFile(),
@@ -1419,7 +1419,7 @@ const T* DynamicCastToGenerated(const Message* from) {
   const T& (*get_default_instance)() = &T::default_instance;
   (void)get_default_instance;
 
-  // Compile-time assert that T is a subclass of google::protobuf::Message.
+  // Compile-time assert that T is a subclass of google::protobuf_inworld::Message.
   const Message* unused = static_cast<T*>(nullptr);
   (void)unused;
 
@@ -1441,7 +1441,7 @@ T* DynamicCastToGenerated(Message* from) {
 // Call this function to ensure that this message's reflection is linked into
 // the binary:
 //
-//   google::protobuf::LinkMessageReflection<pkg::FooMessage>();
+//   google::protobuf_inworld::LinkMessageReflection<pkg::FooMessage>();
 //
 // This will ensure that the following lookup will succeed:
 //
@@ -1467,8 +1467,8 @@ void LinkMessageReflection() {
 // Implementation details for {Get,Mutable}RawRepeatedPtrField.  We provide
 // specializations for <std::string>, <StringPieceField> and <Message> and
 // handle everything else with the default template which will match any type
-// having a method with signature "static const google::protobuf::Descriptor*
-// descriptor()". Such a type presumably is a descendant of google::protobuf::Message.
+// having a method with signature "static const google::protobuf_inworld::Descriptor*
+// descriptor()". Such a type presumably is a descendant of google::protobuf_inworld::Message.
 
 template <>
 inline const RepeatedPtrField<std::string>&
@@ -1580,7 +1580,7 @@ MutableRepeatedFieldRef<T> Reflection::GetMutableRepeatedFieldRef(
     Message* message, const FieldDescriptor* field) const {
   return MutableRepeatedFieldRef<T>(message, field);
 }
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

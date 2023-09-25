@@ -140,7 +140,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class DescriptorPool;
 class MessageFactory;
@@ -628,8 +628,8 @@ class PROTOBUF_EXPORT CodedInputStream {
 
   static int default_recursion_limit_;  // 100 by default.
 
-  friend class google::protobuf::ZeroCopyCodedInputStream;
-  friend class google::protobuf::internal::EpsCopyByteStream;
+  friend class google::protobuf_inworld::ZeroCopyCodedInputStream;
+  friend class google::protobuf_inworld::internal::EpsCopyByteStream;
 };
 
 // EpsCopyOutputStream wraps a ZeroCopyOutputStream and exposes a new stream,
@@ -1291,7 +1291,7 @@ class PROTOBUF_EXPORT CodedOutputStream {
   // that wants deterministic serialization by default needs to call
   // SetDefaultSerializationDeterministic() or ensure on its own that another
   // thread has done so.
-  friend void google::protobuf::internal::MapTestForceDeterministic();
+  friend void google::protobuf_inworld::internal::MapTestForceDeterministic();
   static void SetDefaultSerializationDeterministic() {
     default_serialization_deterministic_.store(true, std::memory_order_relaxed);
   }
@@ -1785,7 +1785,7 @@ inline uint8_t* CodedOutputStream::WriteStringToArray(const std::string& str,
 }
 
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #if defined(_MSC_VER) && _MSC_VER >= 1300 && !defined(__INTEL_COMPILER)

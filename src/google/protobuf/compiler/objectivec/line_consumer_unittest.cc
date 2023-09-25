@@ -40,7 +40,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl_lite.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 namespace {
@@ -179,5 +179,5 @@ TEST(ObjCHelper, ParseSimple_RejectLinesNoMessage) {
 }  // namespace
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

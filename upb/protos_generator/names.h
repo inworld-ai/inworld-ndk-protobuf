@@ -38,34 +38,34 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 inline constexpr absl::string_view kNoPackageNamePrefix = "protos_";
 
-std::string ClassName(const protobuf::Descriptor* descriptor);
-std::string QualifiedClassName(const protobuf::Descriptor* descriptor);
-std::string QualifiedInternalClassName(const protobuf::Descriptor* descriptor);
+std::string ClassName(const protobuf_inworld::Descriptor* descriptor);
+std::string QualifiedClassName(const protobuf_inworld::Descriptor* descriptor);
+std::string QualifiedInternalClassName(const protobuf_inworld::Descriptor* descriptor);
 
-std::string CppSourceFilename(const google::protobuf::FileDescriptor* file);
-std::string ForwardingHeaderFilename(const google::protobuf::FileDescriptor* file);
-std::string UpbCFilename(const google::protobuf::FileDescriptor* file);
-std::string CppHeaderFilename(const google::protobuf::FileDescriptor* file);
+std::string CppSourceFilename(const google::protobuf_inworld::FileDescriptor* file);
+std::string ForwardingHeaderFilename(const google::protobuf_inworld::FileDescriptor* file);
+std::string UpbCFilename(const google::protobuf_inworld::FileDescriptor* file);
+std::string CppHeaderFilename(const google::protobuf_inworld::FileDescriptor* file);
 
-void WriteStartNamespace(const protobuf::FileDescriptor* file, Output& output);
-void WriteEndNamespace(const protobuf::FileDescriptor* file, Output& output);
+void WriteStartNamespace(const protobuf_inworld::FileDescriptor* file, Output& output);
+void WriteEndNamespace(const protobuf_inworld::FileDescriptor* file, Output& output);
 
-std::string CppConstType(const protobuf::FieldDescriptor* field);
-std::string CppTypeParameterName(const protobuf::FieldDescriptor* field);
+std::string CppConstType(const protobuf_inworld::FieldDescriptor* field);
+std::string CppTypeParameterName(const protobuf_inworld::FieldDescriptor* field);
 
-std::string MessageBaseType(const protobuf::FieldDescriptor* field,
+std::string MessageBaseType(const protobuf_inworld::FieldDescriptor* field,
                             bool is_const);
 // Generate protos::Ptr<const Model> to be used in accessors as public
 // signatures.
-std::string MessagePtrConstType(const protobuf::FieldDescriptor* field,
+std::string MessagePtrConstType(const protobuf_inworld::FieldDescriptor* field,
                                 bool is_const);
-std::string MessageCProxyType(const protobuf::FieldDescriptor* field,
+std::string MessageCProxyType(const protobuf_inworld::FieldDescriptor* field,
                               bool is_const);
-std::string MessageProxyType(const protobuf::FieldDescriptor* field,
+std::string MessageProxyType(const protobuf_inworld::FieldDescriptor* field,
                              bool is_const);
 
 }  // namespace protos_generator

@@ -42,9 +42,9 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
-using ::google::protobuf::internal::DownCast;
+using ::google::protobuf_inworld::internal::DownCast;
 
 const char* TcParser::GenericFallback(PROTOBUF_TC_PARAM_DECL) {
   return GenericFallbackImpl<Message, UnknownFieldSet>(PROTOBUF_TC_PARAM_PASS);
@@ -90,5 +90,5 @@ const char* TcParser::ReflectionParseLoop(PROTOBUF_TC_PARAM_DECL) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

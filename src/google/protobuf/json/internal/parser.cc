@@ -71,7 +71,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 namespace {
 // This file contains code that drives a JsonLexer to visit a JSON document and
@@ -1326,7 +1326,7 @@ absl::Status JsonStringToMessage(absl::string_view input, Message* message,
   return s;
 }
 
-absl::Status JsonToBinaryStream(google::protobuf::util::TypeResolver* resolver,
+absl::Status JsonToBinaryStream(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 io::ZeroCopyInputStream* json_input,
                                 io::ZeroCopyOutputStream* binary_output,
@@ -1388,5 +1388,5 @@ absl::Status JsonToBinaryStream(google::protobuf::util::TypeResolver* resolver,
   return s;
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

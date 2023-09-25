@@ -41,7 +41,7 @@
 #include "google/protobuf/port.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class FieldDescriptor;  // descriptor.h
 namespace compiler {
 namespace java {
@@ -52,11 +52,11 @@ class ClassNameResolver;  // name_resolver.h
 namespace io {
 class Printer;  // printer.h
 }
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 
@@ -110,7 +110,7 @@ class ImmutableExtensionGenerator : public ExtensionGenerator {
 
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_JAVA_EXTENSION_H__

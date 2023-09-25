@@ -36,7 +36,7 @@
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 // Owns a python object and decrements the reference count on destruction.
@@ -94,6 +94,6 @@ class ScopedPythonPtr {
 typedef ScopedPythonPtr<PyObject> ScopedPyObjectPtr;
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_SCOPED_PYOBJECT_PTR_H__

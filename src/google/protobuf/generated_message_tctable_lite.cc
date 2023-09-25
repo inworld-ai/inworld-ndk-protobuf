@@ -61,7 +61,7 @@
 // clang-format on
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 using FieldEntry = TcParseTableBase::FieldEntry;
@@ -856,8 +856,8 @@ PROTOBUF_NOINLINE const char* TcParser::SingularVarBigint(
   // code size, but for this heavily-used piece of code, that's fine.
   struct Spill {
     uint64_t field_data;
-    ::google::protobuf::MessageLite* msg;
-    const ::google::protobuf::internal::TcParseTableBase* table;
+    ::google::protobuf_inworld::MessageLite* msg;
+    const ::google::protobuf_inworld::internal::TcParseTableBase* table;
     uint64_t hasbits;
   };
   Spill spill = {data.data, msg, table, hasbits};
@@ -2898,5 +2898,5 @@ PROTOBUF_NOINLINE const char* TcParser::MpMap(PROTOBUF_TC_PARAM_DECL) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

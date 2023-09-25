@@ -43,7 +43,7 @@
 #include "absl/strings/string_view.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace zc_sink_internal {
 namespace {
@@ -223,5 +223,5 @@ TEST_F(ZeroCopyStreamByteSinkTest, WriteLong) {
 }  // namespace
 }  // namespace zc_sink_internal
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

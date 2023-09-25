@@ -33,7 +33,7 @@
 #include <gtest/gtest.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 namespace {
@@ -133,5 +133,5 @@ TEST(ObjCHelper, IsCreateName) {
 }  // namespace
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -41,29 +41,29 @@
 #define PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fempty_2eproto PROTOBUF_EXPORT
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class AnyMetadata;
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // Internal implementation detail -- do not use these members.
 struct PROTOBUF_EXPORT TableStruct_google_2fprotobuf_2fempty_2eproto {
   static const ::uint32_t offsets[];
 };
-PROTOBUF_EXPORT extern const ::google::protobuf::internal::DescriptorTable
+PROTOBUF_EXPORT extern const ::google::protobuf_inworld::internal::DescriptorTable
     descriptor_table_google_2fprotobuf_2fempty_2eproto;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class Empty;
 struct EmptyDefaultTypeInternal;
 PROTOBUF_EXPORT extern EmptyDefaultTypeInternal _Empty_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // ===================================================================
 
@@ -71,13 +71,13 @@ namespace protobuf {
 // -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT Empty final :
-    public ::google::protobuf::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:google.protobuf.Empty) */ {
+    public ::google::protobuf_inworld::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:google.protobuf.Empty) */ {
  public:
   inline Empty() : Empty(nullptr) {}
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Empty(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Empty(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  Empty(::google::protobuf::Arena* arena, const Empty& from);
+  Empty(::google::protobuf_inworld::Arena* arena, const Empty& from);
   inline Empty(const Empty& from)
       : Empty(nullptr, from) {}
   Empty(Empty&& from) noexcept
@@ -103,22 +103,22 @@ class PROTOBUF_EXPORT Empty final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const Empty& default_instance() {
@@ -144,7 +144,7 @@ class PROTOBUF_EXPORT Empty final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(Empty* other) {
@@ -155,29 +155,29 @@ class PROTOBUF_EXPORT Empty final :
 
   // implements Message ----------------------------------------------
 
-  Empty* New(::google::protobuf::Arena* arena = nullptr) const final {
+  Empty* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<Empty>(arena);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
+  using ::google::protobuf_inworld::internal::ZeroFieldsBase::CopyFrom;
   inline void CopyFrom(const Empty& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
+    ::google::protobuf_inworld::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
-  using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
+  using ::google::protobuf_inworld::internal::ZeroFieldsBase::MergeFrom;
   void MergeFrom(const Empty& from) {
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
+    ::google::protobuf_inworld::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "google.protobuf.Empty";
   }
   protected:
-  explicit Empty(::google::protobuf::Arena* arena);
+  explicit Empty(::google::protobuf_inworld::Arena* arena);
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -187,19 +187,19 @@ class PROTOBUF_EXPORT Empty final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   friend struct ::TableStruct_google_2fprotobuf_2fempty_2eproto;
@@ -226,7 +226,7 @@ class PROTOBUF_EXPORT Empty final :
 #endif  // __GNUC__
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 

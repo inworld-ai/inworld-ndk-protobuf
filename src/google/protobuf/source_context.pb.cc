@@ -17,16 +17,16 @@
 // Must be included last.
 #include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+namespace _pb = ::google::protobuf_inworld;
+namespace _pbi = ::google::protobuf_inworld::internal;
+namespace _fl = ::google::protobuf_inworld::internal::field_layout;
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 inline constexpr SourceContext::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : file_name_(
-            &::google::protobuf::internal::fixed_address_empty_string,
+            &::google::protobuf_inworld::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         _cached_size_{0} {}
 
@@ -43,7 +43,7 @@ struct SourceContextDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_EXPORT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SourceContextDefaultTypeInternal _SourceContext_default_instance_;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 static ::_pb::Metadata file_level_metadata_google_2fprotobuf_2fsource_5fcontext_2eproto[1];
 static constexpr const ::_pb::EnumDescriptor**
@@ -53,23 +53,23 @@ static constexpr const ::_pb::ServiceDescriptor**
 const ::uint32_t TableStruct_google_2fprotobuf_2fsource_5fcontext_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::google::protobuf::SourceContext, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::google::protobuf_inworld::SourceContext, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::google::protobuf::SourceContext, _impl_.file_name_),
+    PROTOBUF_FIELD_OFFSET(::google::protobuf_inworld::SourceContext, _impl_.file_name_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::google::protobuf::SourceContext)},
+        {0, -1, -1, sizeof(::google::protobuf_inworld::SourceContext)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::google::protobuf::_SourceContext_default_instance_._instance,
+    &::google::protobuf_inworld::_SourceContext_default_instance_._instance,
 };
 const char descriptor_table_protodef_google_2fprotobuf_2fsource_5fcontext_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n$google/protobuf/source_context.proto\022\017"
@@ -116,39 +116,39 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_google_2
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_google_2fprotobuf_2fsource_5fcontext_2eproto(&descriptor_table_google_2fprotobuf_2fsource_5fcontext_2eproto);
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 // ===================================================================
 
 class SourceContext::_Internal {
  public:
 };
 
-SourceContext::SourceContext(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
+SourceContext::SourceContext(::google::protobuf_inworld::Arena* arena)
+    : ::google::protobuf_inworld::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:google.protobuf.SourceContext)
 }
 inline PROTOBUF_NDEBUG_INLINE SourceContext::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    ::google::protobuf_inworld::internal::InternalVisibility visibility, ::google::protobuf_inworld::Arena* arena,
     const Impl_& from)
       : file_name_(arena, from.file_name_),
         _cached_size_{0} {}
 
 SourceContext::SourceContext(
-    ::google::protobuf::Arena* arena,
+    ::google::protobuf_inworld::Arena* arena,
     const SourceContext& from)
-    : ::google::protobuf::Message(arena) {
+    : ::google::protobuf_inworld::Message(arena) {
   SourceContext* const _this = this;
   (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+  _internal_metadata_.MergeFrom<::google::protobuf_inworld::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
   // @@protoc_insertion_point(copy_constructor:google.protobuf.SourceContext)
 }
 inline PROTOBUF_NDEBUG_INLINE SourceContext::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* arena)
+    ::google::protobuf_inworld::internal::InternalVisibility visibility,
+    ::google::protobuf_inworld::Arena* arena)
       : file_name_(arena),
         _cached_size_{0} {}
 
@@ -157,7 +157,7 @@ inline void SourceContext::SharedCtor(::_pb::Arena* arena) {
 }
 SourceContext::~SourceContext() {
   // @@protoc_insertion_point(destructor:google.protobuf.SourceContext)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Delete<::google::protobuf_inworld::UnknownFieldSet>();
   SharedDtor();
 }
 inline void SourceContext::SharedDtor() {
@@ -174,7 +174,7 @@ PROTOBUF_NOINLINE void SourceContext::Clear() {
   (void) cached_has_bits;
 
   _impl_.file_name_.ClearToEmpty();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf_inworld::UnknownFieldSet>();
 }
 
 const char* SourceContext::_InternalParse(
@@ -219,7 +219,7 @@ const ::_pbi::TcParseTable<0, 1, 0, 47, 2> SourceContext::_table_ = {
 
 ::uint8_t* SourceContext::_InternalSerialize(
     ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:google.protobuf.SourceContext)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
@@ -227,15 +227,15 @@ const ::_pbi::TcParseTable<0, 1, 0, 47, 2> SourceContext::_table_ = {
   // string file_name = 1;
   if (!this->_internal_file_name().empty()) {
     const std::string& _s = this->_internal_file_name();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "google.protobuf.SourceContext.file_name");
+    ::google::protobuf_inworld::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf_inworld::internal::WireFormatLite::SERIALIZE, "google.protobuf.SourceContext.file_name");
     target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+            _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:google.protobuf.SourceContext)
   return target;
@@ -251,21 +251,21 @@ const ::_pbi::TcParseTable<0, 1, 0, 47, 2> SourceContext::_table_ = {
 
   // string file_name = 1;
   if (!this->_internal_file_name().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+    total_size += 1 + ::google::protobuf_inworld::internal::WireFormatLite::StringSize(
                                     this->_internal_file_name());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SourceContext::_class_data_ = {
+const ::google::protobuf_inworld::Message::ClassData SourceContext::_class_data_ = {
     SourceContext::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData* SourceContext::GetClassData() const {
+const ::google::protobuf_inworld::Message::ClassData* SourceContext::GetClassData() const {
   return &_class_data_;
 }
 
-void SourceContext::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SourceContext::MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg) {
   auto* const _this = static_cast<SourceContext*>(&to_msg);
   auto& from = static_cast<const SourceContext&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:google.protobuf.SourceContext)
@@ -276,7 +276,7 @@ void SourceContext::MergeImpl(::google::protobuf::Message& to_msg, const ::googl
   if (!from._internal_file_name().empty()) {
     _this->_internal_set_file_name(from._internal_file_name());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf_inworld::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SourceContext::CopyFrom(const SourceContext& from) {
@@ -302,17 +302,17 @@ void SourceContext::InternalSwap(SourceContext* PROTOBUF_RESTRICT other) {
                                        &other->_impl_.file_name_, rhs_arena);
 }
 
-::google::protobuf::Metadata SourceContext::GetMetadata() const {
+::google::protobuf_inworld::Metadata SourceContext::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_google_2fprotobuf_2fsource_5fcontext_2eproto_getter, &descriptor_table_google_2fprotobuf_2fsource_5fcontext_2eproto_once,
       file_level_metadata_google_2fprotobuf_2fsource_5fcontext_2eproto[0]);
 }
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 namespace google {
-namespace protobuf {
-}  // namespace protobuf
+namespace protobuf_inworld {
+}  // namespace protobuf_inworld
 }  // namespace google
 // @@protoc_insertion_point(global_scope)
 #include "google/protobuf/port_undef.inc"

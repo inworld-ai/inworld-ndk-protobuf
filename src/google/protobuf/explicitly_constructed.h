@@ -41,7 +41,7 @@
 // clang-format on
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Wraps a variable whose constructor and destructor are explicitly
@@ -87,7 +87,7 @@ class ExplicitlyConstructed {
 using ExplicitlyConstructedArenaString = ExplicitlyConstructed<std::string, 8>;
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

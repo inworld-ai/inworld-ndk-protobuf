@@ -57,17 +57,17 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class MapKey;
 class MapValueRef;
 class MessageLayoutInspector;
 class Message;
 struct Metadata;
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class DefaultEmptyOneof;
 // Defined in other files.
@@ -129,7 +129,7 @@ constexpr uint32_t kInlinedMask = 0x1u;
 //                  -1.
 struct ReflectionSchema {
  public:
-  // Size of a google::protobuf::Message object of this type.
+  // Size of a google::protobuf_inworld::Message object of this type.
   uint32_t GetObjectSize() const { return static_cast<uint32_t>(object_size_); }
 
   bool InRealOneof(const FieldDescriptor* field) const {
@@ -394,7 +394,7 @@ PROTOBUF_EXPORT bool SplitFieldHasExtraIndirection(
     const FieldDescriptor* field);
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

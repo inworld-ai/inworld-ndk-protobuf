@@ -47,7 +47,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace ruby {
 
@@ -151,7 +151,7 @@ void GenerateMessageAssignment(absl::string_view prefix,
     "prefix", prefix,
     "name", RubifyConstant(message->name()));
   printer->Print(
-    "::Google::Protobuf::DescriptorPool.generated_pool."
+    "::Google::protobuf_inworld::DescriptorPool.generated_pool."
     "lookup(\"$full_name$\").msgclass\n",
     "full_name", message->full_name());
 
@@ -172,7 +172,7 @@ void GenerateEnumAssignment(absl::string_view prefix, const EnumDescriptor* en,
     "prefix", prefix,
     "name", RubifyConstant(en->name()));
   printer->Print(
-    "::Google::Protobuf::DescriptorPool.generated_pool."
+    "::Google::protobuf_inworld::DescriptorPool.generated_pool."
     "lookup(\"$full_name$\").enummodule\n",
     "full_name", en->full_name());
 }
@@ -284,14 +284,14 @@ void GenerateBinaryDescriptor(const FileDescriptor* file, io::Printer* printer,
   printer->Print(R"(
 descriptor_data = "$descriptor_data$"
 
-pool = Google::Protobuf::DescriptorPool.generated_pool
+pool = Google::protobuf_inworld::DescriptorPool.generated_pool
 
 begin
   pool.add_serialized_file(descriptor_data)
 rescue TypeError
   # Compatibility code: will be removed in the next major version.
   require 'google/protobuf/descriptor_pb'
-  parsed = Google::Protobuf::FileDescriptorProto.decode(descriptor_data)
+  parsed = Google::protobuf_inworld::FileDescriptorProto.decode(descriptor_data)
   parsed.clear_dependency
   serialized = parsed.class.encode(parsed)
   file = pool.add_serialized_file(serialized)
@@ -371,5 +371,5 @@ bool Generator::Generate(
 
 }  // namespace ruby
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

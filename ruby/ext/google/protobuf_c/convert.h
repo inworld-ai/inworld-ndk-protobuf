@@ -40,7 +40,7 @@
 // value will be assigned. It is used as follows:
 // - If type is string or bytes, the string data will be copied into |arena|.
 // - If type is message, and we need to auto-construct a message due to implicit
-//   conversions (eg. Time -> Google::Protobuf::Timestamp), the new message
+//   conversions (eg. Time -> Google::protobuf_inworld::Timestamp), the new message
 //   will be created in |arena|.
 // - If type is message and the Ruby value is a message instance, we will fuse
 //   the message's arena into |arena|, to ensure that this message outlives the

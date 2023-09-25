@@ -33,7 +33,7 @@
 #include <gtest/gtest.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 #ifndef PROTOBUF_NO_THREADLOCAL
@@ -111,5 +111,5 @@ TEST(ReflectionModeTest, AlwaysReturnDefaultWhenNoThreadLocal) {
 #endif
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

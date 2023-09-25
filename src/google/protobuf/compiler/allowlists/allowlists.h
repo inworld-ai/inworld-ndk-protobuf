@@ -34,7 +34,7 @@
 #include "absl/strings/string_view.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // Returns whether a file can use the `import weak` syntax.
@@ -56,7 +56,7 @@ bool IsUnusedImportFile(absl::string_view file);
 bool IsEarlyEditionsFile(absl::string_view file);
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_ALLOWLISTS_COMPILER_ALLOWLISTS_H__

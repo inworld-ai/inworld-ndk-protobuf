@@ -76,7 +76,7 @@ using protobuf_unittest::TestOneof2;
 using protobuf_unittest::TestRepeatedString;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Notifier {
  public:
@@ -1567,7 +1567,7 @@ TEST(ArenaTest, SpaceReusePoisonsAndUnpoisonsMemory) {
 }
 
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

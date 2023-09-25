@@ -37,12 +37,12 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 ABSL_CONST_INIT PROTOBUF_EXPORT
     ABSL_CACHELINE_ALIGNED const char kZeroBuffer[ABSL_CACHELINE_SIZE] = {};
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

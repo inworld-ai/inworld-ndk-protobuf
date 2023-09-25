@@ -44,7 +44,7 @@
 #include "google/protobuf/unittest_import.pb.h"
 
 
-#define BRIDGE_UNITTEST ::google::protobuf::bridge_unittest
+#define BRIDGE_UNITTEST ::google::protobuf_inworld::bridge_unittest
 #define UNITTEST ::protobuf_unittest
 #define UNITTEST_IMPORT ::protobuf_unittest_import
 #define UNITTEST_PACKAGE_NAME "protobuf_unittest"
@@ -60,7 +60,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 struct AlignedAsDefault {
@@ -204,7 +204,7 @@ TEST(MapTest, Aligned8OnArena) { MapTest_Aligned<AlignedAs8, true>(); }
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

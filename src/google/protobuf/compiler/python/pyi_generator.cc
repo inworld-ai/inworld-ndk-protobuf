@@ -47,7 +47,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace python {
 
@@ -648,5 +648,5 @@ bool PyiGenerator::Generate(const FileDescriptor* file,
 
 }  // namespace python
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

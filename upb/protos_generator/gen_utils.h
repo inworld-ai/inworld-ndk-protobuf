@@ -40,7 +40,7 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 enum class MessageClassType {
   kMessage,
@@ -49,17 +49,17 @@ enum class MessageClassType {
   kMessageAccess,
 };
 
-inline bool IsMapEntryMessage(const protobuf::Descriptor* descriptor) {
+inline bool IsMapEntryMessage(const protobuf_inworld::Descriptor* descriptor) {
   return descriptor->options().map_entry();
 }
-std::vector<const protobuf::EnumDescriptor*> SortedEnums(
-    const protobuf::FileDescriptor* file);
-std::vector<const protobuf::Descriptor*> SortedMessages(
-    const protobuf::FileDescriptor* file);
-std::vector<const protobuf::FieldDescriptor*> SortedExtensions(
-    const protobuf::FileDescriptor* file);
-std::vector<const protobuf::FieldDescriptor*> FieldNumberOrder(
-    const protobuf::Descriptor* message);
+std::vector<const protobuf_inworld::EnumDescriptor*> SortedEnums(
+    const protobuf_inworld::FileDescriptor* file);
+std::vector<const protobuf_inworld::Descriptor*> SortedMessages(
+    const protobuf_inworld::FileDescriptor* file);
+std::vector<const protobuf_inworld::FieldDescriptor*> SortedExtensions(
+    const protobuf_inworld::FileDescriptor* file);
+std::vector<const protobuf_inworld::FieldDescriptor*> FieldNumberOrder(
+    const protobuf_inworld::Descriptor* message);
 
 std::string ToCamelCase(const std::string& input, bool lower_first);
 

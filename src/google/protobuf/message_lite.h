@@ -66,7 +66,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 template <typename T>
 class RepeatedPtrField;
@@ -282,7 +282,7 @@ class PROTOBUF_EXPORT MessageLite {
   // Implementation of the `AbslStringify` interface. This adds `DebugString()`
   // to the sink. Do not rely on exact format.
   template <typename Sink>
-  friend void AbslStringify(Sink& sink, const google::protobuf::MessageLite& msg) {
+  friend void AbslStringify(Sink& sink, const google::protobuf_inworld::MessageLite& msg) {
     sink.Append(msg.DebugString());
   }
 
@@ -343,7 +343,7 @@ class PROTOBUF_EXPORT MessageLite {
   // This function takes a string in the (non-human-readable) binary wire
   // format, matching the encoding output by MessageLite::SerializeToString().
   // If you'd like to convert a human-readable string into a protocol buffer
-  // object, see google::protobuf::TextFormat::ParseFromString().
+  // object, see google::protobuf_inworld::TextFormat::ParseFromString().
   PROTOBUF_ATTRIBUTE_REINITIALIZES bool ParseFromString(absl::string_view data);
   // Like ParseFromString(), but accepts messages that are missing
   // required fields.
@@ -694,7 +694,7 @@ T* OnShutdownDelete(T* p) {
 std::string ShortFormat(const MessageLite& message_lite);
 std::string Utf8Format(const MessageLite& message_lite);
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

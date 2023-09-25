@@ -52,7 +52,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
@@ -364,7 +364,7 @@ bool CppGenerator::Generate(const FileDescriptor* file,
 
 absl::Status CppGenerator::ValidateFeatures(const FileDescriptor* file) const {
   absl::Status status = absl::OkStatus();
-  google::protobuf::internal::VisitDescriptors(*file, [&](const FieldDescriptor& field) {
+  google::protobuf_inworld::internal::VisitDescriptors(*file, [&](const FieldDescriptor& field) {
     const FeatureSet& resolved_features = GetResolvedSourceFeatures(field);
     const pb::CppFeatures& unresolved_features =
         GetUnresolvedSourceFeatures(field, pb::cpp);
@@ -429,5 +429,5 @@ absl::Status CppGenerator::ValidateFeatures(const FileDescriptor* file) const {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -66,7 +66,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class Arena;
 class Descriptor;       // descriptor.h
 class FieldDescriptor;  // descriptor.h
@@ -81,14 +81,14 @@ namespace internal {
 class FieldSkipper;  // wire_format_lite.h
 class WireFormat;
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 namespace pb {
 class CppFeatures;
 }  // namespace pb
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 class InternalMetadata;
@@ -528,8 +528,8 @@ class PROTOBUF_EXPORT ExtensionSet {
   template <typename Type, bool IsValid(int)>
   friend class RepeatedEnumTypeTraits;
 
-  friend class google::protobuf::Reflection;
-  friend class google::protobuf::internal::WireFormat;
+  friend class google::protobuf_inworld::Reflection;
+  friend class google::protobuf_inworld::internal::WireFormat;
 
   const int32_t& GetRefInt32(int number, const int32_t& default_value) const;
   const int64_t& GetRefInt64(int number, const int64_t& default_value) const;
@@ -1460,7 +1460,7 @@ class RepeatedMessageTypeTraits {
     // See notes above in RepeatedEnumTypeTraits::GetRepeated(): same
     // casting hack applies here, because a RepeatedPtrField<MessageLite>
     // cannot naturally become a RepeatedPtrType<Type> even though Type is
-    // presumably a message. google::protobuf::Message goes through similar contortions
+    // presumably a message. google::protobuf_inworld::Message goes through similar contortions
     // with a reinterpret_cast<>.
     return *reinterpret_cast<const RepeatedPtrField<Type>*>(
         set.GetRawRepeatedField(number, GetDefaultRepeatedField()));
@@ -1588,7 +1588,7 @@ class ExtensionIdentifier<FeatureSet, MessageTypeTraits<::pb::CppFeatures>, 11,
 // Call this function to ensure that this extensions's reflection is linked into
 // the binary:
 //
-//   google::protobuf::LinkExtensionReflection(Foo::my_extension);
+//   google::protobuf_inworld::LinkExtensionReflection(Foo::my_extension);
 //
 // This will ensure that the following lookup will succeed:
 //
@@ -1610,7 +1610,7 @@ class ExtensionIdentifier<FeatureSet, MessageTypeTraits<::pb::CppFeatures>, 11,
 template <typename ExtendeeType, typename TypeTraitsType,
           internal::FieldType field_type, bool is_packed>
 void LinkExtensionReflection(
-    const google::protobuf::internal::ExtensionIdentifier<
+    const google::protobuf_inworld::internal::ExtensionIdentifier<
         ExtendeeType, TypeTraitsType, field_type, is_packed>& extension) {
   internal::StrongReference(extension);
 }
@@ -1621,16 +1621,16 @@ template <typename ExtendeeType, typename TypeTraitsType,
           internal::FieldType field_type, bool is_packed,
           typename PoolType = DescriptorPool>
 const FieldDescriptor* GetExtensionReflection(
-    const google::protobuf::internal::ExtensionIdentifier<
+    const google::protobuf_inworld::internal::ExtensionIdentifier<
         ExtendeeType, TypeTraitsType, field_type, is_packed>& extension) {
   return PoolType::generated_pool()->FindExtensionByNumber(
-      google::protobuf::internal::ExtensionIdentifier<ExtendeeType, TypeTraitsType,
+      google::protobuf_inworld::internal::ExtensionIdentifier<ExtendeeType, TypeTraitsType,
                                             field_type,
                                             is_packed>::Extendee::descriptor(),
       extension.number());
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

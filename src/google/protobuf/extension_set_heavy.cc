@@ -57,7 +57,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Implementation of ExtensionFinder which finds extensions in a given
@@ -437,7 +437,7 @@ uint8_t* ExtensionSet::SerializeMessageSetWithCachedSizesToArray(
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

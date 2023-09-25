@@ -33,7 +33,7 @@
 #include <gtest/gtest.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace internal {
 namespace {
@@ -116,5 +116,5 @@ TEST(AllowlistTest, Unsorted) {
 }  // namespace
 }  // namespace internal
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

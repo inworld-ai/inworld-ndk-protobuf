@@ -125,7 +125,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 typedef unsigned int uint;
 
@@ -289,7 +289,7 @@ class BigEndian {
   }
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

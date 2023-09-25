@@ -33,7 +33,7 @@
 #include "google/protobuf/compiler/allowlists/allowlists.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 // NOTE: These files have early default access to go/editions.  The protoc flag
@@ -50,5 +50,5 @@ bool IsEarlyEditionsFile(absl::string_view file) {
   return kEarlyEditionsFile.Allows(file);
 }
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

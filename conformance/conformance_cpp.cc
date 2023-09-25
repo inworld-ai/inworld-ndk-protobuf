@@ -57,15 +57,15 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 using ::conformance::ConformanceRequest;
 using ::conformance::ConformanceResponse;
-using ::google::protobuf::util::BinaryToJsonString;
-using ::google::protobuf::util::JsonParseOptions;
-using ::google::protobuf::util::JsonToBinaryString;
-using ::google::protobuf::util::NewTypeResolverForDescriptorPool;
-using ::google::protobuf::util::TypeResolver;
+using ::google::protobuf_inworld::util::BinaryToJsonString;
+using ::google::protobuf_inworld::util::JsonParseOptions;
+using ::google::protobuf_inworld::util::JsonToBinaryString;
+using ::google::protobuf_inworld::util::NewTypeResolverForDescriptorPool;
+using ::google::protobuf_inworld::util::TypeResolver;
 using ::protobuf_test_messages::proto2::TestAllTypesProto2;
 using ::protobuf_test_messages::proto3::TestAllTypesProto3;
 
@@ -97,8 +97,8 @@ absl::Status WriteFd(int fd, const void* buf, size_t len) {
 class Harness {
  public:
   Harness() {
-    google::protobuf::LinkMessageReflection<TestAllTypesProto2>();
-    google::protobuf::LinkMessageReflection<TestAllTypesProto3>();
+    google::protobuf_inworld::LinkMessageReflection<TestAllTypesProto2>();
+    google::protobuf_inworld::LinkMessageReflection<TestAllTypesProto3>();
 
     resolver_.reset(NewTypeResolverForDescriptorPool(
         "type.googleapis.com", DescriptorPool::generated_pool()));
@@ -258,11 +258,11 @@ absl::StatusOr<bool> Harness::ServeConformanceRequest() {
   return false;
 }
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 int main() {
-  google::protobuf::Harness harness;
+  google::protobuf_inworld::Harness harness;
   int total_runs = 0;
   while (true) {
     auto is_done = harness.ServeConformanceRequest();

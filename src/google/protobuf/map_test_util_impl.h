@@ -36,10 +36,10 @@
 #include <gtest/gtest.h>
 
 
-namespace protobuf_unittest {}  // namespace protobuf_unittest
+namespace protobuf_inworld_unittest {}  // namespace protobuf_inworld_unittest
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace unittest = ::protobuf_unittest;
 
@@ -477,7 +477,7 @@ void MapTestUtilImpl::ExpectMapFieldsModified(const MapMessage& message) {
   EXPECT_EQ(2, message.map_int32_foreign_message().at(1).c());
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_MAP_TEST_UTIL_IMPL_H__

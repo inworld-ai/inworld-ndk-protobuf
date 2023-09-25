@@ -34,7 +34,7 @@
 #include <cstddef>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace zc_sink_internal {
 void ZeroCopyStreamByteSink::Append(const char* bytes, size_t len) {
@@ -64,5 +64,5 @@ void ZeroCopyStreamByteSink::Append(const char* bytes, size_t len) {
 }
 }  // namespace zc_sink_internal
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

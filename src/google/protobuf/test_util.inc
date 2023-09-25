@@ -44,7 +44,7 @@
 #include "google/protobuf/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace TestUtil {
 
 // Set every field in the message to a unique value.
@@ -2432,5 +2432,5 @@ inline void TestUtil::ExpectAtMostOneFieldSetInOneof(
 
 // ===================================================================
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

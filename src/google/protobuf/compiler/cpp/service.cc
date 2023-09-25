@@ -41,7 +41,7 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 void ServiceGenerator::GenerateDeclarations(io::Printer* printer) {
@@ -75,7 +75,7 @@ void ServiceGenerator::GenerateDeclarations(io::Printer* printer) {
                           ::$proto_ns$::RpcController* controller,
                           const ::$proto_ns$::Message* request,
                           ::$proto_ns$::Message* response,
-                          ::google::protobuf::Closure* done) override;
+                          ::google::protobuf_inworld::Closure* done) override;
 
           const ::$proto_ns$::Message& GetRequestPrototype(
               const ::$proto_ns$::MethodDescriptor* method) const override;
@@ -126,7 +126,7 @@ void ServiceGenerator::GenerateMethodSignatures(VirtualOrNot virtual_or_not,
           $virtual $void $name$(::$proto_ns$::RpcController* controller,
                                 const $input$* request,
                                 $output$* response,
-                                ::google::protobuf::Closure* done)$ override$;
+                                ::google::protobuf_inworld::Closure* done)$ override$;
         )");
   }
 }
@@ -192,7 +192,7 @@ void ServiceGenerator::GenerateNotImplementedMethods(io::Printer* printer) {
         },
         R"cc(
           void $classname$::$name$(::$proto_ns$::RpcController* controller,
-                                   const $input$*, $output$*, ::google::protobuf::Closure* done) {
+                                   const $input$*, $output$*, ::google::protobuf_inworld::Closure* done) {
             controller->SetFailed("Method $name$() not implemented.");
             done->Run();
           }
@@ -211,7 +211,7 @@ void ServiceGenerator::GenerateCallMethod(io::Printer* printer) {
             const ::$proto_ns$::MethodDescriptor* method,
             ::$proto_ns$::RpcController* controller,
             const ::$proto_ns$::Message* request,
-            ::$proto_ns$::Message* response, ::google::protobuf::Closure* done) {
+            ::$proto_ns$::Message* response, ::google::protobuf_inworld::Closure* done) {
           ABSL_DCHECK_EQ(method->service(), $file_level_service_descriptors$[$index$]);
           switch (method->index()) {
             $cases$;
@@ -300,7 +300,7 @@ void ServiceGenerator::GenerateStubMethods(io::Printer* printer) {
         R"cc(
           void $classname$_Stub::$name$(::$proto_ns$::RpcController* controller,
                                         const $input$* request,
-                                        $output$* response, ::google::protobuf::Closure* done) {
+                                        $output$* response, ::google::protobuf_inworld::Closure* done) {
             channel_->CallMethod(descriptor()->method($index$), controller,
                                  request, response, done);
           }
@@ -310,5 +310,5 @@ void ServiceGenerator::GenerateStubMethods(io::Printer* printer) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

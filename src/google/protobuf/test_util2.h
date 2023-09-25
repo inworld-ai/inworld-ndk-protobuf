@@ -42,11 +42,11 @@
 #include "google/protobuf/util/message_differencer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace TestUtil {
 
 inline std::string TestSourceDir() {
-  return google::protobuf::TestSourceDir();
+  return google::protobuf_inworld::TestSourceDir();
 }
 
 inline std::string GetTestDataPath(absl::string_view path) {
@@ -85,7 +85,7 @@ class BoundedArrayInputStream : public io::ZeroCopyInputStream {
 };
 
 }  // namespace TestUtil
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_TEST_UTIL2_H__

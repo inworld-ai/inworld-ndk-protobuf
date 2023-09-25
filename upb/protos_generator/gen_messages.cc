@@ -47,34 +47,34 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
-void WriteModelAccessDeclaration(const protobuf::Descriptor* descriptor,
+void WriteModelAccessDeclaration(const protobuf_inworld::Descriptor* descriptor,
                                  Output& output);
 void WriteModelPublicDeclaration(
-    const protobuf::Descriptor* descriptor,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
-    const std::vector<const protobuf::EnumDescriptor*>& file_enums,
+    const protobuf_inworld::Descriptor* descriptor,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& file_enums,
     Output& output);
 void WriteExtensionIdentifiersInClassHeader(
-    const protobuf::Descriptor* message,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
+    const protobuf_inworld::Descriptor* message,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
     Output& output);
-void WriteModelProxyDeclaration(const protobuf::Descriptor* descriptor,
+void WriteModelProxyDeclaration(const protobuf_inworld::Descriptor* descriptor,
                                 Output& output);
-void WriteModelCProxyDeclaration(const protobuf::Descriptor* descriptor,
+void WriteModelCProxyDeclaration(const protobuf_inworld::Descriptor* descriptor,
                                  Output& output);
 void WriteInternalForwardDeclarationsInHeader(
-    const protobuf::Descriptor* message, Output& output);
-void WriteDefaultInstanceHeader(const protobuf::Descriptor* message,
+    const protobuf_inworld::Descriptor* message, Output& output);
+void WriteDefaultInstanceHeader(const protobuf_inworld::Descriptor* message,
                                 Output& output);
 void WriteExtensionIdentifiersImplementation(
-    const protobuf::Descriptor* message,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
+    const protobuf_inworld::Descriptor* message,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
     Output& output);
 void WriteUsingEnumsInHeader(
-    const protobuf::Descriptor* message,
-    const std::vector<const protobuf::EnumDescriptor*>& file_enums,
+    const protobuf_inworld::Descriptor* message,
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& file_enums,
     Output& output);
 
 // Writes message class declarations into .upb.proto.h.
@@ -82,9 +82,9 @@ void WriteUsingEnumsInHeader(
 // For each proto Foo, FooAccess and FooProxy/FooCProxy are generated
 // that are exposed to users as Foo , Ptr<Foo> and Ptr<const Foo>.
 void WriteMessageClassDeclarations(
-    const protobuf::Descriptor* descriptor,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
-    const std::vector<const protobuf::EnumDescriptor*>& file_enums,
+    const protobuf_inworld::Descriptor* descriptor,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& file_enums,
     Output& output) {
   if (IsMapEntryMessage(descriptor)) {
     // Skip map entry generation. Low level accessors for maps are
@@ -107,7 +107,7 @@ void WriteMessageClassDeclarations(
   output("}  // namespace internal\n\n");
 }
 
-void WriteModelAccessDeclaration(const protobuf::Descriptor* descriptor,
+void WriteModelAccessDeclaration(const protobuf_inworld::Descriptor* descriptor,
                                  Output& output) {
   output(
       R"cc(
@@ -144,9 +144,9 @@ void WriteModelAccessDeclaration(const protobuf::Descriptor* descriptor,
 }
 
 void WriteModelPublicDeclaration(
-    const protobuf::Descriptor* descriptor,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
-    const std::vector<const protobuf::EnumDescriptor*>& file_enums,
+    const protobuf_inworld::Descriptor* descriptor,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& file_enums,
     Output& output) {
   output(
       R"cc(
@@ -232,7 +232,7 @@ void WriteModelPublicDeclaration(
   output("};\n\n");
 }
 
-void WriteModelProxyDeclaration(const protobuf::Descriptor* descriptor,
+void WriteModelProxyDeclaration(const protobuf_inworld::Descriptor* descriptor,
                                 Output& output) {
   // Foo::Proxy.
   output(
@@ -294,7 +294,7 @@ void WriteModelProxyDeclaration(const protobuf::Descriptor* descriptor,
   output("};\n\n");
 }
 
-void WriteModelCProxyDeclaration(const protobuf::Descriptor* descriptor,
+void WriteModelCProxyDeclaration(const protobuf_inworld::Descriptor* descriptor,
                                  Output& output) {
   // Foo::CProxy.
   output(
@@ -341,15 +341,15 @@ void WriteModelCProxyDeclaration(const protobuf::Descriptor* descriptor,
   output("};\n\n");
 }
 
-void WriteDefaultInstanceHeader(const protobuf::Descriptor* message,
+void WriteDefaultInstanceHeader(const protobuf_inworld::Descriptor* message,
                                 Output& output) {
   output("  static ::protos::Ptr<const $0> default_instance();\n",
          ClassName(message));
 }
 
 void WriteMessageImplementation(
-    const protobuf::Descriptor* descriptor,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
+    const protobuf_inworld::Descriptor* descriptor,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
     Output& output) {
   bool message_is_map_entry = descriptor->options().map_entry();
   if (!message_is_map_entry) {
@@ -431,7 +431,7 @@ void WriteMessageImplementation(
 }
 
 void WriteInternalForwardDeclarationsInHeader(
-    const protobuf::Descriptor* message, Output& output) {
+    const protobuf_inworld::Descriptor* message, Output& output) {
   // Write declaration for internal re-usable default_instance without
   // leaking implementation.
   output(
@@ -443,8 +443,8 @@ void WriteInternalForwardDeclarationsInHeader(
 }
 
 void WriteExtensionIdentifiersInClassHeader(
-    const protobuf::Descriptor* message,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
+    const protobuf_inworld::Descriptor* message,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
     Output& output) {
   for (auto* ext : file_exts) {
     if (ext->extension_scope() &&
@@ -455,8 +455,8 @@ void WriteExtensionIdentifiersInClassHeader(
 }
 
 void WriteExtensionIdentifiersImplementation(
-    const protobuf::Descriptor* message,
-    const std::vector<const protobuf::FieldDescriptor*>& file_exts,
+    const protobuf_inworld::Descriptor* message,
+    const std::vector<const protobuf_inworld::FieldDescriptor*>& file_exts,
     Output& output) {
   for (auto* ext : file_exts) {
     if (ext->extension_scope() &&
@@ -467,8 +467,8 @@ void WriteExtensionIdentifiersImplementation(
 }
 
 void WriteUsingEnumsInHeader(
-    const protobuf::Descriptor* message,
-    const std::vector<const protobuf::EnumDescriptor*>& file_enums,
+    const protobuf_inworld::Descriptor* message,
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& file_enums,
     Output& output) {
   for (auto* enum_descriptor : file_enums) {
     std::string enum_type_name = EnumTypeName(enum_descriptor);

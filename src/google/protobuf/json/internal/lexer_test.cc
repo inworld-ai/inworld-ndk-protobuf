@@ -59,7 +59,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 namespace {
 using ::testing::_;
@@ -735,5 +735,5 @@ TEST(LexerTest, ObjectRecursion) {
 }
 }  // namespace
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

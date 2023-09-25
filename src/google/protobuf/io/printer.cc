@@ -57,7 +57,7 @@
 #include "absl/types/variant.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace {
 template <typename T>
@@ -822,5 +822,5 @@ void Printer::PrintImpl(absl::string_view format,
   }
 }
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

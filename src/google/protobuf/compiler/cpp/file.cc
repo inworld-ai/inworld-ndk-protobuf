@@ -68,12 +68,12 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using Sub = ::google::protobuf::io::Printer::Sub;
-using ::google::protobuf::internal::cpp::IsLazilyInitializedFile;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
+using ::google::protobuf_inworld::internal::cpp::IsLazilyInitializedFile;
 
 absl::flat_hash_map<absl::string_view, std::string> FileVars(
     const FileDescriptor* file, const Options& options) {
@@ -1759,7 +1759,7 @@ void FileGenerator::GenerateInlineFunctionDefinitions(io::Printer* p) {
 }
 
 void FileGenerator::GenerateProto2NamespaceEnumSpecializations(io::Printer* p) {
-  // Emit GetEnumDescriptor specializations into google::protobuf namespace.
+  // Emit GetEnumDescriptor specializations into google::protobuf_inworld namespace.
   if (!HasEnumDefinitions(file_)) {
     return;
   }
@@ -1786,5 +1786,5 @@ std::vector<const Descriptor*> FileGenerator::MessagesInTopologicalOrder()
 }
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

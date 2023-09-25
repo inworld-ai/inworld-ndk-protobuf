@@ -35,7 +35,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // protobuf_assumption_failed() is declared and used in port_def.inc to assert
@@ -48,5 +48,5 @@ void protobuf_assumption_failed(const char* pred, const char* file, int line) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

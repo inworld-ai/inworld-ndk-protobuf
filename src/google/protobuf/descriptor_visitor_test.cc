@@ -39,7 +39,7 @@
 #include "google/protobuf/unittest.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 using ::testing::Contains;
@@ -162,5 +162,5 @@ TEST(VisitDescriptorsTest, AllTypesDeduceDelegate) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

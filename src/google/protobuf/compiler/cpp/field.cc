@@ -54,11 +54,11 @@
 #include "google/protobuf/wire_format.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
-using ::google::protobuf::internal::WireFormat;
-using Sub = ::google::protobuf::io::Printer::Sub;
+using ::google::protobuf_inworld::internal::WireFormat;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 std::vector<Sub> FieldVars(const FieldDescriptor* field, const Options& opts) {
   bool split = ShouldSplit(field, opts);
@@ -375,5 +375,5 @@ void FieldGeneratorTable::Build(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

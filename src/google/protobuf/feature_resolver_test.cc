@@ -58,7 +58,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 using ::testing::AllOf;
@@ -230,7 +230,7 @@ TEST(FeatureResolverTest, DefaultsTestNestedExtension) {
 TEST(FeatureResolverTest, DefaultsGeneratedPoolCustom) {
   DescriptorPool pool;
   ASSERT_NE(
-      pool.BuildFile(GetProto(google::protobuf::DescriptorProto::descriptor()->file())),
+      pool.BuildFile(GetProto(google::protobuf_inworld::DescriptorProto::descriptor()->file())),
       nullptr);
   ASSERT_NE(pool.BuildFile(GetProto(pb::TestFeatures::descriptor()->file())),
             nullptr);
@@ -1040,7 +1040,7 @@ TEST_F(FeatureResolverPoolTest, CompileDefaultsMinimumCovered) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

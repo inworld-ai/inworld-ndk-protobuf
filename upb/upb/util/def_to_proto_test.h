@@ -53,12 +53,12 @@ namespace upb_test {
 MATCHER_P(EqualsProtoTreatNansAsEqual, proto,
           negation ? "are not equal" : "are equal") {
   upb::DefPool defpool;
-  google::protobuf::DescriptorPool pool;
-  google::protobuf::DynamicMessageFactory factory;
+  google::protobuf_inworld::DescriptorPool pool;
+  google::protobuf_inworld::DynamicMessageFactory factory;
   std::string differences;
-  google::protobuf::util::DefaultFieldComparator comparator;
+  google::protobuf_inworld::util::DefaultFieldComparator comparator;
   comparator.set_treat_nan_as_equal(true);
-  google::protobuf::util::MessageDifferencer differencer;
+  google::protobuf_inworld::util::MessageDifferencer differencer;
   differencer.set_field_comparator(&comparator);
   differencer.ReportDifferencesToString(&differences);
   bool eq = differencer.Compare(proto, arg);
@@ -68,24 +68,24 @@ MATCHER_P(EqualsProtoTreatNansAsEqual, proto,
   return eq;
 }
 
-class NullErrorCollector : public google::protobuf::DescriptorPool::ErrorCollector {
+class NullErrorCollector : public google::protobuf_inworld::DescriptorPool::ErrorCollector {
   void AddError(const std::string& filename, const std::string& element_name,
-                const google::protobuf::Message* descriptor, ErrorLocation location,
+                const google::protobuf_inworld::Message* descriptor, ErrorLocation location,
                 const std::string& message) override {}
   void RecordWarning(absl::string_view filename, absl::string_view element_name,
-                     const google::protobuf::Message* descriptor, ErrorLocation location,
+                     const google::protobuf_inworld::Message* descriptor, ErrorLocation location,
                      absl::string_view message) override {}
 };
 
-static void AddFile(google::protobuf::FileDescriptorProto& file, upb::DefPool* pool,
-                    google::protobuf::DescriptorPool* desc_pool) {
+static void AddFile(google::protobuf_inworld::FileDescriptorProto& file, upb::DefPool* pool,
+                    google::protobuf_inworld::DescriptorPool* desc_pool) {
   NullErrorCollector collector;
-  const google::protobuf::FileDescriptor* file_desc =
+  const google::protobuf_inworld::FileDescriptor* file_desc =
       desc_pool->BuildFileCollectingErrors(file, &collector);
 
   if (file_desc != nullptr) {
     // The file descriptor was valid according to proto2.
-    google::protobuf::FileDescriptorProto normalized_file;
+    google::protobuf_inworld::FileDescriptorProto normalized_file;
     file_desc->CopyTo(&normalized_file);
     std::string serialized;
     normalized_file.SerializeToString(&serialized);
@@ -114,7 +114,7 @@ static void AddFile(google::protobuf::FileDescriptorProto& file, upb::DefPool* p
     size_t size;
     const char* buf =
         google_protobuf_FileDescriptorProto_serialize(upb_proto, arena.ptr(), &size);
-    google::protobuf::FileDescriptorProto google_proto;
+    google::protobuf_inworld::FileDescriptorProto google_proto;
     bool ok = google_proto.ParseFromArray(buf, size);
     ASSERT_TRUE(ok);
     EXPECT_THAT(google_proto, EqualsProtoTreatNansAsEqual(normalized_file));
@@ -133,12 +133,12 @@ static void AddFile(google::protobuf::FileDescriptorProto& file, upb::DefPool* p
   }
 }
 
-inline void RoundTripDescriptor(const google::protobuf::FileDescriptorSet& set) {
+inline void RoundTripDescriptor(const google::protobuf_inworld::FileDescriptorSet& set) {
   upb::DefPool defpool;
-  google::protobuf::DescriptorPool desc_pool;
+  google::protobuf_inworld::DescriptorPool desc_pool;
   desc_pool.EnforceWeakDependencies(true);
   for (const auto& file : set.file()) {
-    google::protobuf::FileDescriptorProto mutable_file(file);
+    google::protobuf_inworld::FileDescriptorProto mutable_file(file);
     AddFile(mutable_file, &defpool, &desc_pool);
   }
 }

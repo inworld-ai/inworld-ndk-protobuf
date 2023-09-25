@@ -54,7 +54,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 class UnknownFieldSet;
@@ -963,7 +963,7 @@ inline PROTOBUF_ALWAYS_INLINE const char* TcParser::ToParseLoop(
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

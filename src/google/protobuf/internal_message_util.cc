@@ -35,7 +35,7 @@
 #include "google/protobuf/map_field.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 class MessageUtil {
@@ -115,5 +115,5 @@ void EagerParseLazyField(Message& message) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

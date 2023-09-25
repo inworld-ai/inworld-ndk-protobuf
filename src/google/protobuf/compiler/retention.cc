@@ -43,7 +43,7 @@
 #include "google/protobuf/dynamic_message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 namespace {
@@ -171,12 +171,12 @@ void ConvertToDynamicMessageAndStripOptions(
 // Returns a const reference to the descriptor pool associated with the given
 // descriptor.
 template <typename DescriptorType>
-const google::protobuf::DescriptorPool& GetPool(const DescriptorType& descriptor) {
+const google::protobuf_inworld::DescriptorPool& GetPool(const DescriptorType& descriptor) {
   return *descriptor.file()->pool();
 }
 
 // Specialization for FileDescriptor.
-const google::protobuf::DescriptorPool& GetPool(const FileDescriptor& descriptor) {
+const google::protobuf_inworld::DescriptorPool& GetPool(const FileDescriptor& descriptor) {
   return *descriptor.pool();
 }
 
@@ -346,5 +346,5 @@ ServiceOptions StripLocalSourceRetentionOptions(
 }
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

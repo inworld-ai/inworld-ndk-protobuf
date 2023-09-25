@@ -48,12 +48,12 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 using internal::ArenaStringPtr;
 using internal::InlinedStringField;
 
 namespace {
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

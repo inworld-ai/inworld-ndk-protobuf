@@ -36,16 +36,16 @@
 
 namespace protos_generator {
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
-std::string EnumTypeName(const protobuf::EnumDescriptor* enum_descriptor);
+std::string EnumTypeName(const protobuf_inworld::EnumDescriptor* enum_descriptor);
 std::string EnumValueSymbolInNameSpace(
-    const protobuf::EnumDescriptor* desc,
-    const protobuf::EnumValueDescriptor* value);
+    const protobuf_inworld::EnumDescriptor* desc,
+    const protobuf_inworld::EnumValueDescriptor* value);
 void WriteHeaderEnumForwardDecls(
-    std::vector<const protobuf::EnumDescriptor*>& enums, Output& output);
+    std::vector<const protobuf_inworld::EnumDescriptor*>& enums, Output& output);
 void WriteEnumDeclarations(
-    const std::vector<const protobuf::EnumDescriptor*>& enums, Output& output);
+    const std::vector<const protobuf_inworld::EnumDescriptor*>& enums, Output& output);
 
 }  // namespace protos_generator
 

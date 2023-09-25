@@ -45,7 +45,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class Message;
 class EnumValueDescriptor;
@@ -271,7 +271,7 @@ class PROTOBUF_EXPORT DefaultFieldComparator final
 };
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

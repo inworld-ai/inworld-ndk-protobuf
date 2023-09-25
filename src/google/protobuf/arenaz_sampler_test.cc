@@ -45,7 +45,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 #if defined(PROTOBUF_ARENAZ_SAMPLE)
 class ThreadSafeArenaStatsHandlePeer {
@@ -423,7 +423,7 @@ TEST(ThreadSafeArenazSamplerTest, InitialBlockReportsZeroUsedAndWasted) {
   auto& sampler = GlobalThreadSafeArenazSampler();
   for (int i = 0; i < 10; ++i) {
     char block[kSize];
-    google::protobuf::Arena arena(/*initial_block=*/block, /*initial_block_size=*/kSize);
+    google::protobuf_inworld::Arena arena(/*initial_block=*/block, /*initial_block_size=*/kSize);
     sampler.Iterate([&](const ThreadSafeArenaStats& h) {
       const auto& histbin =
           h.block_histogram[ThreadSafeArenaStats::FindBin(kSize)];
@@ -441,9 +441,9 @@ TEST(ThreadSafeArenazSamplerTest, InitialBlockReportsZeroUsedAndWasted) {
 class ThreadSafeArenazSamplerTestThread : public Thread {
  protected:
   void Run() override {
-    google::protobuf::ArenaSafeUniquePtr<
+    google::protobuf_inworld::ArenaSafeUniquePtr<
         protobuf_test_messages::proto2::TestAllTypesProto2>
-        message = google::protobuf::MakeArenaSafeUnique<
+        message = google::protobuf_inworld::MakeArenaSafeUnique<
             protobuf_test_messages::proto2::TestAllTypesProto2>(arena_);
     ABSL_CHECK(message != nullptr);
     // Signal that a message on the arena has been created.  This should create
@@ -456,12 +456,12 @@ class ThreadSafeArenazSamplerTestThread : public Thread {
  public:
   ThreadSafeArenazSamplerTestThread(const thread::Options& options,
                                     absl::string_view name,
-                                    google::protobuf::Arena* arena,
+                                    google::protobuf_inworld::Arena* arena,
                                     absl::Barrier* barrier)
       : Thread(options, name), arena_(arena), barrier_(barrier) {}
 
  private:
-  google::protobuf::Arena* arena_;
+  google::protobuf_inworld::Arena* arena_;
   absl::Barrier* barrier_;
 };
 
@@ -477,7 +477,7 @@ TEST(ThreadSafeArenazSamplerTest, MultiThread) {
   for (int i = 0; i < 10; ++i) {
     const int kNumThreads = 10;
     absl::Barrier* barrier = new absl::Barrier(kNumThreads + 1);
-    google::protobuf::Arena arena;
+    google::protobuf_inworld::Arena arena;
     thread::Options options;
     options.set_joinable(true);
     std::vector<std::unique_ptr<ThreadSafeArenazSamplerTestThread>> threads;
@@ -503,10 +503,10 @@ TEST(ThreadSafeArenazSamplerTest, MultiThread) {
 class SampleFirstArenaThread : public Thread {
  protected:
   void Run() override {
-    google::protobuf::Arena arena;
-    google::protobuf::ArenaSafeUniquePtr<
+    google::protobuf_inworld::Arena arena;
+    google::protobuf_inworld::ArenaSafeUniquePtr<
         protobuf_test_messages::proto2::TestAllTypesProto2>
-        message = google::protobuf::MakeArenaSafeUnique<
+        message = google::protobuf_inworld::MakeArenaSafeUnique<
             protobuf_test_messages::proto2::TestAllTypesProto2>(&arena);
     ABSL_CHECK(message != nullptr);
     arena_created_.Notify();
@@ -594,7 +594,7 @@ TEST(ThreadSafeArenazSamplerTest, UsedAndWasted) {
   SetThreadSafeArenazSampleParameter(1);
   SetThreadSafeArenazGlobalNextSample(0);
   auto& sampler = GlobalThreadSafeArenazSampler();
-  google::protobuf::Arena arena;
+  google::protobuf_inworld::Arena arena;
   // Do enough small allocations to completely fill 3 first blocks.
   // Test that they are fully used and none wasted.
   for (int i = 0; i < 1000; ++i) {
@@ -603,12 +603,12 @@ TEST(ThreadSafeArenazSamplerTest, UsedAndWasted) {
   sampler.Iterate([&](const ThreadSafeArenaStats& h) {
     for (size_t i = 0; i < 3; ++i) {
       constexpr auto kSize =
-          google::protobuf::internal::AllocationPolicy::kDefaultStartBlockSize;
+          google::protobuf_inworld::internal::AllocationPolicy::kDefaultStartBlockSize;
       const auto& histbin =
           h.block_histogram[ThreadSafeArenaStats::FindBin(kSize << i)];
       EXPECT_EQ(histbin.bytes_allocated, kSize << i);
       EXPECT_EQ(histbin.bytes_used,
-                (kSize << i) - google::protobuf::internal::SerialArena::kBlockHeaderSize);
+                (kSize << i) - google::protobuf_inworld::internal::SerialArena::kBlockHeaderSize);
       EXPECT_EQ(histbin.bytes_wasted, 0);
     }
   });
@@ -618,5 +618,5 @@ TEST(ThreadSafeArenazSamplerTest, UsedAndWasted) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

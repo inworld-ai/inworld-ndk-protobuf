@@ -49,12 +49,12 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using Semantic = ::google::protobuf::io::AnnotationCollector::Semantic;
-using Sub = ::google::protobuf::io::Printer::Sub;
+using Semantic = ::google::protobuf_inworld::io::AnnotationCollector::Semantic;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts) {
   const EnumValueDescriptor* default_value = field->default_value_enum();
@@ -583,5 +583,5 @@ std::unique_ptr<FieldGeneratorBase> MakeRepeatedEnumGenerator(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

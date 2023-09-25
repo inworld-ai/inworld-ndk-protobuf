@@ -49,7 +49,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 
 class ZeroCopyInputStream;  // zero_copy_stream.h
@@ -458,7 +458,7 @@ inline void Tokenizer::ParseString(const std::string& text,
 }
 
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

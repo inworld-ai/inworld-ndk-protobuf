@@ -43,7 +43,7 @@
 #include "google/protobuf/unittest.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 using internal::DownCast;
@@ -712,5 +712,5 @@ TEST(RepeatedFieldReflectionTest, RepeatedFieldRefDynamicMessage) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

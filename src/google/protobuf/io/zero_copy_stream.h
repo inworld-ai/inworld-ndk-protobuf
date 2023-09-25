@@ -116,7 +116,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 
 // Abstract interface similar to an input stream but designed to minimize
@@ -275,7 +275,7 @@ class PROTOBUF_EXPORT ZeroCopyOutputStream {
 };
 
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

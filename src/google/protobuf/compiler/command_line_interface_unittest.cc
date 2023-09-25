@@ -83,18 +83,18 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 #if defined(_WIN32)
 // DO NOT include <io.h>, instead create functions in io_win32.{h,cc} and import
 // them like we do below.
-using google::protobuf::io::win32::access;
-using google::protobuf::io::win32::close;
-using google::protobuf::io::win32::dup;
-using google::protobuf::io::win32::dup2;
-using google::protobuf::io::win32::open;
-using google::protobuf::io::win32::write;
+using google::protobuf_inworld::io::win32::access;
+using google::protobuf_inworld::io::win32::close;
+using google::protobuf_inworld::io::win32::dup;
+using google::protobuf_inworld::io::win32::dup2;
+using google::protobuf_inworld::io::win32::open;
+using google::protobuf_inworld::io::win32::write;
 #endif
 
 // Disable the whole test when we use tcmalloc for "draconian" heap checks, in
@@ -664,7 +664,7 @@ TEST_F(CommandLineInterfaceTest, MultipleInputs_UnusedImport_DescriptorSetIn) {
   descriptor_file->CopyTo(file_descriptor_set.add_file());
 
   FileDescriptorProto& any_proto = *file_descriptor_set.add_file();
-  google::protobuf::Any::descriptor()->file()->CopyTo(&any_proto);
+  google::protobuf_inworld::Any::descriptor()->file()->CopyTo(&any_proto);
 
   const FileDescriptor* custom_file =
       protobuf_unittest::AggregateMessage::descriptor()->file();
@@ -1416,7 +1416,7 @@ TEST_F(CommandLineInterfaceTest, FeaturesEditionZero) {
 
 TEST_F(CommandLineInterfaceTest, FeatureExtensions) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("features.proto",
                  R"schema(
     syntax = "proto2";
@@ -1481,7 +1481,7 @@ TEST_F(CommandLineInterfaceTest, FeatureTargetError) {
 
 TEST_F(CommandLineInterfaceTest, FeatureExtensionError) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("features.proto",
                  pb::TestInvalidFeatures::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
@@ -1665,7 +1665,7 @@ TEST_F(CommandLineInterfaceTest, Plugin_RuntimeFeatures) {
 
 TEST_F(CommandLineInterfaceTest, Plugin_SourceFeatures) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("google/protobuf/unittest_features.proto",
                  pb::TestFeatures::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
@@ -1762,7 +1762,7 @@ TEST_F(CommandLineInterfaceTest, PluginNoEditionsSupport) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaults) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_out=$tmpdir/defaults "
       "google/protobuf/descriptor.proto");
@@ -1787,7 +1787,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaults) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsWithMaximum) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_out=$tmpdir/defaults "
       "--experimental_edition_defaults_maximum=99997_TEST_ONLY "
@@ -1813,7 +1813,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsWithMaximum) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsWithMinimum) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_out=$tmpdir/defaults "
       "--experimental_edition_defaults_minimum=99997_TEST_ONLY "
@@ -1840,7 +1840,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsWithMinimum) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsWithExtension) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("features.proto",
                  pb::TestFeatures::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
@@ -1870,7 +1870,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsWithExtension) {
 #ifndef _WIN32
 TEST_F(CommandLineInterfaceTest, EditionDefaultsDependencyManifest) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("features.proto",
                  pb::TestFeatures::descriptor()->file()->DebugString());
 
@@ -1900,7 +1900,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMissingDescriptor) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidTwice) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_out=$tmpdir/defaults "
       "--experimental_edition_defaults_out=$tmpdir/defaults "
@@ -1911,7 +1911,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidTwice) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidEmpty) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_out= "
       "google/protobuf/descriptor.proto");
@@ -1921,7 +1921,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidEmpty) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidCompile) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--encode=pb.CppFeatures "
       "--experimental_edition_defaults_out=$tmpdir/defaults "
@@ -1931,7 +1931,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidCompile) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMinimumTwice) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_minimum=2023 "
       "--experimental_edition_defaults_minimum=2023 "
@@ -1942,7 +1942,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMinimumTwice) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMinimumEmpty) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_minimum= "
       "google/protobuf/descriptor.proto");
@@ -1951,7 +1951,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMinimumEmpty) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMinimumUnknown) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_minimum=2022 "
       "google/protobuf/descriptor.proto");
@@ -1960,7 +1960,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMinimumUnknown) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMaximumTwice) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_maximum=2023 "
       "--experimental_edition_defaults_maximum=2023 "
@@ -1971,7 +1971,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMaximumTwice) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMaximumEmpty) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_maximum= "
       "google/protobuf/descriptor.proto");
@@ -1980,7 +1980,7 @@ TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMaximumEmpty) {
 
 TEST_F(CommandLineInterfaceTest, EditionDefaultsInvalidMaximumUnknown) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   Run("protocol_compiler --proto_path=$tmpdir "
       "--experimental_edition_defaults_maximum=2022 "
       "google/protobuf/descriptor.proto");
@@ -3270,7 +3270,7 @@ TEST_F(CommandLineInterfaceTest, TargetTypeEnforcement) {
   // when it is used as an option. This test verifies that the enforcement
   // works correctly on all entity types.
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
                  R"schema(
       syntax = "proto2";
@@ -3370,7 +3370,7 @@ TEST_F(CommandLineInterfaceTest, TargetTypeEnforcement) {
 
 TEST_F(CommandLineInterfaceTest, TargetTypeEnforcementMultipleTargetsValid) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
                  R"schema(
       syntax = "proto2";
@@ -3398,7 +3398,7 @@ TEST_F(CommandLineInterfaceTest, TargetTypeEnforcementMultipleTargetsValid) {
 
 TEST_F(CommandLineInterfaceTest, TargetTypeEnforcementMultipleTargetsInvalid) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
                  R"schema(
       syntax = "proto2";
@@ -3426,7 +3426,7 @@ TEST_F(CommandLineInterfaceTest, TargetTypeEnforcementMultipleTargetsInvalid) {
 TEST_F(CommandLineInterfaceTest,
        TargetTypeEnforcementMultipleEdgesWithConstraintsValid) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
                  R"schema(
       syntax = "proto2";
@@ -3453,7 +3453,7 @@ TEST_F(CommandLineInterfaceTest,
 TEST_F(CommandLineInterfaceTest,
        TargetTypeEnforcementMultipleEdgesWithConstraintsInvalid) {
   CreateTempFile("google/protobuf/descriptor.proto",
-                 google::protobuf::DescriptorProto::descriptor()->file()->DebugString());
+                 google::protobuf_inworld::DescriptorProto::descriptor()->file()->DebugString());
   CreateTempFile("foo.proto",
                  R"schema(
       syntax = "proto2";
@@ -4047,5 +4047,5 @@ INSTANTIATE_TEST_SUITE_P(FileDescriptorSetSource, EncodeDecodeTest,
 #include "google/protobuf/port_undef.inc"
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -52,7 +52,7 @@ void RepeatedField_Inspect(StringBuilder* b, const upb_Array* array,
 // Returns a deep copy of this RepeatedField object.
 VALUE RepeatedField_deep_copy(VALUE obj);
 
-// Ruby class of Google::Protobuf::RepeatedField.
+// Ruby class of Google::protobuf_inworld::RepeatedField.
 extern VALUE cRepeatedField;
 
 // Call at startup to register all types in this module.

@@ -44,7 +44,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class UnknownFieldSet;
 
@@ -272,7 +272,7 @@ class PROTOBUF_EXPORT LiteUnknownFieldSetter {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

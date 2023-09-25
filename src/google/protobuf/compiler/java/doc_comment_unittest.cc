@@ -35,7 +35,7 @@
 #include <gtest/gtest.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 namespace {
@@ -52,5 +52,5 @@ TEST(JavaDocCommentTest, Escaping) {
 }  // namespace
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

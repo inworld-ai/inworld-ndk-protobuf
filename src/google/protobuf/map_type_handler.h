@@ -42,7 +42,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Used for compile time type selection. MapIf::type will be TrueType if Flag is
@@ -730,7 +730,7 @@ struct MapEntryFuncs {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_MAP_TYPE_HANDLER_H__

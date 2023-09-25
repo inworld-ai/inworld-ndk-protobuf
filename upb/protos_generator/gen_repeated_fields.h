@@ -36,31 +36,31 @@
 #include "protos_generator/output.h"
 
 namespace protos_generator {
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
-void WriteRepeatedFieldUsingAccessors(const protobuf::FieldDescriptor* field,
+void WriteRepeatedFieldUsingAccessors(const protobuf_inworld::FieldDescriptor* field,
                                       absl::string_view class_name,
                                       absl::string_view resolved_field_name,
                                       Output& output, bool read_only);
 
-void WriteRepeatedFieldsInMessageHeader(const protobuf::Descriptor* desc,
-                                        const protobuf::FieldDescriptor* field,
+void WriteRepeatedFieldsInMessageHeader(const protobuf_inworld::Descriptor* desc,
+                                        const protobuf_inworld::FieldDescriptor* field,
                                         absl::string_view resolved_field_name,
                                         absl::string_view resolved_upbc_name,
                                         Output& output);
 
-void WriteRepeatedMessageAccessor(const protobuf::Descriptor* message,
-                                  const protobuf::FieldDescriptor* field,
+void WriteRepeatedMessageAccessor(const protobuf_inworld::Descriptor* message,
+                                  const protobuf_inworld::FieldDescriptor* field,
                                   absl::string_view resolved_field_name,
                                   absl::string_view class_name, Output& output);
 
-void WriteRepeatedStringAccessor(const protobuf::Descriptor* message,
-                                 const protobuf::FieldDescriptor* field,
+void WriteRepeatedStringAccessor(const protobuf_inworld::Descriptor* message,
+                                 const protobuf_inworld::FieldDescriptor* field,
                                  absl::string_view resolved_field_name,
                                  absl::string_view class_name, Output& output);
 
-void WriteRepeatedScalarAccessor(const protobuf::Descriptor* message,
-                                 const protobuf::FieldDescriptor* field,
+void WriteRepeatedScalarAccessor(const protobuf_inworld::Descriptor* message,
+                                 const protobuf_inworld::FieldDescriptor* field,
                                  absl::string_view resolved_field_name,
                                  absl::string_view class_name, Output& output);
 

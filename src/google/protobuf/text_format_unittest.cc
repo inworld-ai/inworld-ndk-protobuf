@@ -73,12 +73,12 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // Can't use an anonymous namespace here due to brokenness of Tru64 compiler.
 namespace text_format_unittest {
 
-using ::google::protobuf::internal::kDebugStringSilentMarker;
+using ::google::protobuf_inworld::internal::kDebugStringSilentMarker;
 using ::testing::AllOf;
 using ::testing::HasSubstr;
 
@@ -194,7 +194,7 @@ TEST_F(TextFormatTest, ShortFormat) {
   (*proto.mutable_map_unredacted_string())["ghi"] = "jkl";
 
   std::string value_replacement = "\\[REDACTED\\]";
-  EXPECT_THAT(google::protobuf::ShortFormat(proto),
+  EXPECT_THAT(google::protobuf_inworld::ShortFormat(proto),
               testing::MatchesRegex(
                   "optional_redacted_string: " +
                   value_replacement +
@@ -258,7 +258,7 @@ TEST_F(TextFormatTest, Utf8Format) {
   (*proto.mutable_map_unredacted_string())["ghi"] = "jkl";
 
   std::string value_replacement = "\\[REDACTED\\]";
-  EXPECT_THAT(google::protobuf::Utf8Format(proto),
+  EXPECT_THAT(google::protobuf_inworld::Utf8Format(proto),
               testing::MatchesRegex(
                   "optional_redacted_string: " +
                   value_replacement +
@@ -2536,7 +2536,7 @@ TEST(TextFormatFloatingPointTest, PreservesNegative0) {
 
 
 }  // namespace text_format_unittest
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -39,11 +39,11 @@
 #include <gtest/gtest.h>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
-using google::protobuf::Duration;
-using google::protobuf::Timestamp;
+using google::protobuf_inworld::Duration;
+using google::protobuf_inworld::Timestamp;
 
 namespace {
 
@@ -527,5 +527,5 @@ TEST(TimeUtilTest, TimestampBounds) {
 
 }  // namespace
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

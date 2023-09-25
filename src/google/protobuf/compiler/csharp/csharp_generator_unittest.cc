@@ -39,7 +39,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace csharp {
 namespace {
@@ -64,12 +64,12 @@ TEST(CSharpEnumValue, PascalCasedPrefixStripping) {
 
 TEST(DescriptorProtoHelpers, IsDescriptorProto) {
   EXPECT_TRUE(IsDescriptorProto(DescriptorProto::descriptor()->file()));
-  EXPECT_FALSE(IsDescriptorProto(google::protobuf::Any::descriptor()->file()));
+  EXPECT_FALSE(IsDescriptorProto(google::protobuf_inworld::Any::descriptor()->file()));
 }
 
 TEST(DescriptorProtoHelpers, IsDescriptorOptionMessage) {
   EXPECT_TRUE(IsDescriptorOptionMessage(FileOptions::descriptor()));
-  EXPECT_FALSE(IsDescriptorOptionMessage(google::protobuf::Any::descriptor()));
+  EXPECT_FALSE(IsDescriptorOptionMessage(google::protobuf_inworld::Any::descriptor()));
   EXPECT_FALSE(IsDescriptorOptionMessage(DescriptorProto::descriptor()));
 }
 
@@ -92,5 +92,5 @@ TEST(CSharpIdentifiers, UnderscoresToCamelCase) {
 }  // namespace
 }  // namespace csharp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

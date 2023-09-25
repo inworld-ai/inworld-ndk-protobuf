@@ -66,16 +66,16 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace util {
 
 namespace {
 
-std::string PrintShortTextFormat(const google::protobuf::Message& message) {
+std::string PrintShortTextFormat(const google::protobuf_inworld::Message& message) {
   std::string debug_string;
 
-  google::protobuf::TextFormat::Printer printer;
+  google::protobuf_inworld::TextFormat::Printer printer;
   printer.SetSingleLineMode(true);
   printer.SetExpandAny(true);
 
@@ -92,7 +92,7 @@ std::string PrintShortTextFormat(const google::protobuf::Message& message) {
 
 // A reporter to report the total number of diffs.
 // TODO(ykzhu): we can improve this to take into account the value differencers.
-class NumDiffsReporter : public google::protobuf::util::MessageDifferencer::Reporter {
+class NumDiffsReporter : public google::protobuf_inworld::util::MessageDifferencer::Reporter {
  public:
   NumDiffsReporter() : num_diffs_(0) {}
 
@@ -102,27 +102,27 @@ class NumDiffsReporter : public google::protobuf::util::MessageDifferencer::Repo
 
   // Report that a field has been added into Message2.
   void ReportAdded(
-      const google::protobuf::Message& /* message1 */,
-      const google::protobuf::Message& /* message2 */,
-      const std::vector<google::protobuf::util::MessageDifferencer::SpecificField>&
+      const google::protobuf_inworld::Message& /* message1 */,
+      const google::protobuf_inworld::Message& /* message2 */,
+      const std::vector<google::protobuf_inworld::util::MessageDifferencer::SpecificField>&
       /*field_path*/) override {
     ++num_diffs_;
   }
 
   // Report that a field has been deleted from Message1.
   void ReportDeleted(
-      const google::protobuf::Message& /* message1 */,
-      const google::protobuf::Message& /* message2 */,
-      const std::vector<google::protobuf::util::MessageDifferencer::SpecificField>&
+      const google::protobuf_inworld::Message& /* message1 */,
+      const google::protobuf_inworld::Message& /* message2 */,
+      const std::vector<google::protobuf_inworld::util::MessageDifferencer::SpecificField>&
       /*field_path*/) override {
     ++num_diffs_;
   }
 
   // Report that the value of a field has been modified.
   void ReportModified(
-      const google::protobuf::Message& /* message1 */,
-      const google::protobuf::Message& /* message2 */,
-      const std::vector<google::protobuf::util::MessageDifferencer::SpecificField>&
+      const google::protobuf_inworld::Message& /* message1 */,
+      const google::protobuf_inworld::Message& /* message2 */,
+      const std::vector<google::protobuf_inworld::util::MessageDifferencer::SpecificField>&
       /*field_path*/) override {
     ++num_diffs_;
   }
@@ -241,7 +241,7 @@ void MatchIndicesPostProcessorForSmartList(std::vector<int>* match_list1,
 }
 
 void AddSpecificIndex(
-    google::protobuf::util::MessageDifferencer::SpecificField* specific_field,
+    google::protobuf_inworld::util::MessageDifferencer::SpecificField* specific_field,
     const Message& message, const FieldDescriptor* field, int index) {
   if (field->is_map()) {
     const Reflection* reflection = message.GetReflection();
@@ -252,7 +252,7 @@ void AddSpecificIndex(
 }
 
 void AddSpecificNewIndex(
-    google::protobuf::util::MessageDifferencer::SpecificField* specific_field,
+    google::protobuf_inworld::util::MessageDifferencer::SpecificField* specific_field,
     const Message& message, const FieldDescriptor* field, int index) {
   if (field->is_map()) {
     const Reflection* reflection = message.GetReflection();
@@ -2341,5 +2341,5 @@ MessageDifferencer::CreateMultipleFieldsMapKeyComparator(
 }
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -56,7 +56,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // Arena blocks are variable length malloc-ed objects.  The following structure
@@ -421,7 +421,7 @@ SerialArena::AllocateFromStringBlock() {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

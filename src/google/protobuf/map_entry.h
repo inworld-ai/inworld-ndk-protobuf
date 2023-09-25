@@ -53,7 +53,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class Arena;
 namespace internal {
 template <typename Derived, typename Key, typename Value,
@@ -61,15 +61,15 @@ template <typename Derived, typename Key, typename Value,
           WireFormatLite::FieldType kValueFieldType>
 class MapField;
 }
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
-// MapEntry is the returned google::protobuf::Message when calling AddMessage of
-// google::protobuf::Reflection. In order to let it work with generated message
+// MapEntry is the returned google::protobuf_inworld::Message when calling AddMessage of
+// google::protobuf_inworld::Reflection. In order to let it work with generated message
 // reflection, its in-memory type is the same as generated message with the same
 // fields. However, in order to decide the in-memory type of key/value, we need
 // to know both their cpp type in generated api and proto type. In
@@ -181,7 +181,7 @@ class MapEntry : public Message {
   }
 
   void CheckTypeAndMergeFrom(const MessageLite& other) override {
-    MergeFromInternal(*::google::protobuf::internal::DownCast<const Derived*>(&other));
+    MergeFromInternal(*::google::protobuf_inworld::internal::DownCast<const Derived*>(&other));
   }
 
   const char* _InternalParse(const char* ptr, ParseContext* ctx) final {
@@ -243,7 +243,7 @@ class MapEntry : public Message {
   }
 
  protected:
-  friend class google::protobuf::Arena;
+  friend class google::protobuf_inworld::Arena;
   template <typename C, typename K, typename V, WireFormatLite::FieldType,
             WireFormatLite::FieldType>
   friend class MapField;
@@ -278,7 +278,7 @@ class MapEntry : public Message {
 };
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

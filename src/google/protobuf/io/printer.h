@@ -61,7 +61,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 
 // Records annotations about a Printer's output.
@@ -759,7 +759,7 @@ class PROTOBUF_EXPORT Printer {
   absl::optional<std::pair<size_t, size_t>> GetSubstitutionRange(
       absl::string_view varname, PrintOptions opts);
 
-  google::protobuf::io::zc_sink_internal::ZeroCopyStreamByteSink sink_;
+  google::protobuf_inworld::io::zc_sink_internal::ZeroCopyStreamByteSink sink_;
   Options options_;
   size_t indent_ = 0;
   bool at_start_of_line_ = true;
@@ -1165,7 +1165,7 @@ inline auto Printer::WithVars(absl::Span<const Sub> vars) {
   return WithDefs(vars, /*allow_callbacks=*/false);
 }
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

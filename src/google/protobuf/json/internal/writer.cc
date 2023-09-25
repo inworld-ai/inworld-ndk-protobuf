@@ -42,7 +42,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 
 // Tries to write a non-finite double if necessary; returns false if
@@ -324,5 +324,5 @@ void JsonWriter::WriteUEscape(uint16_t val) {
   Write(absl::string_view(hex, static_cast<size_t>(len)));
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

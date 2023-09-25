@@ -40,7 +40,7 @@
 #include "absl/types/optional.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace io {
 namespace internal {
 namespace {
@@ -215,5 +215,5 @@ TEST(TestZeroCopyInputStreamTest, ByteCountWorks) {
 }  // namespace
 }  // namespace internal
 }  // namespace io
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -42,7 +42,7 @@
 #include "google/protobuf/stubs/status_macros.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 // A ZeroCopyInputStream for writing unit tests.
 class TestInputStream final : public io::ZeroCopyInputStream {
@@ -99,7 +99,7 @@ class TestInputStream final : public io::ZeroCopyInputStream {
   size_t next_ = 0;
 };
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_UTIL_TEST_INPUT_STREAM_H__

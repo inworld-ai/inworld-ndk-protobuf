@@ -38,7 +38,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 
@@ -292,5 +292,5 @@ TEST(GeneratedMessageTest, PackedTypesSize) {
 }  // namespace cpp_unittest
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

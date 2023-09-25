@@ -44,15 +44,15 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json {
 
-absl::Status BinaryToJsonStream(google::protobuf::util::TypeResolver* resolver,
+absl::Status BinaryToJsonStream(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 io::ZeroCopyInputStream* binary_input,
                                 io::ZeroCopyOutputStream* json_output,
                                 const PrintOptions& options) {
-  google::protobuf::json_internal::WriterOptions opts;
+  google::protobuf_inworld::json_internal::WriterOptions opts;
   opts.add_whitespace = options.add_whitespace;
   opts.preserve_proto_field_names = options.preserve_proto_field_names;
   opts.always_print_enums_as_ints = options.always_print_enums_as_ints;
@@ -62,11 +62,11 @@ absl::Status BinaryToJsonStream(google::protobuf::util::TypeResolver* resolver,
   // TODO(b/234868512): Drop this setting.
   opts.allow_legacy_syntax = true;
 
-  return google::protobuf::json_internal::BinaryToJsonStream(
+  return google::protobuf_inworld::json_internal::BinaryToJsonStream(
       resolver, type_url, binary_input, json_output, opts);
 }
 
-absl::Status BinaryToJsonString(google::protobuf::util::TypeResolver* resolver,
+absl::Status BinaryToJsonString(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 const std::string& binary_input,
                                 std::string* json_output,
@@ -77,23 +77,23 @@ absl::Status BinaryToJsonString(google::protobuf::util::TypeResolver* resolver,
                             options);
 }
 
-absl::Status JsonToBinaryStream(google::protobuf::util::TypeResolver* resolver,
+absl::Status JsonToBinaryStream(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 io::ZeroCopyInputStream* json_input,
                                 io::ZeroCopyOutputStream* binary_output,
                                 const ParseOptions& options) {
-  google::protobuf::json_internal::ParseOptions opts;
+  google::protobuf_inworld::json_internal::ParseOptions opts;
   opts.ignore_unknown_fields = options.ignore_unknown_fields;
   opts.case_insensitive_enum_parsing = options.case_insensitive_enum_parsing;
 
   // TODO(b/234868512): Drop this setting.
   opts.allow_legacy_syntax = true;
 
-  return google::protobuf::json_internal::JsonToBinaryStream(
+  return google::protobuf_inworld::json_internal::JsonToBinaryStream(
       resolver, type_url, json_input, binary_output, opts);
 }
 
-absl::Status JsonToBinaryString(google::protobuf::util::TypeResolver* resolver,
+absl::Status JsonToBinaryString(google::protobuf_inworld::util::TypeResolver* resolver,
                                 const std::string& type_url,
                                 absl::string_view json_input,
                                 std::string* binary_output,
@@ -106,7 +106,7 @@ absl::Status JsonToBinaryString(google::protobuf::util::TypeResolver* resolver,
 
 absl::Status MessageToJsonString(const Message& message, std::string* output,
                                  const PrintOptions& options) {
-  google::protobuf::json_internal::WriterOptions opts;
+  google::protobuf_inworld::json_internal::WriterOptions opts;
   opts.add_whitespace = options.add_whitespace;
   opts.preserve_proto_field_names = options.preserve_proto_field_names;
   opts.always_print_enums_as_ints = options.always_print_enums_as_ints;
@@ -116,20 +116,20 @@ absl::Status MessageToJsonString(const Message& message, std::string* output,
   // TODO(b/234868512): Drop this setting.
   opts.allow_legacy_syntax = true;
 
-  return google::protobuf::json_internal::MessageToJsonString(message, output, opts);
+  return google::protobuf_inworld::json_internal::MessageToJsonString(message, output, opts);
 }
 
 absl::Status JsonStringToMessage(absl::string_view input, Message* message,
                                  const ParseOptions& options) {
-  google::protobuf::json_internal::ParseOptions opts;
+  google::protobuf_inworld::json_internal::ParseOptions opts;
   opts.ignore_unknown_fields = options.ignore_unknown_fields;
   opts.case_insensitive_enum_parsing = options.case_insensitive_enum_parsing;
 
   // TODO(b/234868512): Drop this setting.
   opts.allow_legacy_syntax = true;
 
-  return google::protobuf::json_internal::JsonStringToMessage(input, message, opts);
+  return google::protobuf_inworld::json_internal::JsonStringToMessage(input, message, opts);
 }
 }  // namespace json
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

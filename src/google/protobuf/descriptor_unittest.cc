@@ -85,9 +85,9 @@
 // Must be included last.
 #include "google/protobuf/port_def.inc"
 
-using ::google::protobuf::internal::cpp::GetUtf8CheckMode;
-using ::google::protobuf::internal::cpp::HasPreservingUnknownEnumSemantics;
-using ::google::protobuf::internal::cpp::Utf8CheckMode;
+using ::google::protobuf_inworld::internal::cpp::GetUtf8CheckMode;
+using ::google::protobuf_inworld::internal::cpp::HasPreservingUnknownEnumSemantics;
+using ::google::protobuf_inworld::internal::cpp::Utf8CheckMode;
 using ::testing::AnyOf;
 using ::testing::ElementsAre;
 using ::testing::HasSubstr;
@@ -106,7 +106,7 @@ MATCHER_P(StatusIs, status,
 #define ASSERT_OK(x) ASSERT_THAT(x, StatusIs(absl::StatusCode::kOk))
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 // Can't use an anonymous namespace here due to brokenness of Tru64 compiler.
 namespace descriptor_unittest {
@@ -3502,7 +3502,7 @@ TEST(CustomOptions, OptionsFromOtherFile) {
   {
     // We have to import the Any dependency.
     FileDescriptorProto any_proto;
-    google::protobuf::Any::descriptor()->file()->CopyTo(&any_proto);
+    google::protobuf_inworld::Any::descriptor()->file()->CopyTo(&any_proto);
     ASSERT_TRUE(pool.BuildFile(any_proto) != nullptr);
   }
   FileDescriptorProto file_proto;
@@ -3567,7 +3567,7 @@ TEST(CustomOptions, MessageOptionThreeFieldsSet) {
   }
   {
     FileDescriptorProto any_proto;
-    google::protobuf::Any::descriptor()->file()->CopyTo(&any_proto);
+    google::protobuf_inworld::Any::descriptor()->file()->CopyTo(&any_proto);
     ASSERT_TRUE(pool.BuildFile(any_proto) != nullptr);
   }
   FileDescriptorProto file_proto;
@@ -3651,7 +3651,7 @@ TEST(CustomOptions, MessageOptionRepeatedLeafFieldSet) {
   }
   {
     FileDescriptorProto any_proto;
-    google::protobuf::Any::descriptor()->file()->CopyTo(&any_proto);
+    google::protobuf_inworld::Any::descriptor()->file()->CopyTo(&any_proto);
     ASSERT_TRUE(pool.BuildFile(any_proto) != nullptr);
   }
   FileDescriptorProto file_proto;
@@ -3738,7 +3738,7 @@ TEST(CustomOptions, MessageOptionRepeatedMsgFieldSet) {
   }
   {
     FileDescriptorProto any_proto;
-    google::protobuf::Any::descriptor()->file()->CopyTo(&any_proto);
+    google::protobuf_inworld::Any::descriptor()->file()->CopyTo(&any_proto);
     ASSERT_TRUE(pool.BuildFile(any_proto) != nullptr);
   }
   FileDescriptorProto file_proto;
@@ -3871,7 +3871,7 @@ TEST(CustomOptions, UnusedImportError) {
   }
   {
     FileDescriptorProto any_proto;
-    google::protobuf::Any::descriptor()->file()->CopyTo(&any_proto);
+    google::protobuf_inworld::Any::descriptor()->file()->CopyTo(&any_proto);
     ASSERT_TRUE(pool.BuildFile(any_proto) != nullptr);
   }
   FileDescriptorProto file_proto;
@@ -12277,7 +12277,7 @@ TEST_F(LazilyBuildDependenciesTest, Dependency) {
 
 
 }  // namespace descriptor_unittest
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

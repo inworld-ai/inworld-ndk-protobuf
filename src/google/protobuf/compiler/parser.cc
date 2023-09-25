@@ -67,11 +67,11 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace {
 
-using ::google::protobuf::internal::DownCast;
+using ::google::protobuf_inworld::internal::DownCast;
 
 using TypeNameMap =
     absl::flat_hash_map<absl::string_view, FieldDescriptorProto::Type>;
@@ -2624,7 +2624,7 @@ void SourceLocationTable::AddImport(const Message* descriptor,
 void SourceLocationTable::Clear() { location_map_.clear(); }
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -59,11 +59,11 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 namespace {
 
-using ::google::protobuf::internal::DownCast;
+using ::google::protobuf_inworld::internal::DownCast;
 using TestUtil::EqualsToSerialized;
 
 // This test closely mirrors google/protobuf/compiler/cpp/unittest.cc
@@ -1366,7 +1366,7 @@ TEST(ExtensionSetTest, Proto3PackedDynamicExtensions) {
 
   // Create a custom option in proto3 and load this into an overlay
   // DescriptorPool with a DynamicMessageFactory.
-  google::protobuf::FileDescriptorProto file_descriptor_proto;
+  google::protobuf_inworld::FileDescriptorProto file_descriptor_proto;
   file_descriptor_proto.set_syntax("proto3");
   file_descriptor_proto.set_name(
       "google/protobuf/unittest_proto3_packed_extension.proto");
@@ -1380,7 +1380,7 @@ TEST(ExtensionSetTest, Proto3PackedDynamicExtensions) {
   extension->set_label(FieldDescriptorProto::LABEL_REPEATED);
   extension->set_type(FieldDescriptorProto::TYPE_INT32);
   extension->set_json_name("repeatedInt32Option");
-  google::protobuf::DescriptorPool pool(DescriptorPool::generated_pool());
+  google::protobuf_inworld::DescriptorPool pool(DescriptorPool::generated_pool());
   ASSERT_NE(pool.BuildFile(file_descriptor_proto), nullptr);
   DynamicMessageFactory factory;
   factory.SetDelegateToGeneratedFactory(true);
@@ -1445,5 +1445,5 @@ TEST(ExtensionSetTest, Descriptor) {
 
 }  // namespace
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

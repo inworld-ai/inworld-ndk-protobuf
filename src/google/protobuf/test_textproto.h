@@ -41,7 +41,7 @@
 // tests.  We make no guarantees about the behavior in real-world situations,
 // and these are only meant for basic unit-tests of protobuf internals.
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 MATCHER_P(EqualsProto, textproto, "") {
   auto msg = absl::WrapUnique(arg.New());
@@ -71,7 +71,7 @@ class ParseTextOrDie {
   absl::string_view text_;
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_TEST_TEXTPROTO_H__

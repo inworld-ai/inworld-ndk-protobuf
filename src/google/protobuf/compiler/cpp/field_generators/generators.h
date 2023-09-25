@@ -48,7 +48,7 @@
 // The returned pointers are never null.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 std::unique_ptr<FieldGeneratorBase> MakeSinguarPrimitiveGenerator(
@@ -101,7 +101,7 @@ std::unique_ptr<FieldGeneratorBase> MakeOneofCordGenerator(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CPP_FIELD_GENERATORS_GENERATORS_H__

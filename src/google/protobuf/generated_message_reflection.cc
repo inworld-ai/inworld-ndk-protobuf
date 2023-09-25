@@ -72,24 +72,24 @@
 
 #define GOOGLE_PROTOBUF_HAS_ONEOF
 
-using google::protobuf::internal::ArenaStringPtr;
-using google::protobuf::internal::DescriptorTable;
-using google::protobuf::internal::ExtensionSet;
-using google::protobuf::internal::GenericTypeHandler;
-using google::protobuf::internal::GetEmptyString;
-using google::protobuf::internal::InlinedStringField;
-using google::protobuf::internal::InternalMetadata;
-using google::protobuf::internal::LazyField;
-using google::protobuf::internal::MapFieldBase;
-using google::protobuf::internal::MigrationSchema;
-using google::protobuf::internal::OnShutdownDelete;
-using google::protobuf::internal::ReflectionSchema;
-using google::protobuf::internal::RepeatedPtrFieldBase;
-using google::protobuf::internal::StringSpaceUsedExcludingSelfLong;
-using google::protobuf::internal::cpp::IsLazilyInitializedFile;
+using google::protobuf_inworld::internal::ArenaStringPtr;
+using google::protobuf_inworld::internal::DescriptorTable;
+using google::protobuf_inworld::internal::ExtensionSet;
+using google::protobuf_inworld::internal::GenericTypeHandler;
+using google::protobuf_inworld::internal::GetEmptyString;
+using google::protobuf_inworld::internal::InlinedStringField;
+using google::protobuf_inworld::internal::InternalMetadata;
+using google::protobuf_inworld::internal::LazyField;
+using google::protobuf_inworld::internal::MapFieldBase;
+using google::protobuf_inworld::internal::MigrationSchema;
+using google::protobuf_inworld::internal::OnShutdownDelete;
+using google::protobuf_inworld::internal::ReflectionSchema;
+using google::protobuf_inworld::internal::RepeatedPtrFieldBase;
+using google::protobuf_inworld::internal::StringSpaceUsedExcludingSelfLong;
+using google::protobuf_inworld::internal::cpp::IsLazilyInitializedFile;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace {
 bool IsMapFieldInApi(const FieldDescriptor* field) { return field->is_map(); }
@@ -193,7 +193,7 @@ void ReportReflectionUsageError(const Descriptor* descriptor,
                                 const FieldDescriptor* field,
                                 const char* method, const char* description) {
   ABSL_LOG(FATAL) << "Protocol Buffer reflection usage error:\n"
-                     "  Method      : google::protobuf::Reflection::"
+                     "  Method      : google::protobuf_inworld::Reflection::"
                   << method
                   << "\n"
                      "  Message type: "
@@ -213,7 +213,7 @@ void ReportReflectionUsageMessageError(const Descriptor* expected,
                                        const char* method) {
   ABSL_LOG(FATAL) << absl::StrFormat(
       "Protocol Buffer reflection usage error:\n"
-      "  Method       : google::protobuf::Reflection::%s\n"
+      "  Method       : google::protobuf_inworld::Reflection::%s\n"
       "  Expected type: %s\n"
       "  Actual type  : %s\n"
       "  Field        : %s\n"
@@ -232,7 +232,7 @@ static void ReportReflectionUsageTypeError(
     const char* method, FieldDescriptor::CppType expected_type) {
   ABSL_LOG(FATAL)
       << "Protocol Buffer reflection usage error:\n"
-         "  Method      : google::protobuf::Reflection::"
+         "  Method      : google::protobuf_inworld::Reflection::"
       << method
       << "\n"
          "  Message type: "
@@ -253,7 +253,7 @@ static void ReportReflectionUsageEnumTypeError(
     const Descriptor* descriptor, const FieldDescriptor* field,
     const char* method, const EnumValueDescriptor* value) {
   ABSL_LOG(FATAL) << "Protocol Buffer reflection usage error:\n"
-                     "  Method      : google::protobuf::Reflection::"
+                     "  Method      : google::protobuf_inworld::Reflection::"
                   << method
                   << "\n"
                      "  Message type: "
@@ -3818,7 +3818,7 @@ bool SplitFieldHasExtraIndirection(const FieldDescriptor* field) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

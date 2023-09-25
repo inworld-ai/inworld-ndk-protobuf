@@ -39,7 +39,7 @@
 #include "google/protobuf/pyext/descriptor_pool.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 class MessageFactory;
 
 namespace python {
@@ -98,7 +98,7 @@ CMessageClass* GetOrCreateMessageClass(PyMessageFactory* self,
 bool InitMessageFactory();
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_MESSAGE_FACTORY_H__

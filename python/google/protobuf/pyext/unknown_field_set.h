@@ -40,7 +40,7 @@
 #include "google/protobuf/pyext/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class UnknownField;
 class UnknownFieldSet;
@@ -72,7 +72,7 @@ extern PyTypeObject PyUnknownFieldSet_Type;
 extern PyTypeObject PyUnknownField_Type;
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_PYTHON_CPP_UNKNOWN_FIELD_SET_H__

@@ -52,7 +52,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace csharp {
 
@@ -183,5 +183,5 @@ TEST(CsharpBootstrapTest, GeneratedCsharpDescriptorMatches) {
 
 }  // namespace csharp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

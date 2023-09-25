@@ -47,7 +47,7 @@
 #include "upb/reflection/def.hpp"
 
 upb_StringView descriptor = benchmarks_descriptor_proto_upbdefinit.descriptor;
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 // A buffer big enough to parse descriptor.proto without going to heap.
 // We use 64-bit ints here to force alignment.
@@ -222,13 +222,13 @@ static void BM_LoadAdsDescriptor_Proto2(benchmark::State& state) {
   size_t bytes_per_iter = 0;
   for (auto _ : state) {
     bytes_per_iter = 0;
-    protobuf::Arena arena;
-    protobuf::DescriptorPool pool;
+    protobuf_inworld::Arena arena;
+    protobuf_inworld::DescriptorPool pool;
     for (auto file : serialized_files) {
       absl::string_view input(file.data, file.size);
       auto proto =
-          protobuf::Arena::CreateMessage<protobuf::FileDescriptorProto>(&arena);
-      bool ok = proto->ParseFrom<protobuf::MessageLite::kMergePartial>(input) &&
+          protobuf_inworld::Arena::CreateMessage<protobuf_inworld::FileDescriptorProto>(&arena);
+      bool ok = proto->ParseFrom<protobuf_inworld::MessageLite::kMergePartial>(input) &&
                 pool.BuildFile(*proto) != nullptr;
       if (!ok) {
         printf("Failed to add file.\n");
@@ -238,8 +238,8 @@ static void BM_LoadAdsDescriptor_Proto2(benchmark::State& state) {
     }
 
     if (Mode == WithLayout) {
-      protobuf::DynamicMessageFactory factory;
-      const protobuf::Descriptor* d = pool.FindMessageTypeByName(
+      protobuf_inworld::DynamicMessageFactory factory;
+      const protobuf_inworld::Descriptor* d = pool.FindMessageTypeByName(
           "google.ads.googleads.v13.services.SearchGoogleAdsResponse");
       if (!d) {
         printf("Failed to find descriptor.\n");
@@ -305,27 +305,27 @@ struct Proto2Factory<NoArena, P> {
 template <class P>
 struct Proto2Factory<UseArena, P> {
  public:
-  P* GetProto() { return protobuf::Arena::CreateMessage<P>(&arena); }
+  P* GetProto() { return protobuf_inworld::Arena::CreateMessage<P>(&arena); }
 
  private:
-  protobuf::Arena arena;
+  protobuf_inworld::Arena arena;
 };
 
 template <class P>
 struct Proto2Factory<InitBlock, P> {
  public:
   Proto2Factory() : arena(GetOptions()) {}
-  P* GetProto() { return protobuf::Arena::CreateMessage<P>(&arena); }
+  P* GetProto() { return protobuf_inworld::Arena::CreateMessage<P>(&arena); }
 
  private:
-  protobuf::ArenaOptions GetOptions() {
-    protobuf::ArenaOptions opts;
+  protobuf_inworld::ArenaOptions GetOptions() {
+    protobuf_inworld::ArenaOptions opts;
     opts.initial_block = (char*)buf;
     opts.initial_block_size = sizeof(buf);
     return opts;
   }
 
-  protobuf::Arena arena;
+  protobuf_inworld::Arena arena;
 };
 
 using FileDesc = ::upb_benchmark::FileDescriptorProto;
@@ -333,10 +333,10 @@ using FileDescSV = ::upb_benchmark::sv::FileDescriptorProto;
 
 template <class P, ArenaMode AMode, CopyStrings kCopy>
 void BM_Parse_Proto2(benchmark::State& state) {
-  constexpr protobuf::MessageLite::ParseFlags kParseFlags =
+  constexpr protobuf_inworld::MessageLite::ParseFlags kParseFlags =
       kCopy == Copy
-          ? protobuf::MessageLite::ParseFlags::kMergePartial
-          : protobuf::MessageLite::ParseFlags::kMergePartialWithAliasing;
+          ? protobuf_inworld::MessageLite::ParseFlags::kMergePartial
+          : protobuf_inworld::MessageLite::ParseFlags::kMergePartialWithAliasing;
   for (auto _ : state) {
     Proto2Factory<AMode, P> proto_factory;
     auto proto = proto_factory.GetProto();

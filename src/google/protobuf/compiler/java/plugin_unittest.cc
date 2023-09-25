@@ -45,7 +45,7 @@
 #include "google/protobuf/io/zero_copy_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 namespace {
@@ -134,5 +134,5 @@ TEST(JavaPluginTest, PluginTest) {
 }  // namespace
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

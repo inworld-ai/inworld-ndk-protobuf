@@ -44,7 +44,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace json_internal {
 absl::Status ZeroCopyBufferedStream::Advance(size_t bytes) {
   while (bytes != 0) {
@@ -144,5 +144,5 @@ bool ZeroCopyBufferedStream::ReadChunk() {
   return true;
 }
 }  // namespace json_internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

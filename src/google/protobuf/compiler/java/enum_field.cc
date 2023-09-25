@@ -52,12 +52,12 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 
 namespace {
-using Semantic = ::google::protobuf::io::AnnotationCollector::Semantic;
+using Semantic = ::google::protobuf_inworld::io::AnnotationCollector::Semantic;
 
 void SetEnumVariables(
     const FieldDescriptor* descriptor, int messageBitIndex, int builderBitIndex,
@@ -1158,7 +1158,7 @@ std::string RepeatedImmutableEnumFieldGenerator::GetBoxedType() const {
 
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

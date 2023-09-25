@@ -50,7 +50,7 @@
 // #include "testing/fuzzing/fuzztest.h"
 // end:google_only
 
-namespace protobuf = ::google::protobuf;
+namespace protobuf_inworld = ::google::protobuf_inworld;
 
 class MiniTableTest : public testing::TestWithParam<upb_MiniTablePlatform> {};
 
@@ -216,10 +216,10 @@ TEST(MiniTablePlatformIndependentTest, Base92Roundtrip) {
 }
 
 TEST(MiniTablePlatformIndependentTest, IsTypePackable) {
-  for (int i = 1; i <= protobuf::FieldDescriptor::MAX_TYPE; i++) {
+  for (int i = 1; i <= protobuf_inworld::FieldDescriptor::MAX_TYPE; i++) {
     EXPECT_EQ(upb_FieldType_IsPackable(static_cast<upb_FieldType>(i)),
-              protobuf::FieldDescriptor::IsTypePackable(
-                  static_cast<protobuf::FieldDescriptor::Type>(i)));
+              protobuf_inworld::FieldDescriptor::IsTypePackable(
+                  static_cast<protobuf_inworld::FieldDescriptor::Type>(i)));
   }
 }
 

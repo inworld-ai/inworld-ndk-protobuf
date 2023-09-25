@@ -34,7 +34,7 @@
 #include "conformance_test.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class TextFormatConformanceTestSuite : public ConformanceTestSuite {
  public:
@@ -79,7 +79,7 @@ class TextFormatConformanceTestSuite : public ConformanceTestSuite {
       const std::string& test_type_name, const std::string& message_field);
 };
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // TEXT_FORMAT_CONFORMANCE_SUITE_H_

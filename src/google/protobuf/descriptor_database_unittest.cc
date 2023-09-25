@@ -48,7 +48,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace {
 
 static void AddToDatabase(SimpleDescriptorDatabase* database,
@@ -829,5 +829,5 @@ TEST_F(MergedDescriptorDatabaseTest, FindAllFileNames) {
 
 
 }  // anonymous namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

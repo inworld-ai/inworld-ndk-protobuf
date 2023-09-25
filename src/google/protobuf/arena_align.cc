@@ -34,12 +34,12 @@
 #include <cstdint>
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // There are still compilers (open source) requiring a definition for constexpr.
 constexpr size_t ArenaAlignDefault::align;  // NOLINT
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

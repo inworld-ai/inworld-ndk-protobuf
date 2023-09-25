@@ -42,18 +42,18 @@
 #define PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fcpp_5ffeatures_2eproto PROTOBUF_EXPORT
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class AnyMetadata;
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // Internal implementation detail -- do not use these members.
 struct PROTOBUF_EXPORT TableStruct_google_2fprotobuf_2fcpp_5ffeatures_2eproto {
   static const ::uint32_t offsets[];
 };
-PROTOBUF_EXPORT extern const ::google::protobuf::internal::DescriptorTable
+PROTOBUF_EXPORT extern const ::google::protobuf_inworld::internal::DescriptorTable
     descriptor_table_google_2fprotobuf_2fcpp_5ffeatures_2eproto;
 namespace pb {
 class CppFeatures;
@@ -61,8 +61,8 @@ struct CppFeaturesDefaultTypeInternal;
 PROTOBUF_EXPORT extern CppFeaturesDefaultTypeInternal _CppFeatures_default_instance_;
 }  // namespace pb
 namespace google {
-namespace protobuf {
-}  // namespace protobuf
+namespace protobuf_inworld {
+}  // namespace protobuf_inworld
 }  // namespace google
 
 namespace pb {
@@ -78,7 +78,7 @@ PROTOBUF_EXPORT extern const uint32_t CppFeatures_Utf8Validation_internal_data_[
 constexpr CppFeatures_Utf8Validation CppFeatures_Utf8Validation_Utf8Validation_MIN = static_cast<CppFeatures_Utf8Validation>(0);
 constexpr CppFeatures_Utf8Validation CppFeatures_Utf8Validation_Utf8Validation_MAX = static_cast<CppFeatures_Utf8Validation>(3);
 constexpr int CppFeatures_Utf8Validation_Utf8Validation_ARRAYSIZE = 3 + 1;
-PROTOBUF_EXPORT const ::google::protobuf::EnumDescriptor*
+PROTOBUF_EXPORT const ::google::protobuf_inworld::EnumDescriptor*
 CppFeatures_Utf8Validation_descriptor();
 template <typename T>
 const std::string& CppFeatures_Utf8Validation_Name(T value) {
@@ -89,12 +89,12 @@ const std::string& CppFeatures_Utf8Validation_Name(T value) {
 }
 template <>
 inline const std::string& CppFeatures_Utf8Validation_Name(CppFeatures_Utf8Validation value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<CppFeatures_Utf8Validation_descriptor,
+  return ::google::protobuf_inworld::internal::NameOfDenseEnum<CppFeatures_Utf8Validation_descriptor,
                                                  0, 3>(
       static_cast<int>(value));
 }
 inline bool CppFeatures_Utf8Validation_Parse(absl::string_view name, CppFeatures_Utf8Validation* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<CppFeatures_Utf8Validation>(
+  return ::google::protobuf_inworld::internal::ParseNamedEnum<CppFeatures_Utf8Validation>(
       CppFeatures_Utf8Validation_descriptor(), name, value);
 }
 
@@ -104,14 +104,14 @@ inline bool CppFeatures_Utf8Validation_Parse(absl::string_view name, CppFeatures
 // -------------------------------------------------------------------
 
 class PROTOBUF_EXPORT CppFeatures final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.CppFeatures) */ {
+    public ::google::protobuf_inworld::Message /* @@protoc_insertion_point(class_definition:pb.CppFeatures) */ {
  public:
   inline CppFeatures() : CppFeatures(nullptr) {}
   ~CppFeatures() override;
   template<typename = void>
-  explicit PROTOBUF_CONSTEXPR CppFeatures(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR CppFeatures(::google::protobuf_inworld::internal::ConstantInitialized);
 
-  CppFeatures(::google::protobuf::Arena* arena, const CppFeatures& from);
+  CppFeatures(::google::protobuf_inworld::Arena* arena, const CppFeatures& from);
   inline CppFeatures(const CppFeatures& from)
       : CppFeatures(nullptr, from) {}
   CppFeatures(CppFeatures&& from) noexcept
@@ -137,22 +137,22 @@ class PROTOBUF_EXPORT CppFeatures final :
     return *this;
   }
 
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+  inline const ::google::protobuf_inworld::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+  inline ::google::protobuf_inworld::UnknownFieldSet* mutable_unknown_fields()
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf_inworld::UnknownFieldSet>();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
+  static const ::google::protobuf_inworld::Descriptor* descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
+  static const ::google::protobuf_inworld::Descriptor* GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* GetReflection() {
+  static const ::google::protobuf_inworld::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const CppFeatures& default_instance() {
@@ -178,7 +178,7 @@ class PROTOBUF_EXPORT CppFeatures final :
   #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
       InternalSwap(other);
     } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
+      ::google::protobuf_inworld::internal::GenericSwap(this, other);
     }
   }
   void UnsafeArenaSwap(CppFeatures* other) {
@@ -189,46 +189,46 @@ class PROTOBUF_EXPORT CppFeatures final :
 
   // implements Message ----------------------------------------------
 
-  CppFeatures* New(::google::protobuf::Arena* arena = nullptr) const final {
+  CppFeatures* New(::google::protobuf_inworld::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<CppFeatures>(arena);
   }
-  using ::google::protobuf::Message::CopyFrom;
+  using ::google::protobuf_inworld::Message::CopyFrom;
   void CopyFrom(const CppFeatures& from);
-  using ::google::protobuf::Message::MergeFrom;
+  using ::google::protobuf_inworld::Message::MergeFrom;
   void MergeFrom( const CppFeatures& from) {
     CppFeatures::MergeImpl(*this, from);
   }
   private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  static void MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg);
   public:
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
   ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf_inworld::internal::ParseContext* ctx) final;
   ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+      ::uint8_t* target, ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const final;
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
   private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
+  ::google::protobuf_inworld::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf_inworld::Arena* arena);
   void SharedDtor();
   void InternalSwap(CppFeatures* other);
 
   private:
-  friend class ::google::protobuf::internal::AnyMetadata;
+  friend class ::google::protobuf_inworld::internal::AnyMetadata;
   static ::absl::string_view FullMessageName() {
     return "pb.CppFeatures";
   }
   protected:
-  explicit CppFeatures(::google::protobuf::Arena* arena);
+  explicit CppFeatures(::google::protobuf_inworld::Arena* arena);
   public:
 
   static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+  const ::google::protobuf_inworld::Message::ClassData*GetClassData() const final;
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::google::protobuf_inworld::Metadata GetMetadata() const final;
 
   // nested types ----------------------------------------------------
 
@@ -243,7 +243,7 @@ class PROTOBUF_EXPORT CppFeatures final :
   static constexpr Utf8Validation Utf8Validation_MIN = CppFeatures_Utf8Validation_Utf8Validation_MIN;
   static constexpr Utf8Validation Utf8Validation_MAX = CppFeatures_Utf8Validation_Utf8Validation_MAX;
   static constexpr int Utf8Validation_ARRAYSIZE = CppFeatures_Utf8Validation_Utf8Validation_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor* Utf8Validation_descriptor() {
+  static inline const ::google::protobuf_inworld::EnumDescriptor* Utf8Validation_descriptor() {
     return CppFeatures_Utf8Validation_descriptor();
   }
   template <typename T>
@@ -286,26 +286,26 @@ class PROTOBUF_EXPORT CppFeatures final :
  private:
   class _Internal;
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
+  friend class ::google::protobuf_inworld::internal::TcParser;
+  static const ::google::protobuf_inworld::internal::TcParseTable<
       1, 2, 1,
       0, 2>
       _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T> friend class ::google::protobuf::Arena::InternalHelper;
+  friend class ::google::protobuf_inworld::MessageLite;
+  friend class ::google::protobuf_inworld::Arena;
+  template <typename T> friend class ::google::protobuf_inworld::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct PROTOBUF_EXPORT Impl_ {
 
         inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+            ::google::protobuf_inworld::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena);
+        inline explicit Impl_(::google::protobuf_inworld::internal::InternalVisibility visibility,
+                              ::google::protobuf_inworld::Arena* arena, const Impl_& from);
+    ::google::protobuf_inworld::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf_inworld::internal::CachedSize _cached_size_;
     bool legacy_closed_enum_;
     int utf8_validation_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -319,8 +319,8 @@ class PROTOBUF_EXPORT CppFeatures final :
 
 
 static const int kCppFieldNumber = 1000;
-PROTOBUF_EXPORT extern ::google::protobuf::internal::ExtensionIdentifier< ::google::protobuf::FeatureSet,
-    ::google::protobuf::internal::MessageTypeTraits< ::pb::CppFeatures >, 11, false >
+PROTOBUF_EXPORT extern ::google::protobuf_inworld::internal::ExtensionIdentifier< ::google::protobuf_inworld::FeatureSet,
+    ::google::protobuf_inworld::internal::MessageTypeTraits< ::pb::CppFeatures >, 11, false >
   cpp;
 
 // ===================================================================
@@ -400,7 +400,7 @@ inline void CppFeatures::_internal_set_utf8_validation(::pb::CppFeatures_Utf8Val
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 template <>
 struct is_proto_enum<::pb::CppFeatures_Utf8Validation> : std::true_type {};
@@ -409,7 +409,7 @@ inline const EnumDescriptor* GetEnumDescriptor<::pb::CppFeatures_Utf8Validation>
   return ::pb::CppFeatures_Utf8Validation_descriptor();
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 // @@protoc_insertion_point(global_scope)

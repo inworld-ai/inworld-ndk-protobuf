@@ -49,12 +49,12 @@
 #include "google/protobuf/wire_format.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace java {
 
 using internal::WireFormat;
-using Semantic = ::google::protobuf::io::AnnotationCollector::Semantic;
+using Semantic = ::google::protobuf_inworld::io::AnnotationCollector::Semantic;
 
 namespace {
 
@@ -1084,5 +1084,5 @@ std::string RepeatedImmutablePrimitiveFieldGenerator::GetBoxedType() const {
 
 }  // namespace java
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

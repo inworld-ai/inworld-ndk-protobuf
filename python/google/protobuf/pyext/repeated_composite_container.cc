@@ -46,7 +46,7 @@
 #include "google/protobuf/pyext/scoped_pyobject_ptr.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 namespace repeated_composite_container {
@@ -588,5 +588,5 @@ PyTypeObject RepeatedCompositeContainer_Type = {
 };
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

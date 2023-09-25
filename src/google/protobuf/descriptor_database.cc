@@ -48,7 +48,7 @@
 
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace {
 void RecordMessageNames(const DescriptorProto& desc_proto,
@@ -1056,5 +1056,5 @@ bool MergedDescriptorDatabase::FindAllFileNames(
   return implemented;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

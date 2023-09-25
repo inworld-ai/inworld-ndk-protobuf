@@ -57,7 +57,7 @@ const char* const kReservedNames[] = {
 const int kReservedNamesSize = 80;
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace php {
 
@@ -140,5 +140,5 @@ std::string GeneratedClassName(const ServiceDescriptor* desc) {
 
 }  // namespace php
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

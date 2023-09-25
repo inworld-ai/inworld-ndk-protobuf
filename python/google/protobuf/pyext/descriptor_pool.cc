@@ -61,7 +61,7 @@
        : PyBytes_AsStringAndSize(ob, (charpp), (sizep)))
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace python {
 
 // A map to cache Python Pools per C++ pointer.
@@ -828,7 +828,7 @@ PyObject* PyDescriptorPool_FromPool(const DescriptorPool* pool) {
 }
 
 }  // namespace python
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

@@ -40,9 +40,9 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
-using ::google::protobuf::internal::DownCast;
+using ::google::protobuf_inworld::internal::DownCast;
 
 VariantKey RealKeyToVariantKey<MapKey>::operator()(const MapKey& value) const {
   switch (value.type()) {
@@ -612,7 +612,7 @@ size_t DynamicMapField::SpaceUsedExcludingSelfNoLock() const {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

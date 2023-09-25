@@ -49,7 +49,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // This class provides access to map field using generated api. It is used for
@@ -106,7 +106,7 @@ class MapFieldLite {
     Map<Key, T> map_;
   };
 
-  friend class google::protobuf::Arena;
+  friend class google::protobuf_inworld::Arena;
 };
 
 // True if IsInitialized() is true for value field in all elements of t. T is
@@ -127,7 +127,7 @@ template <typename MEntry>
 struct MapEntryToMapField : MapEntryToMapField<typename MEntry::SuperType> {};
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

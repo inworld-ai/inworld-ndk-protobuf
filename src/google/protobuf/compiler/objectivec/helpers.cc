@@ -49,7 +49,7 @@
 // error cases, so it seems to be ok to use as a back door for errors.
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace objectivec {
 
@@ -413,5 +413,5 @@ void EmitCommentsString(io::Printer* printer, const SourceLocation& location,
 
 }  // namespace objectivec
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

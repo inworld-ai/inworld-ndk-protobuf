@@ -42,7 +42,7 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 class EnumGenerator {
@@ -60,7 +60,7 @@ class EnumGenerator {
   void GenerateDefinition(io::Printer* p);
 
   // Generate specialization of GetEnumDescriptor<MyEnum>().
-  // Precondition: in ::google::protobuf namespace.
+  // Precondition: in ::google::protobuf_inworld namespace.
   void GenerateGetEnumDescriptorSpecializations(io::Printer* p);
 
 
@@ -98,7 +98,7 @@ class EnumGenerator {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_CPP_ENUM_H__

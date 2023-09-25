@@ -17,9 +17,9 @@
 // Must be included last.
 #include "google/protobuf/port_def.inc"
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+namespace _pb = ::google::protobuf_inworld;
+namespace _pbi = ::google::protobuf_inworld::internal;
+namespace _fl = ::google::protobuf_inworld::internal::field_layout;
 namespace pb {
 
 inline constexpr CppFeatures::Impl_::Impl_(
@@ -120,8 +120,8 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_google_2
   return &descriptor_table_google_2fprotobuf_2fcpp_5ffeatures_2eproto;
 }
 namespace pb {
-const ::google::protobuf::EnumDescriptor* CppFeatures_Utf8Validation_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_google_2fprotobuf_2fcpp_5ffeatures_2eproto);
+const ::google::protobuf_inworld::EnumDescriptor* CppFeatures_Utf8Validation_descriptor() {
+  ::google::protobuf_inworld::internal::AssignDescriptors(&descriptor_table_google_2fprotobuf_2fcpp_5ffeatures_2eproto);
   return file_level_enum_descriptors_google_2fprotobuf_2fcpp_5ffeatures_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t CppFeatures_Utf8Validation_internal_data_[] = {
@@ -157,19 +157,19 @@ class CppFeatures::_Internal {
   }
 };
 
-CppFeatures::CppFeatures(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
+CppFeatures::CppFeatures(::google::protobuf_inworld::Arena* arena)
+    : ::google::protobuf_inworld::Message(arena) {
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:pb.CppFeatures)
 }
 CppFeatures::CppFeatures(
-    ::google::protobuf::Arena* arena, const CppFeatures& from)
+    ::google::protobuf_inworld::Arena* arena, const CppFeatures& from)
     : CppFeatures(arena) {
   MergeFrom(from);
 }
 inline PROTOBUF_NDEBUG_INLINE CppFeatures::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* arena)
+    ::google::protobuf_inworld::internal::InternalVisibility visibility,
+    ::google::protobuf_inworld::Arena* arena)
       : _cached_size_{0} {}
 
 inline void CppFeatures::SharedCtor(::_pb::Arena* arena) {
@@ -183,7 +183,7 @@ inline void CppFeatures::SharedCtor(::_pb::Arena* arena) {
 }
 CppFeatures::~CppFeatures() {
   // @@protoc_insertion_point(destructor:pb.CppFeatures)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Delete<::google::protobuf_inworld::UnknownFieldSet>();
   SharedDtor();
 }
 inline void CppFeatures::SharedDtor() {
@@ -205,7 +205,7 @@ PROTOBUF_NOINLINE void CppFeatures::Clear() {
         reinterpret_cast<char*>(&_impl_.legacy_closed_enum_)) + sizeof(_impl_.utf8_validation_));
   }
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::google::protobuf_inworld::UnknownFieldSet>();
 }
 
 const char* CppFeatures::_InternalParse(
@@ -253,7 +253,7 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CppFeatures::_table_ = {
 
 ::uint8_t* CppFeatures::_InternalSerialize(
     ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+    ::google::protobuf_inworld::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:pb.CppFeatures)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
@@ -276,7 +276,7 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CppFeatures::_table_ = {
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+            _internal_metadata_.unknown_fields<::google::protobuf_inworld::UnknownFieldSet>(::google::protobuf_inworld::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.CppFeatures)
   return target;
@@ -307,14 +307,14 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CppFeatures::_table_ = {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData CppFeatures::_class_data_ = {
+const ::google::protobuf_inworld::Message::ClassData CppFeatures::_class_data_ = {
     CppFeatures::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData* CppFeatures::GetClassData() const {
+const ::google::protobuf_inworld::Message::ClassData* CppFeatures::GetClassData() const {
   return &_class_data_;
 }
 
-void CppFeatures::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void CppFeatures::MergeImpl(::google::protobuf_inworld::Message& to_msg, const ::google::protobuf_inworld::Message& from_msg) {
   auto* const _this = static_cast<CppFeatures*>(&to_msg);
   auto& from = static_cast<const CppFeatures&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:pb.CppFeatures)
@@ -332,7 +332,7 @@ void CppFeatures::MergeImpl(::google::protobuf::Message& to_msg, const ::google:
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf_inworld::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CppFeatures::CopyFrom(const CppFeatures& from) {
@@ -353,7 +353,7 @@ void CppFeatures::InternalSwap(CppFeatures* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::google::protobuf_inworld::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CppFeatures, _impl_.utf8_validation_)
       + sizeof(CppFeatures::_impl_.utf8_validation_)
       - PROTOBUF_FIELD_OFFSET(CppFeatures, _impl_.legacy_closed_enum_)>(
@@ -361,20 +361,20 @@ void CppFeatures::InternalSwap(CppFeatures* PROTOBUF_RESTRICT other) {
           reinterpret_cast<char*>(&other->_impl_.legacy_closed_enum_));
 }
 
-::google::protobuf::Metadata CppFeatures::GetMetadata() const {
+::google::protobuf_inworld::Metadata CppFeatures::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_google_2fprotobuf_2fcpp_5ffeatures_2eproto_getter, &descriptor_table_google_2fprotobuf_2fcpp_5ffeatures_2eproto_once,
       file_level_metadata_google_2fprotobuf_2fcpp_5ffeatures_2eproto[0]);
 }
 PROTOBUF_CONSTINIT PROTOBUF_EXPORT PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-::google::protobuf::internal::ExtensionIdentifier< ::google::protobuf::FeatureSet,
-    ::google::protobuf::internal::MessageTypeTraits< ::pb::CppFeatures >, 11, false>
+::google::protobuf_inworld::internal::ExtensionIdentifier< ::google::protobuf_inworld::FeatureSet,
+    ::google::protobuf_inworld::internal::MessageTypeTraits< ::pb::CppFeatures >, 11, false>
   cpp(kCppFieldNumber);
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace pb
 namespace google {
-namespace protobuf {
-}  // namespace protobuf
+namespace protobuf_inworld {
+}  // namespace protobuf_inworld
 }  // namespace google
 // @@protoc_insertion_point(global_scope)
 #include "google/protobuf/port_undef.inc"

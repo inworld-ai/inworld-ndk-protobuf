@@ -72,7 +72,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 // This class is for internal use by the protocol buffer library and by
@@ -547,7 +547,7 @@ class PROTOBUF_EXPORT WireFormatLite {
   // Write fields, including tags.
   template <int field_number>
   PROTOBUF_NOINLINE static uint8_t* WriteInt32ToArrayWithField(
-      ::google::protobuf::io::EpsCopyOutputStream* stream, int32_t value,
+      ::google::protobuf_inworld::io::EpsCopyOutputStream* stream, int32_t value,
       uint8_t* target) {
     target = stream->EnsureSpace(target);
     return WriteInt32ToArray(field_number, value, target);
@@ -555,7 +555,7 @@ class PROTOBUF_EXPORT WireFormatLite {
 
   template <int field_number>
   PROTOBUF_NOINLINE static uint8_t* WriteInt64ToArrayWithField(
-      ::google::protobuf::io::EpsCopyOutputStream* stream, int64_t value,
+      ::google::protobuf_inworld::io::EpsCopyOutputStream* stream, int64_t value,
       uint8_t* target) {
     target = stream->EnsureSpace(target);
     return WriteInt64ToArray(field_number, value, target);
@@ -563,7 +563,7 @@ class PROTOBUF_EXPORT WireFormatLite {
 
   template <int field_number>
   PROTOBUF_NOINLINE static uint8_t* WriteEnumToArrayWithField(
-      ::google::protobuf::io::EpsCopyOutputStream* stream, int value, uint8_t* target) {
+      ::google::protobuf_inworld::io::EpsCopyOutputStream* stream, int value, uint8_t* target) {
     target = stream->EnsureSpace(target);
     return WriteEnumToArray(field_number, value, target);
   }
@@ -1959,7 +1959,7 @@ bool ParseMessageSetItemImpl(io::CodedInputStream* input, MS ms) {
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

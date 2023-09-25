@@ -36,7 +36,7 @@
 #include "google/protobuf/io/coded_stream.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace util {
 
 bool SerializeDelimitedToFileDescriptor(const MessageLite& message,
@@ -125,5 +125,5 @@ bool SerializeDelimitedToCodedStream(const MessageLite& message,
 }
 
 }  // namespace util
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

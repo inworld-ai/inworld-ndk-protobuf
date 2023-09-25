@@ -53,7 +53,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 const UnknownFieldSet& UnknownFieldSet::default_instance() {
   static auto instance = internal::OnShutdownDelete(new UnknownFieldSet());
@@ -243,22 +243,22 @@ bool UnknownFieldSet::ParseFromArray(const void* data, int size) {
 
 bool UnknownFieldSet::SerializeToString(std::string* output) const {
   const size_t size =
-      google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(*this);
+      google::protobuf_inworld::internal::WireFormat::ComputeUnknownFieldsSize(*this);
   absl::strings_internal::STLStringResizeUninitializedAmortized(output, size);
-  google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+  google::protobuf_inworld::internal::WireFormat::SerializeUnknownFieldsToArray(
       *this, reinterpret_cast<uint8_t*>(const_cast<char*>(output->data())));
   return true;
 }
 
 bool UnknownFieldSet::SerializeToCodedStream(
     io::CodedOutputStream* output) const {
-  google::protobuf::internal::WireFormat::SerializeUnknownFields(*this, output);
+  google::protobuf_inworld::internal::WireFormat::SerializeUnknownFields(*this, output);
   return !output->HadError();
 }
 
 bool UnknownFieldSet::SerializeToCord(absl::Cord* output) const {
   const size_t size =
-      google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(*this);
+      google::protobuf_inworld::internal::WireFormat::ComputeUnknownFieldsSize(*this);
   io::CordOutputStream cord_output_stream(size);
   {
     io::CodedOutputStream coded_output_stream(&cord_output_stream);
@@ -358,7 +358,7 @@ const char* UnknownFieldParse(uint64_t tag, UnknownFieldSet* unknown,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

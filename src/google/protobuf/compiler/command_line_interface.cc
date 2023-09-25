@@ -112,7 +112,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 
 #ifndef O_BINARY
@@ -127,12 +127,12 @@ namespace {
 #if defined(_WIN32)
 // DO NOT include <io.h>, instead create functions in io_win32.{h,cc} and import
 // them like we do below.
-using google::protobuf::io::win32::access;
-using google::protobuf::io::win32::close;
-using google::protobuf::io::win32::mkdir;
-using google::protobuf::io::win32::open;
-using google::protobuf::io::win32::setmode;
-using google::protobuf::io::win32::write;
+using google::protobuf_inworld::io::win32::access;
+using google::protobuf_inworld::io::win32::close;
+using google::protobuf_inworld::io::win32::mkdir;
+using google::protobuf_inworld::io::win32::open;
+using google::protobuf_inworld::io::win32::setmode;
+using google::protobuf_inworld::io::win32::write;
 #endif
 
 static const char* kDefaultDirectDependenciesViolationMsg =
@@ -487,7 +487,7 @@ class CommandLineInterface::GeneratorContextImpl : public GeneratorContext {
       const std::string& filename, const std::string& insertion_point) override;
   io::ZeroCopyOutputStream* OpenForInsertWithGeneratedCodeInfo(
       const std::string& filename, const std::string& insertion_point,
-      const google::protobuf::GeneratedCodeInfo& info) override;
+      const google::protobuf_inworld::GeneratedCodeInfo& info) override;
   void ListParsedFiles(std::vector<const FileDescriptor*>* output) override {
     *output = parsed_files_;
   }
@@ -514,7 +514,7 @@ class CommandLineInterface::MemoryOutputStream
   MemoryOutputStream(GeneratorContextImpl* directory,
                      const std::string& filename,
                      const std::string& insertion_point,
-                     const google::protobuf::GeneratedCodeInfo& info);
+                     const google::protobuf_inworld::GeneratedCodeInfo& info);
   ~MemoryOutputStream() override;
 
   // implements ZeroCopyOutputStream ---------------------------------
@@ -541,7 +541,7 @@ class CommandLineInterface::MemoryOutputStream
   // indent_length. insertion_content must end with an endline.
   void InsertShiftedInfo(const std::string& insertion_content,
                          size_t insertion_offset, size_t indent_length,
-                         google::protobuf::GeneratedCodeInfo& target_info);
+                         google::protobuf_inworld::GeneratedCodeInfo& target_info);
 
   // Where to insert the string when it's done.
   GeneratorContextImpl* directory_;
@@ -558,7 +558,7 @@ class CommandLineInterface::MemoryOutputStream
   std::unique_ptr<io::StringOutputStream> inner_;
 
   // The GeneratedCodeInfo to insert at the insertion point.
-  google::protobuf::GeneratedCodeInfo info_to_insert_;
+  google::protobuf_inworld::GeneratedCodeInfo info_to_insert_;
 };
 
 // -------------------------------------------------------------------
@@ -720,7 +720,7 @@ CommandLineInterface::GeneratorContextImpl::OpenForInsert(
 io::ZeroCopyOutputStream*
 CommandLineInterface::GeneratorContextImpl::OpenForInsertWithGeneratedCodeInfo(
     const std::string& filename, const std::string& insertion_point,
-    const google::protobuf::GeneratedCodeInfo& info) {
+    const google::protobuf_inworld::GeneratedCodeInfo& info) {
   return new MemoryOutputStream(this, filename, insertion_point, info);
 }
 
@@ -744,7 +744,7 @@ CommandLineInterface::MemoryOutputStream::MemoryOutputStream(
 
 CommandLineInterface::MemoryOutputStream::MemoryOutputStream(
     GeneratorContextImpl* directory, const std::string& filename,
-    const std::string& insertion_point, const google::protobuf::GeneratedCodeInfo& info)
+    const std::string& insertion_point, const google::protobuf_inworld::GeneratedCodeInfo& info)
     : directory_(directory),
       filename_(filename),
       insertion_point_(insertion_point),
@@ -753,7 +753,7 @@ CommandLineInterface::MemoryOutputStream::MemoryOutputStream(
 
 void CommandLineInterface::MemoryOutputStream::InsertShiftedInfo(
     const std::string& insertion_content, size_t insertion_offset,
-    size_t indent_length, google::protobuf::GeneratedCodeInfo& target_info) {
+    size_t indent_length, google::protobuf_inworld::GeneratedCodeInfo& target_info) {
   // Keep track of how much extra data was added for indents before the
   // current annotation being inserted. `pos` and `source_annotation.begin()`
   // are offsets in `insertion_content`. `insertion_offset` is updated so that
@@ -1294,7 +1294,7 @@ int CommandLineInterface::Run(int argc, const char* const argv[]) {
   bool validation_error = false;  // Defer exiting so we log more warnings.
 
   for (auto& file : parsed_files) {
-    google::protobuf::internal::VisitDescriptors(
+    google::protobuf_inworld::internal::VisitDescriptors(
         *file, [&](const FieldDescriptor& field) {
           if (HasReservedFieldNumber(&field)) {
             const char* error_link = nullptr;
@@ -1326,10 +1326,10 @@ int CommandLineInterface::Run(int argc, const char* const argv[]) {
   // error messages. Usually we can get the file name from any descriptor with
   // something like descriptor->file()->name(), but ExtensionRange does not
   // support this.
-  for (const google::protobuf::FileDescriptor* file : parsed_files) {
+  for (const google::protobuf_inworld::FileDescriptor* file : parsed_files) {
     FileDescriptorProto proto;
     file->CopyTo(&proto);
-    google::protobuf::internal::VisitDescriptors(
+    google::protobuf_inworld::internal::VisitDescriptors(
         *file, proto, [&](const auto& descriptor, const auto& proto) {
           if (!ValidateTargetConstraints(proto.options(), *descriptor_pool,
                                          *error_collector, file->name(),
@@ -2048,13 +2048,13 @@ CommandLineInterface::InterpretArgument(const std::string& name,
 #if defined(_WIN32)
     // On Windows, the shell (typically cmd.exe) does not expand wildcards in
     // file names (e.g. foo\*.proto), so we do it ourselves.
-    switch (google::protobuf::io::win32::ExpandWildcards(
+    switch (google::protobuf_inworld::io::win32::ExpandWildcards(
         value, [this](const std::string& path) {
           this->input_files_.push_back(path);
         })) {
-      case google::protobuf::io::win32::ExpandWildcardsResult::kSuccess:
+      case google::protobuf_inworld::io::win32::ExpandWildcardsResult::kSuccess:
         break;
-      case google::protobuf::io::win32::ExpandWildcardsResult::kErrorNoMatchingFile:
+      case google::protobuf_inworld::io::win32::ExpandWildcardsResult::kErrorNoMatchingFile:
         // Path does not exist, is not a file, or it's longer than MAX_PATH and
         // long path handling is disabled.
         std::cerr << "Invalid file name pattern or missing input file \""
@@ -2756,7 +2756,7 @@ bool CommandLineInterface::GeneratePluginOutput(
     }
   }
 
-  google::protobuf::compiler::Version* version =
+  google::protobuf_inworld::compiler::Version* version =
       request.mutable_compiler_version();
   version->set_major(PROTOBUF_VERSION / 1000000);
   version->set_minor(PROTOBUF_VERSION / 1000 % 1000);
@@ -3146,5 +3146,5 @@ void CommandLineInterface::PrintFreeFieldNumbers(const Descriptor* descriptor) {
 
 
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

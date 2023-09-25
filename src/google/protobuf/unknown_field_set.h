@@ -59,7 +59,7 @@
 #endif
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 class InternalMetadata;           // metadata_lite.h
 class WireFormat;                 // wire_format.h
@@ -401,7 +401,7 @@ inline void UnknownField::SetType(Type type) {
 }
 
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

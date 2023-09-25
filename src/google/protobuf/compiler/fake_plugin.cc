@@ -39,8 +39,8 @@
 #include "google/protobuf/compiler/plugin.pb.h"
 #include "google/protobuf/io/io_win32.h"
 
-using google::protobuf::compiler::CodeGeneratorRequest;
-using google::protobuf::compiler::CodeGeneratorResponse;
+using google::protobuf_inworld::compiler::CodeGeneratorRequest;
+using google::protobuf_inworld::compiler::CodeGeneratorResponse;
 
 // This fake protoc plugin does nothing but write out the CodeGeneratorRequest
 // in base64. This is not very useful except that it gives us a way to make
@@ -49,8 +49,8 @@ using google::protobuf::compiler::CodeGeneratorResponse;
 int main(int argc, char* argv[]) {
 
 #ifdef _WIN32
-  google::protobuf::io::win32::setmode(STDIN_FILENO, _O_BINARY);
-  google::protobuf::io::win32::setmode(STDOUT_FILENO, _O_BINARY);
+  google::protobuf_inworld::io::win32::setmode(STDIN_FILENO, _O_BINARY);
+  google::protobuf_inworld::io::win32::setmode(STDOUT_FILENO, _O_BINARY);
 #endif
 
   CodeGeneratorRequest request;

@@ -40,9 +40,9 @@ extern "C" void MutateTestAllTypes(protobuf_unittest::TestAllTypes* msg) {
   msg->set_optional_bool(false);
 }
 
-extern "C" google::protobuf::rust_internal::SerializedData SerializeTestAllTypes(
+extern "C" google::protobuf_inworld::rust_internal::SerializedData SerializeTestAllTypes(
     const protobuf_unittest::TestAllTypes* msg) {
-  return google::protobuf::rust_internal::SerializeMsg(msg);
+  return google::protobuf_inworld::rust_internal::SerializeMsg(msg);
 }
 
 extern "C" void* DeserializeTestAllTypes(const void* data, size_t size) {
@@ -57,7 +57,7 @@ extern "C" void* NewWithExtension() {
   return proto;
 }
 
-extern "C" google::protobuf::rust_internal::PtrAndLen GetBytesExtension(
+extern "C" google::protobuf_inworld::rust_internal::PtrAndLen GetBytesExtension(
     const protobuf_unittest::TestAllExtensions* proto) {
   absl::string_view bytes =
       proto->GetExtension(protobuf_unittest::optional_bytes_extension);

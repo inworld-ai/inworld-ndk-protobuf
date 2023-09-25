@@ -42,7 +42,7 @@
 #include "google/protobuf/compiler/code_generator.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace rust {
 static constexpr std::pair<absl::string_view, absl::string_view> kMagicValue = {
@@ -92,5 +92,5 @@ absl::StatusOr<Options> Options::Parse(absl::string_view param) {
 
 }  // namespace rust
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

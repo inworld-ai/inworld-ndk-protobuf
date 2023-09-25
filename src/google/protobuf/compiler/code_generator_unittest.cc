@@ -51,7 +51,7 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace {
 
@@ -142,7 +142,7 @@ TEST_F(CodeGeneratorTest, GetUnresolvedSourceFeaturesRoot) {
   ASSERT_THAT(file, NotNull());
 
   EXPECT_THAT(TestGenerator::GetUnresolvedSourceFeatures(*file, pb::test),
-              google::protobuf::EqualsProto(R"pb(
+              google::protobuf_inworld::EqualsProto(R"pb(
                 int_file_feature: 8
                 string_source_feature: "file"
               )pb"));
@@ -177,7 +177,7 @@ TEST_F(CodeGeneratorTest, GetUnresolvedSourceFeaturesInherited) {
   ASSERT_THAT(field, NotNull());
 
   EXPECT_THAT(TestGenerator::GetUnresolvedSourceFeatures(*field, pb::test),
-              google::protobuf::EqualsProto(R"pb(
+              google::protobuf_inworld::EqualsProto(R"pb(
                 int_multiple_feature: 9
                 string_source_feature: "field"
               )pb"));
@@ -305,5 +305,5 @@ TEST_F(CodeGeneratorTest, BuildFeatureSetDefaults) {
 
 }  // namespace
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

@@ -34,7 +34,7 @@
 #include "google/protobuf/message.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 class MapTestUtil {
  public:
@@ -268,5 +268,5 @@ inline std::vector<const Message*> MapTestUtil::GetMapEntriesFromRelease(
   return result;
 }
 
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

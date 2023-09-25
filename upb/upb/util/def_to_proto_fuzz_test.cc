@@ -39,15 +39,15 @@ namespace upb_test {
 
 FUZZ_TEST(FuzzTest, RoundTripDescriptor)
     .WithDomains(
-        ::fuzztest::Arbitrary<google::protobuf::FileDescriptorSet>().WithProtobufField(
+        ::fuzztest::Arbitrary<google::protobuf_inworld::FileDescriptorSet>().WithProtobufField(
             "file",
-            ::fuzztest::Arbitrary<google::protobuf::FileDescriptorProto>()
+            ::fuzztest::Arbitrary<google::protobuf_inworld::FileDescriptorProto>()
                 // upb_FileDef_ToProto() does not attempt to preserve
                 // source_code_info.
                 .WithFieldUnset("source_code_info")
                 .WithProtobufField(
                     "service",
-                    ::fuzztest::Arbitrary<google::protobuf::ServiceDescriptorProto>()
+                    ::fuzztest::Arbitrary<google::protobuf_inworld::ServiceDescriptorProto>()
                         // streams are google3-only, and we do not currently
                         // attempt to preserve them.
                         .WithFieldUnset("stream"))));

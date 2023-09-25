@@ -55,7 +55,7 @@ VALUE Map_CreateHash(const upb_Map *map, upb_CType key_type, TypeInfo val_info);
 // Returns a deep copy of this Map object.
 VALUE Map_deep_copy(VALUE obj);
 
-// Ruby class of Google::Protobuf::Map.
+// Ruby class of Google::protobuf_inworld::Map.
 extern VALUE cMap;
 
 // Call at startup to register all types in this module.

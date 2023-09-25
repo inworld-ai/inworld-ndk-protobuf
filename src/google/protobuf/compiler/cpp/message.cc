@@ -75,16 +75,16 @@
 #include "google/protobuf/port_def.inc"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using ::google::protobuf::internal::WireFormat;
-using ::google::protobuf::internal::WireFormatLite;
-using ::google::protobuf::internal::cpp::HasHasbit;
-using ::google::protobuf::internal::cpp::Utf8CheckMode;
-using Semantic = ::google::protobuf::io::AnnotationCollector::Semantic;
-using Sub = ::google::protobuf::io::Printer::Sub;
+using ::google::protobuf_inworld::internal::WireFormat;
+using ::google::protobuf_inworld::internal::WireFormatLite;
+using ::google::protobuf_inworld::internal::cpp::HasHasbit;
+using ::google::protobuf_inworld::internal::cpp::Utf8CheckMode;
+using Semantic = ::google::protobuf_inworld::io::AnnotationCollector::Semantic;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 static constexpr int kNoHasbit = -1;
 
@@ -4994,7 +4994,7 @@ void MessageGenerator::GenerateIsInitialized(io::Printer* p) {
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"

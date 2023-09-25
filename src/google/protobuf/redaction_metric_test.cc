@@ -42,7 +42,7 @@
 #include "google/protobuf/unittest.pb.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 
 namespace {
 
@@ -59,5 +59,5 @@ TEST(TextFormatParsingMetricsTest, MetricsTest) {
 }
 
 }  // namespace
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

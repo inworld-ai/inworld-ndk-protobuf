@@ -48,13 +48,13 @@
 #include "google/protobuf/io/printer.h"
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace compiler {
 namespace cpp {
 namespace {
-using ::google::protobuf::internal::cpp::HasHasbit;
-using ::google::protobuf::io::AnnotationCollector;
-using Sub = ::google::protobuf::io::Printer::Sub;
+using ::google::protobuf_inworld::internal::cpp::HasHasbit;
+using ::google::protobuf_inworld::io::AnnotationCollector;
+using Sub = ::google::protobuf_inworld::io::Printer::Sub;
 
 std::vector<Sub> Vars(const FieldDescriptor* field, const Options& opts) {
   auto trivial_default =
@@ -1049,5 +1049,5 @@ std::unique_ptr<FieldGeneratorBase> MakeRepeatedStringGenerator(
 
 }  // namespace cpp
 }  // namespace compiler
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google

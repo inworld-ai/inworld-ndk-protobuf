@@ -42,11 +42,11 @@
 // convenient for functions that need type information but cannot necessarily
 // assume a upb_FieldDef will be available.
 //
-// For example, Google::Protobuf::Map and Google::Protobuf::RepeatedField can
+// For example, Google::protobuf_inworld::Map and Google::protobuf_inworld::RepeatedField can
 // be constructed with type information alone:
 //
 //   # RepeatedField will internally store the type information in a TypeInfo.
-//   Google::Protobuf::RepeatedField.new(:message, FooMessage)
+//   Google::protobuf_inworld::RepeatedField.new(:message, FooMessage)
 
 typedef struct {
   upb_CType type;

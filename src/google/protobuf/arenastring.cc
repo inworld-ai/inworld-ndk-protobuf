@@ -44,7 +44,7 @@
 // clang-format on
 
 namespace google {
-namespace protobuf {
+namespace protobuf_inworld {
 namespace internal {
 
 namespace  {
@@ -214,7 +214,7 @@ std::string* ArenaStringPtr::MutableNoCopy(Arena* arena) {
 }
 
 template <typename... Lazy>
-std::string* ArenaStringPtr::MutableSlow(::google::protobuf::Arena* arena,
+std::string* ArenaStringPtr::MutableSlow(::google::protobuf_inworld::Arena* arena,
                                          const Lazy&... lazy_default) {
   ABSL_DCHECK(IsDefault());
 
@@ -276,7 +276,7 @@ void ArenaStringPtr::ClearToEmpty() {
 }
 
 void ArenaStringPtr::ClearToDefault(const LazyString& default_value,
-                                    ::google::protobuf::Arena* arena) {
+                                    ::google::protobuf_inworld::Arena* arena) {
   ScopedCheckPtrInvariants check(&tagged_ptr_);
   (void)arena;
   if (IsDefault()) {
@@ -302,7 +302,7 @@ const char* EpsCopyInputStream::ReadArenaString(const char* ptr,
 }
 
 }  // namespace internal
-}  // namespace protobuf
+}  // namespace protobuf_inworld
 }  // namespace google
 
 #include "google/protobuf/port_undef.inc"
